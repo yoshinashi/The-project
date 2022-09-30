@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <title>ClubStand</title>
+        <!-- Fonts -->
+        <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    </head>
+    <body>
+        <h1>ClubStand</h1>
+        
+        <h2>サークル投稿者用画面</2>
+        
+        
+        <a href="/creates">サークルを作る</a>
+        
+        
+        
+        
+         <div class='posts'>
+            @foreach ($posts as $post)
+                <div class='post'>
+                    <h2 class='clubname'>{{ $post->clubname }}</h2> 
+                    <p class='sport'>{{ $post->sport }}</p>
+                    <p class='place'>{{ $post->place }}</p>
+                    <p class='activity'>{{ $post->activity }}</p>
+                    <p class='condition'>{{ $post->condition }}</p>
+                    <h5>投稿を編集する</h5>
+                    <a href="/members">メンバーを探す</a>
+                </div>
+            @endforeach
+        </div>
+        
+        
+         <div class="footer">
+            <a href="/indexes">戻る</a>
+        </div>
+        
+    </body>
+</html>
