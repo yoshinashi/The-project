@@ -15,24 +15,28 @@
         <a href="/profiles">プロフィールを登録する</a>
         
         
-        
-        
-         <div class='profiles'>
-             
-             @foreach ($profiles as $profile)
-
-                <div class='post'>
+        <div class='profiles'>
+                <div class='profile'>
+                    @if(isset( $profile ))
                     <h2 class='name'>{{ $profile->name }}</h2> 
                     
                     <p class='sex'>{{ $profile->sex }}</p>
+                    <p class='birthday'>{{ $profile->birthday }}</p>
                     <p class='sport'>{{ $profile->sport }}</p>
                     <p class='profile'>{{ $profile->profile }}</p>
                     <p class='profile'>{{ $profile->place }}</p>
+                    @else
+                        <p>プロフィールが登録されていません</p>
+                    @endif
+                    
                     
                 </div>
            
         </div>
-        @endforeach
+       
+
+        
+         
         
          <div class="footer">
             <a href="/indexes">戻る</a>

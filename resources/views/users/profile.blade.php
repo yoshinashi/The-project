@@ -33,7 +33,21 @@
                     name="profile[sex]"value="指定しない" >
                  <label for="contactChoice3">指定しない</label>
   
-            </div>    
+            </div>   
+            
+          <div class="age"> 
+            <h2>年齢層</h2>
+             <select name="profile[birthday]">
+　　　　　　　　<option value="">選択してください</option>
+　　　　　　　　<option value="20歳未満">20歳未満</option>
+　　　　　　　　<option value="20-29歳">20-29歳</option>
+　　　　　　　　<option value="30-39歳">30-39歳</option>
+　　　　　　　　<option value="40-49歳">40-49歳</option>
+　　　　　　　　<option value="50-59歳">50-59歳</option>
+　　　　　　　　<option value="60歳以上">60歳以上</option>
+　　　　　　 </select>
+　　　　　</div>
+　　　　　　
             
             <div class="sport">
              

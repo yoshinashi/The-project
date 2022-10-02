@@ -17,7 +17,8 @@ class ProfileController extends Controller
     
     public function user(Profile $profile)
     {
-        return view('users/user')->with(['profiles' => $profile->get()]);  
+        
+        return view('users/user')->with(['profile' => $profile->first()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     

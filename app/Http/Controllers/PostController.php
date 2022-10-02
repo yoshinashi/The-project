@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-
-
+use Storage;
 
 class PostController extends Controller
+
+
 {
     public function index(Post $post)
     {
@@ -37,8 +38,36 @@ public function create()
 public function store(Request $request, Post $post)
 {
     $input = $request['post'];
+    //s3アップロード開始
+    $image = $request->file('image');
+    
+    
+      // バケットの`myprefix`フォルダへアップロード
+    $path = Storage::disk('s3')->putFile('/',$image,);
+    
+      // アップロードした画像のフルパスを取得
+    $post->image_path = Storage::disk('s3')->url($path);
+   
+    
     $post->fill($input)->save();
+    
+    
+    
+    
     return redirect('/indexes');
+}
+
+public function edit(Post $post)
+{
+    return view('posts/edit')->with(['post' => $post]);
+}
+
+public function update(PostRequest $request, Post $post)
+{
+    $input_post = $request['post'];
+    $post->fill($input_post)->save();
+
+    return redirect('/hosts/' );
 }
 
 }

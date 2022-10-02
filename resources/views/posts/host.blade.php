@@ -13,7 +13,7 @@
         
         
         <a href="/creates">サークルを作る</a>
-        
+        <a href="/members">メンバーを探す</a>
         
         
         
@@ -21,12 +21,22 @@
             @foreach ($posts as $post)
                 <div class='post'>
                     <h2 class='clubname'>{{ $post->clubname }}</h2> 
+                    
+                    <h3>行うスポーツ</h3>
                     <p class='sport'>{{ $post->sport }}</p>
+                    
+                    <h3>主な活動エリア</h3>
                     <p class='place'>{{ $post->place }}</p>
+                    
+                    <h3>活動詳細</h3>
                     <p class='activity'>{{ $post->activity }}</p>
+                    
+                    
                     <p class='condition'>{{ $post->condition }}</p>
-                    <h5>投稿を編集する</h5>
-                    <a href="/members">メンバーを探す</a>
+                    
+                    <h3>募集条件</h3>
+                    [<a href="/posts/{{ $post->id }}/edit">投稿を編集する</a>]
+                    
                 </div>
             @endforeach
         </div>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('clubname')->nullable();
             $table->string('sport')->nullable();
             $table->string('place')->nullable();
-            $table->string('image_name',100)->nullable();
+            $table->string('image_path',200)->nullable();
             $table->string('activity')->nullable();
             $table->string('condition')->nullable();
             $table->timestamps();

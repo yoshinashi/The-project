@@ -23,7 +23,9 @@ Route::get('/indexes', [PostController::class, 'index']);
 Route::get('/posts/{post}', [PostController::class ,'show']);
 Route::get('/hosts', [PostController::class, 'host']); 
 Route::get('/creates', [PostController::class, 'create']);
-Route::post('/posts', [PostController::class, 'store']);
+Route::post('/indexes', [PostController::class, 'store']);
+Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
+Route::put('/indexes', [PostController::class, 'update']);
 
 
 Route::get('/members', [ProfileController::class, 'member']); 
