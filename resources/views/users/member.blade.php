@@ -17,11 +17,12 @@
                    
                      <a href="/users/{{ $profile->id }}"><h2 class='name'>{{ $profile->name }}</h2></a>
                     
-                    
                     <p class='sex'>{{ $profile->sex }}</p>
+                    <p class='birthday'>{{ $profile->birthday }}</p>
                     <p class='sport'>{{ $profile->sport }}</p>
-                    <p class='profile'>{{ $profile->profile }}</p>
                     <p class='profile'>{{ $profile->place }}</p>
+                    <p class='profile'>{{ $profile->profile }}</p>
+                    
                     
                 </div>
             @endforeach

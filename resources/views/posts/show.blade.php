@@ -18,10 +18,11 @@
         <div class="content">
         　　<h3>行うスポーツ</h3>    
          　<p class='sport'>{{ $post->sport }}</p>
-         　<h3>活動場所</h3>
+         　
+         　<h3>主な活動エリア</h3>
         　 <p class='place'>{{ $post->place }}</p>    
             
-         　<h3>活動内容</h3>
+         　<h3>活動詳細</h3>
          　<p>{{ $post->activity }}</p>    
          　
          　<h3>募集条件</h3>

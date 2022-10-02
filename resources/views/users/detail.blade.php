@@ -17,6 +17,9 @@
             <h3>性別</h3>
            <p>{{ $profile->sex }}</p>  
            
+            <h3>年齢層</h3>
+           <p>{{ $profile->birthday }}</p>
+           
            <h3>経験・興味のあるスポーツ</h3>
            <p>{{ $profile->sport }}</p>
            
