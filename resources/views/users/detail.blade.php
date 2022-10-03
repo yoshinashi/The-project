@@ -8,11 +8,19 @@
     </head>
     <body>
         
-        <h1 class="name">
-            {{ $profile->name }}
-        </h1>
         
         <div class="content">
+            
+          <h1 class="name">
+            {{ $profile->name }}
+          </h1>
+        
+        
+        @if ($profile->image_name)
+                     <!-- 画像を表示 -->
+                    
+        <img src="{{ $profile->image_name}}">
+         @endif
             
             <h3>性別</h3>
            <p>{{ $profile->sex }}</p>  

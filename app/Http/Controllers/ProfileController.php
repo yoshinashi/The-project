@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use Storage;
+
+
 
 class ProfileController extends Controller
 {
@@ -36,7 +39,35 @@ public function profile()
 public function keep(Request $request, Profile $profile)
 {
     $input = $request['profile'];
+    
+    //s3アップロード開始
+    $image = $request->file('image_name');
+    
+      // バケットの`myprefix`フォルダへアップロード
+    $path = Storage::disk('s3')->putFile('/',$image,);
+    
+      // アップロードした画像のフルパスを取得
+    $profile->image_name= Storage::disk('s3')->url($path);
+
+    
+    
     $profile->fill($input)->save();
+    
+    
+    
     return redirect('/indexes');
+}
+
+public function remake(Profile $profile)
+{
+    return view('users/remake')->with(['profile' => $profile]);
+}
+
+public function update(Request $request, Profile $profile)
+{
+    $input_profile = $request['profile'];
+    $profile->fill($input_profile)->save();
+
+    return redirect('/users/');
 }
 }

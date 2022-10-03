@@ -16,6 +16,13 @@
                 <div class='profile'>
                    
                      <a href="/users/{{ $profile->id }}"><h2 class='name'>{{ $profile->name }}</h2></a>
+                     
+                      
+                     @if ($profile->image_name)
+                     <!-- 画像を表示 -->
+                    
+                   <img src="{{ $profile->image_name}}">
+                    @endif
                     
                     <p class='sex'>{{ $profile->sex }}</p>
                     <p class='birthday'>{{ $profile->birthday }}</p>

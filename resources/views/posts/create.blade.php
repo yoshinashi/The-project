@@ -9,7 +9,7 @@
     <body>
         <h1>サークルを作る</h1>
         
-       <form action="/indexes" method="POST" enctype="multipart/form-data">
+       <form action="/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="clubname">
                 <h2>サークル名</h2>

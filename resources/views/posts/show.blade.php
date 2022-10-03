@@ -15,7 +15,19 @@
         <h1 class="clubname">
             {{ $post->clubname }}
         </h1>
+        
+       
+                   
         <div class="content">
+            
+            <h3>活動写真</h3>
+                     @if ($post->image_path)
+                     <!-- 画像を表示 -->
+                    
+                   <img src="{{ $post->image_path }}">
+                  
+                    @endif
+             
         　　<h3>行うスポーツ</h3>    
          　<p class='sport'>{{ $post->sport }}</p>
          　
