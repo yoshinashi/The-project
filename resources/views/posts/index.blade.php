@@ -34,8 +34,9 @@
                     <h3>活動写真</h3>
                      @if ($post->image_path)
                      <!-- 画像を表示 -->
-                     <p>{{ $post->image_path }}</p>
+                    
                    <img src="{{ $post->image_path }}">
+                  
                     @endif
                 </div>
                 

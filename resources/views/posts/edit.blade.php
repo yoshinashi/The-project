@@ -11,7 +11,7 @@
          <h1 class="title">編集画面</h1>
     　　　　<div class="content">
     　　　　    
-        　　　　<form action="/indexes" method="POST">
+        　　　　<form action="/posts/{{$post->id}}"method="POST">
             　　　@csrf
             　　　@method('PUT')
             　　　
@@ -24,9 +24,9 @@
             
         <div class="sport">
             <h2>行うスポーツ</h2>
-               <label><input type="checkbox" name="post[sport]"value="post[sport]">サッカー</label>
-               <label><input type="checkbox" name="post[sport]"value="post[sport]">野球</label>
-               <label><input type="checkbox" name="post[sport]"value="post[sport]">バスケットボール</label>
+               <label><input type="checkbox" name="post[sport]"value="サッカー">サッカー</label>
+               <label><input type="checkbox" name="post[sport]"value="野球">野球</label>
+               <label><input type="checkbox" name="post[sport]"value="バスケットボール">バスケットボール</label>
         </div>    
             
             
@@ -56,6 +56,7 @@
                 <textarea name="post[condition]"   placeholder="募集条件の記入"></textarea>
         　　</div>   
             　　　
+            　　
             　　　
             <input type="submit" value="update">
         </form>

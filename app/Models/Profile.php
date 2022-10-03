@@ -13,6 +13,7 @@ class Profile extends Model
     'name',
     'profile',
     'sex',
+    'image_name',
     'birthday',
     'sport',
     'place',

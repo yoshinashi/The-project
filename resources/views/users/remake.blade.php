@@ -7,18 +7,20 @@
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>プロフィールを登録する</h1>
         
-       <form action="/makes" enctype="multipart/form-data"  method="POST">
-            @csrf
-            
-            <div class="name">
+         <h1 class="title">編集画面</h1>
+    　　　　<div class="content">
+    　　　　    
+        　　　　<form action="/profiles/" method="POST">
+            　　　@csrf
+            　　　@method('PUT')
+            　　　
+            　　　 <div class="name">
                 <h2>名前</h2>
                 <input type="text" name="profile[name]" placeholder="名前"/>
             </div>
             
-             <h2>画像を投稿する</h2>
-            <input type="file" name="image_name">
+             
             
             <div class="sex">
                 <h2>性別</h2>
@@ -80,12 +82,14 @@
                 <textarea name="profile[profile]" placeholder="詳細の記入"></textarea>
         </div>
             
-            <input type="submit" value="keep"/>
+             <input type="submit" value="保存">
         </form>
+
+      
         
         
        <div class="footer">
-            <a href="/users">戻る</a>
+            <a href="/hosts">戻る</a>
         </div>
         
         

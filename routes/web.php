@@ -23,17 +23,18 @@ Route::get('/indexes', [PostController::class, 'index']);
 Route::get('/posts/{post}', [PostController::class ,'show']);
 Route::get('/hosts', [PostController::class, 'host']); 
 Route::get('/creates', [PostController::class, 'create']);
-Route::post('/indexes', [PostController::class, 'store']);
+Route::post('/posts', [PostController::class, 'store']);
 Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
-Route::put('/indexes', [PostController::class, 'update']);
+Route::put('/posts/{post}', [PostController::class, 'update']);
 
 
 Route::get('/members', [ProfileController::class, 'member']); 
 Route::get('/users', [ProfileController::class, 'user']);
 Route::get('/users/{profile}', [ProfileController::class ,'detail']);
 Route::get('/profiles', [ProfileController::class, 'profile']);
-Route::post('/plays', [ProfileController::class, 'keep']);
-
+Route::post('/makes', [ProfileController::class, 'keep']);
+Route::get('/remakes', [ProfileController::class, 'remake']);
+Route::put('/users/{profile}', [ProfileController::class, 'update']);
 
 
 Route::get('/dashboard',function () {
