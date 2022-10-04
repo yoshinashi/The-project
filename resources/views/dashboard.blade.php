@@ -17,7 +17,7 @@
     <body>
         <h1>ユーザ情報</h1>
         
-    </body>
+       
     
 
     <div class="py-12">

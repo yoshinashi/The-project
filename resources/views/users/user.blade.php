@@ -12,30 +12,41 @@
         
         
         
-        <a href="/profiles">アクティビティを投稿する</a>
-        <a href="/remakes">投稿をを編集する</a>
+        <a href="/actives">アクティビティを投稿する</a>
         
         
-        <div class='posts'>
-            @foreach ($profiles as $profile)
+        <a href="/remakes">プロフィールの編集</a>
+        
+        
+        <div class='profiles'>
                 <div class='profile'>
-                   
-                     <a href="/users/{{ $profile->id }}"><h2 class='name'>{{ $profile->name }}</h2></a>
-                     
-                      
-                     @if ($profile->image_name)
+                    @if(isset( $profile ))
+
+                    <h2 class='name'>{{ $profile->name }}</h2> 
+                    
+                    
+                    
                      <!-- 画像を表示 -->
                     
-                   <img src="{{ $profile->image_name}}">
-                    @endif
+                   　<img src="{{ $profile->image_name}}">
+                    
+                    
+                    <p class='sex'>{{ $profile->sex }}</p>
+                    <p class='birthday'>{{ $profile->birthday }}</p>
                     <p class='sport'>{{ $profile->sport }}</p>
-                    <p class='profile'>{{ $profile->place }}</p>
                     <p class='profile'>{{ $profile->profile }}</p>
+                    <p class='profile'>{{ $profile->place }}</p>
+                    
+                      
+                    
+                    
+                    @else
+                        <p>プロフィールが登録されていません</p>
+                    @endif
                     
                     
                 </div>
-            @endforeach
-        </div>
+
        
 
         
