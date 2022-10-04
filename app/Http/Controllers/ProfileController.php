@@ -10,9 +10,9 @@ use Storage;
 
 class ProfileController extends Controller
 {
-    public function member(Profile $profile)
+    public function board(Profile $profile)
     {
-        return view('users/member')->with(['profiles' => $profile->get()]);  
+        return view('users/board')->with(['profiles' => $profile->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     
@@ -21,7 +21,7 @@ class ProfileController extends Controller
     public function user(Profile $profile)
     {
         
-        return view('users/user')->with(['profile' => $profile->first()]);  
+        return view('users/user')->with(['profiles' => $profile->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     
@@ -60,7 +60,7 @@ public function keep(Request $request, Profile $profile)
 
 public function remake(Profile $profile)
 {
-    return view('users/remake')->with(['profile' => $profile]);
+    return view('users/remake');
 }
 
 public function update(Request $request, Profile $profile)

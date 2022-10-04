@@ -41,7 +41,7 @@
            
            
         <div class="footer">
-            <a href="/indexes">戻る</a>
+            <a href="/users">戻る</a>
         </div>
         
     </body>

@@ -54,7 +54,7 @@ public function store(Request $request, Post $post)
     
     
     
-    return redirect('/indexes');
+    return redirect('/hosts');
 }
 
 public function edit(Post $post)
@@ -66,9 +66,25 @@ public function update(Request $request, Post $post)
 {
     $input_post = $request['post'];
     
+    //s3アップロード開始
+    $image = $request->file('image_path');
+    
+    
+      // バケットの`myprefix`フォルダへアップロード
+    $path = Storage::disk('s3')->putFile('/',$image,);
+    
+      // アップロードした画像のフルパスを取得
+    $post->image_path = Storage::disk('s3')->url($path);
+    
     
     $post->fill($input_post)->save();
 
+    return redirect('/hosts');
+}
+
+public function delete(Post $post)
+{
+    $post->delete();
     return redirect('/indexes');
 }
 

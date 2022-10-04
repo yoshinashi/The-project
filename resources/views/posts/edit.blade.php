@@ -55,6 +55,9 @@
                 <h2>募集条件</h2>
                 <textarea name="post[condition]"   placeholder="募集条件の記入"></textarea>
         　　</div>   
+        　　
+        　　<h2>投稿画像の編集</h2>
+        　　<input type="file" name="image">
             　　　
             　　
             　　　

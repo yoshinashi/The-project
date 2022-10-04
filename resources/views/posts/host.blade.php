@@ -13,7 +13,7 @@
         
         
         <a href="/creates">サークルを作る</a>
-        <a href="/members">メンバーを探す</a>
+        <a href="/boards">みんなの活動を見る</a>
         
         
         
@@ -44,6 +44,12 @@
                     <h3>募集条件</h3>
                     [<a href="/posts/{{ $post->id }}/edit">投稿を編集する</a>]
                     
+                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                          @csrf
+                           @method('DELETE')
+                           <button type="submit">投稿を削除する</button> 
+                     </form>
+                    
                 </div>
             @endforeach
         </div>
@@ -52,6 +58,8 @@
          <div class="footer">
             <a href="/indexes">戻る</a>
         </div>
+        
+        
         
     </body>
 </html>

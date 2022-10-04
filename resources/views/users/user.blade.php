@@ -7,43 +7,34 @@
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>マイプロフィールページ</h1>
+        <h1>自分のアクティビティを投稿する</h1>
         
         
         
         
-        <a href="/profiles">プロフィールを登録する</a>
-        <a href="/remakes">プロフィールを編集する</a>
+        <a href="/profiles">アクティビティを投稿する</a>
+        <a href="/remakes">投稿をを編集する</a>
         
         
-        <div class='profiles'>
+        <div class='posts'>
+            @foreach ($profiles as $profile)
                 <div class='profile'>
-                    @if(isset( $profile ))
-                    <h2 class='name'>{{ $profile->name }}</h2> 
-                    
-                    
-                    
+                   
+                     <a href="/users/{{ $profile->id }}"><h2 class='name'>{{ $profile->name }}</h2></a>
+                     
+                      
+                     @if ($profile->image_name)
                      <!-- 画像を表示 -->
                     
-                   　<img src="{{ $profile->image_name}}">
-                    
-                    
-                    <p class='sex'>{{ $profile->sex }}</p>
-                    <p class='birthday'>{{ $profile->birthday }}</p>
-                    <p class='sport'>{{ $profile->sport }}</p>
-                    <p class='profile'>{{ $profile->profile }}</p>
-                    <p class='profile'>{{ $profile->place }}</p>
-                    
-                      
-                    
-                    
-                    @else
-                        <p>プロフィールが登録されていません</p>
+                   <img src="{{ $profile->image_name}}">
                     @endif
+                    <p class='sport'>{{ $profile->sport }}</p>
+                    <p class='profile'>{{ $profile->place }}</p>
+                    <p class='profile'>{{ $profile->profile }}</p>
                     
                     
                 </div>
-           
+            @endforeach
         </div>
        
 
