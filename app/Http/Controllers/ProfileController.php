@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use Auth;
 use Storage;
 
 
 
 class ProfileController extends Controller
 {
-    public function board(Profile $profile)
+    public function member(Profile $profile)
     {
-        return view('users/board')->with(['profiles' => $profile->get()]);  
+        return view('users/member')->with(['profiles' => $profile->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     
@@ -20,9 +21,11 @@ class ProfileController extends Controller
     
     public function user(Profile $profile)
     {
-        
-        return view('users/user')->with(['profiles' => $profile->get()]);  
+       $Auth_user=Auth::id();
+       $profile = Profile::find($Auth_user);
+        return view('users/user')->with(['profile' => $profile]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
+       
     }
     
     public function detail(Profile $profile)
@@ -55,7 +58,7 @@ public function keep(Request $request, Profile $profile)
     
     
     
-    return redirect('/indexes');
+    return redirect('/users');
 }
 
 public function remake(Profile $profile)
@@ -68,6 +71,11 @@ public function update(Request $request, Profile $profile)
     $input_profile = $request['profile'];
     $profile->fill($input_profile)->save();
 
-    return redirect('/users/');
+    return redirect('/indexes/');
+}
+
+public function active()
+{
+    return view('users/active');
 }
 }

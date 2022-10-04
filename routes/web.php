@@ -26,13 +26,15 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::delete('/posts/{post}', [PostController::class,'delete']);
 
-Route::get('/boards', [ProfileController::class, 'board']); 
+Route::get('/members', [ProfileController::class, 'member']); 
 Route::get('/users', [ProfileController::class, 'user']);
 Route::get('/users/{profile}', [ProfileController::class ,'detail']);
 Route::get('/profiles', [ProfileController::class, 'profile']);
-Route::post('/makes', [ProfileController::class, 'keep']);
+Route::post('/keeps', [ProfileController::class, 'keep']);
 Route::get('/remakes', [ProfileController::class, 'remake']);
-Route::put('/users', [ProfileController::class, 'update']);
+Route::get('/actives', [ProfileController::class, 'active']);
+
+
 
 
 Route::get('/dashboard',function () {

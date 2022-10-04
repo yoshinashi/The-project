@@ -13,7 +13,7 @@
         
         
         <a href="/creates">サークルを作る</a>
-        <a href="/boards">みんなの活動を見る</a>
+        <a href="/members">メンバーを探す</a>
         
         
         

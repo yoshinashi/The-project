@@ -31,7 +31,10 @@
         
         <h1>ClubStand</h1>
         <a href="/hosts">サークル投稿者画面へ</a>
-        <a href="/users">プロフィールを登録する</a>
+        <a href="/profiles">プロフィールを登録する</a>
+        
+        <!--プロフィール登録してない人をさせる様に実装する-->
+        <a href="/users">ユーザー画面へ</a>
         
         <div class='posts'>
             
