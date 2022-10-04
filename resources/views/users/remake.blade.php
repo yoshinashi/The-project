@@ -11,7 +11,7 @@
          <h1 class="title">編集画面</h1>
     　　　　<div class="content">
     　　　　    
-        　　　　<form action="/profiles/" method="POST">
+        　　　　<form action="/users/" method="POST">
             　　　@csrf
             　　　@method('PUT')
             　　　
@@ -89,7 +89,7 @@
         
         
        <div class="footer">
-            <a href="/hosts">戻る</a>
+            <a href="/users">戻る</a>
         </div>
         
         

@@ -9,7 +9,7 @@
     <body>
         
         
-       <h1>登録者一覧</h1>
+       <h1>みんなのアクティビティ</h1>
         
         <div class='posts'>
             @foreach ($profiles as $profile)
@@ -34,7 +34,7 @@
                 </div>
             @endforeach
         </div>
-        
+
         
         <div class="footer">
             <a href="/indexes">戻る</a>

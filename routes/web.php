@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProfileController; 
+use App\Http\Controllers\ProfileController;
 //外部にあるPostControllerクラスをインポート。
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,8 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [PostController::class, 'index'])->name('index');
 
-Route::get('/', function () {
-    return view('top');
-});
 
 Route::get('/indexes', [PostController::class, 'index']);     
 Route::get('/posts/{post}', [PostController::class ,'show']);
@@ -26,15 +24,15 @@ Route::get('/creates', [PostController::class, 'create']);
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/posts/{post}', [PostController::class, 'update']);
+Route::delete('/posts/{post}', [PostController::class,'delete']);
 
-
-Route::get('/members', [ProfileController::class, 'member']); 
+Route::get('/boards', [ProfileController::class, 'board']); 
 Route::get('/users', [ProfileController::class, 'user']);
 Route::get('/users/{profile}', [ProfileController::class ,'detail']);
 Route::get('/profiles', [ProfileController::class, 'profile']);
 Route::post('/makes', [ProfileController::class, 'keep']);
 Route::get('/remakes', [ProfileController::class, 'remake']);
-Route::put('/users/{profile}', [ProfileController::class, 'update']);
+Route::put('/users', [ProfileController::class, 'update']);
 
 
 Route::get('/dashboard',function () {
