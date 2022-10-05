@@ -59,6 +59,7 @@ public function store(Request $request, Post $post)
 
 public function edit(Post $post)
 {
+    
     return view('posts/edit')->with(['post' => $post]);
 }
 
@@ -67,15 +68,13 @@ public function update(Request $request, Post $post)
     $input_post = $request['post'];
     
     //s3アップロード開始
-    $image = $request->file('image_path');
     
+    $image = $request->file('image');
     
-      // バケットの`myprefix`フォルダへアップロード
+    // バケットの`myprefix`フォルダへアップロード
     $path = Storage::disk('s3')->putFile('/',$image,);
     
-      // アップロードした画像のフルパスを取得
     $post->image_path = Storage::disk('s3')->url($path);
-    
     
     $post->fill($input_post)->save();
 
