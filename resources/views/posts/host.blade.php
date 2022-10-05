@@ -53,7 +53,16 @@
                 </div>
             @endforeach
         </div>
-        
+
+            <script>
+    function deletePost(id) {
+        'use strict'
+
+        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+        }
+    }
+</script>
         
          <div class="footer">
             <a href="/indexes">戻る</a>
