@@ -27,7 +27,7 @@
                             <h2>行うスポーツ</h2>
                             <label><input type="checkbox" name="post[sport]"value="サッカー">サッカー</label>
                             <label><input type="checkbox" name="post[sport]"value="野球">野球</label>
-                         <label><input type="checkbox" name="post[sport]"value="バスケットボール">バスケットボール</label>
+                            <label><input type="checkbox" name="post[sport]"value="バスケットボール">バスケットボール</label>
                     </div>    
             
             

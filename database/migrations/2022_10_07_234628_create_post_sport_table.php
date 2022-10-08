@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');#外部キー
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('post_sport', function (Blueprint $table) {
             
+            //student_idとsubject_idを外部キーに設定
+        $table->foreignId('post_id')->constrained('posts');   //参照先のテーブル名を
+        $table->foreignId('sport_id')->constrained('sports');    //constrainedに記載
+        $table->primary(['post_id', 'sport_id']);  
         });
     }
 
@@ -27,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-        });
+        Schema::dropIfExists('post_sport');
     }
 };

@@ -11,78 +11,81 @@
          <h1 class="title">編集画面</h1>
     　　　　<div class="content">
     　　　　    
-        　　　　<form action="/members/" method="POST">
+    <form action="/users/" method="POST">
             　　　@csrf
             　　　@method('PUT')
             　　　
-            　　　 <div class="name">
-                <h2>名前</h2>
-                <input type="text" name="profile[name]" placeholder="名前"/>
-            </div>
-            
-             
-            
-            <div class="sex">
-                <h2>性別</h2>
+                <div class="name">
+                    <h2>名前</h2>
+                    <input type="text" name="profile[name]"value="{{$profile->name}}" placeholder="名前"/>
+                </div>
                 
-                 <input type="radio" id="contactChoice1"
-                   name="profile[sex]" value="男性">
-                 <label for="contactChoice1">男性</label>
-
-                 <input type="radio" id="contactChoice2"
-                   name="profile[sex]" value="女性">
-                 <label for="contactChoice2">女性</label>
-
-                 <input type="radio" id="contactChoice3"
-                    name="profile[sex]"value="指定しない" >
-                 <label for="contactChoice3">指定しない</label>
-  
-            </div>   
-            
-          <div class="age"> 
-            <h2>年齢層</h2>
-             <select name="profile[birthday]">
-　　　　　　　　<option value="">選択してください</option>
-　　　　　　　　<option value="20歳未満">20歳未満</option>
-　　　　　　　　<option value="20-29歳">20-29歳</option>
-　　　　　　　　<option value="30-39歳">30-39歳</option>
-　　　　　　　　<option value="40-49歳">40-49歳</option>
-　　　　　　　　<option value="50-59歳">50-59歳</option>
-　　　　　　　　<option value="60歳以上">60歳以上</option>
-　　　　　　 </select>
-　　　　　</div>
-　　　　　　
-            
-            <div class="sport">
-             
-               <h2>経験・興味のあるスポーツ</h2>
-               <label><input type="checkbox" name="profile[sport]"value="サッカー">サッカー</label>
-               <label><input type="checkbox" name="profile[sport]"value="野球">野球</label>
-               <label><input type="checkbox" name="profile[sport]"value="バスケットボール">バスケットボール</label>
-             
-            </div>
-            
-            
-    　<div class="place">
-            <h2>住んでいる地域</h2>
-            <select name="profile[place]">
-　　　　　　　　<option value="">選択してください</option>
-　　　　　　　　<option value="東京">東京</option>
-　　　　　　　　<option value="神奈川">神奈川</option>
-　　　　　　　　<option value="埼玉">埼玉</option>
-　　　　　　　　<option value="茨城">茨城</option>
-　　　　　　　　<option value="栃木">栃木</option>
-　　　　　　　　<option value="千葉">千葉</option>
-　　　　　　　　<option value="群馬">群馬</option>
-            </select>
-        </div>    
-        
-        <div class="profile">
-                <h2>プロフィール</h2>
-                <textarea name="profile[profile]" placeholder="詳細の記入"></textarea>
-        </div>
-            
-             <input type="submit" value="保存">
+                <h2>アイコンの設定</h2>
+            <input type="file" name="image_name">
+                            
+                             
+                            
+                <div class="sex">
+                 <h2>性別</h2>
+                                
+                    <input type="radio" id="contactChoice1"
+                        name="profile[sex]" value="男性">
+                    <label for="contactChoice1">男性</label>
+                
+                    <input type="radio" id="contactChoice2"
+                     name="profile[sex]" value="女性">
+                    <label for="contactChoice2">女性</label>
+                
+                    <input type="radio" id="contactChoice3"
+                     name="profile[sex]"value="指定しない" >
+                     <label for="contactChoice3">指定しない</label>
+                  
+                            </div>   
+                            
+                    <div class="age"> 
+                        <h2>年齢層</h2>
+                     <select name="profile[birthday]">
+                　　　　　　　　<option value="">選択してください</option>
+                　　　　　　　　<option value="20歳未満">20歳未満</option>
+                　　　　　　　　<option value="20-29歳">20-29歳</option>
+                　　　　　　　　<option value="30-39歳">30-39歳</option>
+                　　　　　　　　<option value="40-49歳">40-49歳</option>
+                　　　　　　　　<option value="50-59歳">50-59歳</option>
+                　　　　　　　　<option value="60歳以上">60歳以上</option>
+                　　　　　 </select>
+                　　</div>
+                　　　　　　
+                            
+                     <div class="sport">
+                             
+                      <h2>経験・興味のあるスポーツ</h2>
+                        <label><input type="checkbox" name="profile[sport]"value="サッカー">サッカー</label>
+                        <label><input type="checkbox" name="profile[sport]"value="野球">野球</label>
+                        <label><input type="checkbox" name="profile[sport]"value="バスケットボール">バスケットボール</label>
+                             
+                    </div>
+                            
+                            
+                    　<div class="place">
+                            <h2>住んでいる地域</h2>
+                            <select name="profile[place]">
+                　　　　　　　　<option value="">選択してください</option>
+                　　　　　　　　<option value="東京">東京</option>
+                　　　　　　　　<option value="神奈川">神奈川</option>
+                　　　　　　　　<option value="埼玉">埼玉</option>
+                　　　　　　　　<option value="茨城">茨城</option>
+                　　　　　　　　<option value="栃木">栃木</option>
+                　　　　　　　　<option value="千葉">千葉</option>
+                　　　　　　　　<option value="群馬">群馬</option>
+                            </select>
+                        </div>    
+                        
+                        <div class="profile">
+                                <h2>プロフィール</h2>
+                                <textarea name="profile[profile]" placeholder="詳細の記入"></textarea>
+                        </div>
+                            
+                             <input type="submit" value="update">
         </form>
 
       

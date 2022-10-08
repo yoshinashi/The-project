@@ -32,9 +32,14 @@ Route::get('/users/{profile}', [ProfileController::class ,'detail']);
 Route::get('/profiles', [ProfileController::class, 'profile']);
 Route::post('/keeps', [ProfileController::class, 'keep']);
 Route::get('/remakes', [ProfileController::class, 'remake']);
+Route::put('/users', [ProfileController::class, 'update']);
+
+
 Route::get('/actives', [ProfileController::class, 'active']);
-
-
+Route::post('/members', [ProfileController::class, 'save']);
+Route::get('/users/{active}/edit', [ProfileController::class, 'reactive']);
+Route::put('/users/{active}', [ProfileController::class, 'repost']);
+Route::delete('/users/{active}', [ProfileController::class,'delete']);
 
 
 Route::get('/dashboard',function () {

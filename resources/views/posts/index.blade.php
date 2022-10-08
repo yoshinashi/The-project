@@ -41,10 +41,13 @@
             @foreach ($posts as $post)
                 <div class='post'>
                    
-                      <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->clubname }}</h2></a>
+                     <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->clubname }}</h2></a>
+                    
                     
                     <h3>行うスポーツ</h3>
-                    <p class='sport'>{{ $post->sport }}</p>
+                    @foreach($post->sports as $sport)
+                    <p class='sport'>{{ $sport->sport_name }}</p>
+                    @endforeach
                     
                     <h3>主な活動エリア</h3>
                     <p class='place'>{{ $post->place }}</p>

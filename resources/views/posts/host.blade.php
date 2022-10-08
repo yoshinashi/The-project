@@ -5,6 +5,7 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
         <h1>ClubStand</h1>
@@ -22,8 +23,10 @@
                 <div class='post'>
                     <h2 class='clubname'>{{ $post->clubname }}</h2> 
                     
-                    <h3>行うスポーツ</h3>
-                    <p class='sport'>{{ $post->sport }}</p>
+                   <h3>行うスポーツ</h3>
+                    @foreach($post->sports as $sport)
+                    <p class='sport'>{{ $sport->sport_name }}</p>
+                    @endforeach
                     
                     <h3>主な活動エリア</h3>
                     <p class='place'>{{ $post->place }}</p>
@@ -32,6 +35,7 @@
                     <p class='activity'>{{ $post->activity }}</p>
                     
                     
+                    <h3>募集条件</h3>
                     <p class='condition'>{{ $post->condition }}</p>
                     
                     <h3>活動写真</h3>
@@ -41,34 +45,39 @@
                    <img src="{{ $post->image_path }}">
                     @endif
                     
-                    <h3>募集条件</h3>
+                    
+                    
+                    
                     [<a href="/posts/{{ $post->id }}/edit">投稿を編集する</a>]
                     
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                           @csrf
                            @method('DELETE')
-                           <button type="submit">投稿を削除する</button> 
+                           <button type="button" onclick="deletePost({{ $post->id }})">投稿を削除する</button> 
+                           
                      </form>
+                    
+                    
                     
                 </div>
             @endforeach
         </div>
 
-            <script>
-    function deletePost(id) {
-        'use strict'
-
-        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
-            document.getElementById(`form_${id}`).submit();
-        }
-    }
-</script>
+            
         
          <div class="footer">
             <a href="/indexes">戻る</a>
         </div>
         
         
-        
+                <script>
+                    function deletePost(id) {
+                        'use strict'
+                
+                        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                            document.getElementById(`form_${id}`).submit();
+                        }
+                    }
+                </script>
     </body>
 </html>

@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('profiles', function (Blueprint $table) {
+        Schema::table('actives', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');#外部キー
             $table->foreign('user_id')->references('id')->on('users');
-            
         });
     }
 
@@ -27,8 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->dropColumn('user_id');
+        Schema::table('actives', function (Blueprint $table) {
+            //
         });
     }
 };

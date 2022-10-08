@@ -11,6 +11,29 @@
         
        <h1>アクティヴな仲間を探す</h1>
         
+        <div class='posts'>
+            
+            @foreach ($actives as $active)
+                <div class='post'>
+                   
+
+                    
+                    <h3>活動詳細</h3>
+                    <p class='name'>{{ $active->activity }}</p>
+                    
+                    
+                    
+                    <h3>活動写真</h3>
+                     @if ($active->image_active)
+                     <!-- 画像を表示 -->
+                    
+                   <img src="{{ $active->image_active}}">
+                  
+                    @endif
+                </div>
+                
+            @endforeach
+        </div>
         
         
         <div class="footer">

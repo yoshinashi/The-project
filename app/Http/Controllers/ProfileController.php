@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use App\Models\Active;
 use Auth;
 use Storage;
 
@@ -11,19 +12,19 @@ use Storage;
 
 class ProfileController extends Controller
 {
-    public function member(Profile $profile)
+    public function member(Active $active)
     {
-        return view('users/member')->with(['profiles' => $profile->get()]);  
+        return view('users/member')->with(['actives' => $active->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     
     
     
-    public function user(Profile $profile)
+    public function user(Profile $profile, Active $active)
     {
        $Auth_user=Auth::id();
        $profile = Profile::find($Auth_user);
-        return view('users/user')->with(['profile' => $profile]);  
+        return view('users/user')->with(['profile' => $profile,'actives' => $active->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
        
     }
@@ -39,6 +40,7 @@ public function profile()
     return view('users/profile');
 }
 
+//プロフィールの登録
 public function keep(Request $request, Profile $profile)
 {
     $input = $request['profile'];
@@ -51,7 +53,7 @@ public function keep(Request $request, Profile $profile)
     
       // アップロードした画像のフルパスを取得
     $profile->image_name= Storage::disk('s3')->url($path);
-
+    $profile->user_id = Auth::id();
     
     
     $profile->fill($input)->save();
@@ -61,21 +63,81 @@ public function keep(Request $request, Profile $profile)
     return redirect('/users');
 }
 
+//プロフィール画面の編集画面を開く
 public function remake(Profile $profile)
 {
-    return view('users/remake');
+    return view('users/remake')->with(['profile' => $profile]);
 }
 
+//プロフィールの編集実行
 public function update(Request $request, Profile $profile)
 {
     $input_profile = $request['profile'];
+    
+    $profile->user_id = Auth::id();
+    
     $profile->fill($input_profile)->save();
+    
+    $profile->user_id = Auth::id();
 
-    return redirect('/indexes/');
+    return redirect('/users/');
 }
 
+//活動投稿画面
 public function active()
 {
     return view('users/active');
+}
+
+//活動投稿の実行
+public function save(Request $request, Active $active)
+{
+    $input_active = $request['active'];
+    
+    //s3アップロード開始
+    $image = $request->file('image_active');
+   
+      // バケットの`myprefix`フォルダへアップロード
+    $path = Storage::disk('s3')->putFile('/',$image,);
+    
+      // アップロードした画像のフルパスを取得
+    $active->image_active = Storage::disk('s3')->url($path);
+    $active->user_id = Auth::id();
+   
+    $active->fill($input_active)->save();
+    
+    return redirect('/users/');
+}
+
+
+public function reactive(Active $active)
+{
+    return view('users/reactive')->with(['active' => $active]);
+}
+
+
+   public function repost(Request $request, Active $active)
+{
+    $input_active = $request['active'];
+    
+    //s3アップロード開始
+    
+    $image = $request->file('image_active');
+    
+    // バケットの`myprefix`フォルダへアップロード
+    $path = Storage::disk('s3')->putFile('/',$image,);
+    
+    $active->image_active = Storage::disk('s3')->url($path);
+    $active->user_id = Auth::id();
+    
+    $active->fill($input_active)->save();
+
+    return redirect('/users');
+}
+
+public function delete(Active $active)
+{
+    $active->delete();
+    return redirect('/users');
 }
 }
