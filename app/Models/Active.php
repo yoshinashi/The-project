@@ -6,26 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Post extends Model
+class Active extends Model
 {
     use HasFactory;
     use SoftDeletes;
     
     protected $fillable = [
-    'clubname',
     'activity',
-    'image_name',
-    'sport',
-    'place',
-    'condition',
-    ];
-    
-    public function sports(){
-    //生徒は多数の科目を履修。
-    return $this->belongsToMany(Sport::class);
+    'image_active',
+];
 }
-  
-    
-}
-
-

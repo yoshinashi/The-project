@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+<head>
         <meta charset="utf-8">
         <title>ClubStand</title>
         <!-- Fonts -->
@@ -9,9 +7,9 @@
     <body>
         <h1>活動登録</h1>
         
-       <form action="/members"enctype="multipart/form-data"method="POST">
+       <form action="/users/{{$active->id}}"enctype="multipart/form-data"method="POST">
             @csrf
-            
+            @method('PUT')
                 <div class="profile">
                         <h2>自分のアクティビティを紹介する</h2>
                         <textarea name="active[activity]" placeholder="詳細の記入"></textarea>
@@ -20,12 +18,12 @@
                  <h2>活動写真の投稿</h2>
                     <input type="file" name="image_active">
                     
-                    <input type="submit" value="save"/>
+                    <input type="submit" value="再投稿"/>
         </form>
         
         
        <div class="footer">
-            <a href="/users">投稿をやめる</a>
+            <a href="/users">再投稿をやめる</a>
         </div>
         
         

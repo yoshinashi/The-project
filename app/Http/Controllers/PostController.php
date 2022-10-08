@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Sport;
 use Storage;
 
 class PostController extends Controller
@@ -30,14 +31,17 @@ class PostController extends Controller
  //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
 }
 
-public function create()
+public function create(Sport $sport)
 {
-    return view('posts/create');
+    return view('posts/create')->with(['sports' => $sport->get()]);
 }
 
 public function store(Request $request, Post $post)
 {
     $input = $request['post'];
+    
+    $input_sports = $request->sports_array; 
+    
     //s3アップロード開始
     $image = $request->file('image');
     
@@ -51,7 +55,7 @@ public function store(Request $request, Post $post)
     
     $post->fill($input)->save();
     
-    
+    $post->sports()->attach($input_sports); 
     
     
     return redirect('/hosts');

@@ -46,8 +46,42 @@
                     
                     
                 </div>
+        </div>
 
-       
+        <div class='posts'>
+            
+            @foreach ($actives as $active)
+                <div class='post'>
+                   
+
+                    
+                    <h3>活動詳細</h3>
+                    <p class='name'>{{ $active->activity }}</p>
+                    
+                    
+                    
+                    <h3>活動写真</h3>
+                     @if ($active->image_active)
+                     <!-- 画像を表示 -->
+                    
+                   <img src="{{ $active->image_active}}">
+                  
+                    @endif
+                </div>
+                
+                <div class="edit">
+                   <p> [<a href="/users/{{ $active->id }}/edit">活動内容を修正する</a>]</p>
+                </div>    
+                
+                <form action="/users/{{ $active->id }}" id="form_{{ $active->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" onclick="deletePost({{ $active->id }})">この投稿を消去する</button> 
+                </form>
+                
+            @endforeach
+        </div>
+        
 
         
          
@@ -56,5 +90,15 @@
             <a href="/indexes">戻る</a>
         </div>
         
+        
+        <script>
+            function deletePost(id) {
+            'use strict'
+
+            if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+                }
+            }
+        </script>
     </body>
 </html>

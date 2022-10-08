@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');#外部キー
-            $table->foreign('user_id')->references('id')->on('users');
-            
+        Schema::create('actives', function (Blueprint $table) {
+            $table->id();
+            $table->string('activity', 400)->nullable();
+            $table->string('image_active', 200)->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -27,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-        });
+        Schema::dropIfExists('actives');
     }
 };

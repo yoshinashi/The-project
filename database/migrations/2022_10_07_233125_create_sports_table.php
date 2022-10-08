@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');#外部キー
-            $table->foreign('user_id')->references('id')->on('users');
-            
+        Schema::create('sports', function (Blueprint $table) {
+            $table->id();
+            $table->string('sport_name');
+            $table->timestamps();
         });
     }
 
@@ -27,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('profiles', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-        });
+        Schema::dropIfExists('sports');
     }
 };
