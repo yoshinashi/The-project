@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Models\Active;
+use App\Models\User;
+use App\Models\Post;
 use Auth;
 use Storage;
 
@@ -13,6 +15,7 @@ use Storage;
 class ProfileController extends Controller
 {
     public function member(Active $active)
+
     {
         return view('users/member')->with(['actives' => $active->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
@@ -29,9 +32,10 @@ class ProfileController extends Controller
        
     }
     
-    public function detail(Profile $profile)
+    public function account(Profile $profile,Active $active,Post $post)
 {
-    return view('users/detail')->with(['profile' => $profile]);
+    $active->user_id = Auth::id();
+    return view('users/account')->with(['profile' => $profile,'active' => $active,'actives' => $active->get(),'posts' => $post->get()]);
  //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
 }
 
@@ -44,7 +48,7 @@ public function profile()
 public function keep(Request $request, Profile $profile)
 {
     $input = $request['profile'];
-    
+   
     //s3アップロード開始
     $image = $request->file('image_name');
     
@@ -74,12 +78,20 @@ public function update(Request $request, Profile $profile)
 {
     $input_profile = $request['profile'];
     
-    $profile->user_id = Auth::id();
-    
-    $profile->fill($input_profile)->save();
-    
-    $profile->user_id = Auth::id();
+    //s3アップロード開始
+    $image = $request->file('image_name');
 
+      // バケットの`myprefix`フォルダへアップロード
+    $path = Storage::disk('s3')->putFile('/',$image,);
+    // dd($path);
+      // アップロードした画像のフルパスを取得
+    $input_profile['image_name']= Storage::disk('s3')->url($path);
+    
+    //$profile->user_id = Auth::id();
+    
+    //$profile->fill($input_profile)->save();
+
+    $profile::find(auth()->id())->fill($input_profile)->save();
     return redirect('/users/');
 }
 

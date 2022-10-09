@@ -14,5 +14,11 @@ class Active extends Model
     protected $fillable = [
     'activity',
     'image_active',
+    'user_id'
 ];
+
+public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

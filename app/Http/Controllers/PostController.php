@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Sport;
+use Auth;
 use Storage;
 
 class PostController extends Controller
@@ -52,7 +53,7 @@ public function store(Request $request, Post $post)
       // アップロードした画像のフルパスを取得
     $post->image_path = Storage::disk('s3')->url($path);
    
-    
+    $post->user_id = Auth::id();
     $post->fill($input)->save();
     
     $post->sports()->attach($input_sports); 
@@ -61,10 +62,10 @@ public function store(Request $request, Post $post)
     return redirect('/hosts');
 }
 
-public function edit(Post $post)
+public function edit(Post $post,Sport $sport)
 {
     
-    return view('posts/edit')->with(['post' => $post]);
+    return view('posts/edit')->with(['post' => $post,'sports' => $sport->get()]);
 }
 
 public function update(Request $request, Post $post)

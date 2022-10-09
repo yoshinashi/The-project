@@ -5,8 +5,13 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        
     </head>
     <body>
+        
+        
+        <a href="/profiles">プロフィールを登録する</a>
+        <a href="/remakes">プロフィールの編集</a>
         <h1>自分のアクティビティを投稿する</h1>
         
         
@@ -15,7 +20,7 @@
         <a href="/actives">アクティビティを投稿する</a>
         
         
-        <a href="/remakes">プロフィールの編集</a>
+        
         
         
         <div class='profiles'>
@@ -53,7 +58,7 @@
             @foreach ($actives as $active)
                 <div class='post'>
                    
-
+                    <p>{{ $active->created_at }}</p>
                     
                     <h3>活動詳細</h3>
                     <p class='name'>{{ $active->activity }}</p>
@@ -92,13 +97,13 @@
         
         
         <script>
-            function deletePost(id) {
-            'use strict'
-
+                    function deletePost(id) {
+                    'use strict'
+        
             if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
-            document.getElementById(`form_${id}`).submit();
-                }
-            }
+                    document.getElementById(`form_${id}`).submit();
+                        }
+                    }
         </script>
     </body>
 </html>

@@ -18,4 +18,10 @@ class Profile extends Model
     'sport',
     'place',
 ];
+
+public function users(){
+    //生徒は多数の科目を履修。
+    return $this->belongsTo(User::class);
+
+}
 }
