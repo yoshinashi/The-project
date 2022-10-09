@@ -23,6 +23,13 @@
                 <div class='post'>
                     <h2 class='clubname'>{{ $post->clubname }}</h2> 
                     
+                    <h3>活動写真</h3>
+                     @if ($post->image_path)
+                     <!-- 画像を表示 -->
+                    
+                   <img src="{{ $post->image_path }}">
+                    @endif
+                    
                    <h3>行うスポーツ</h3>
                     @foreach($post->sports as $sport)
                     <p class='sport'>{{ $sport->sport_name }}</p>
@@ -38,12 +45,7 @@
                     <h3>募集条件</h3>
                     <p class='condition'>{{ $post->condition }}</p>
                     
-                    <h3>活動写真</h3>
-                     @if ($post->image_path)
-                     <!-- 画像を表示 -->
                     
-                   <img src="{{ $post->image_path }}">
-                    @endif
                     
                     
                     

@@ -16,7 +16,8 @@
             {{ $post->clubname }}
         </h1>
         
-       
+         <a href='/users/{{$post->user_id}}'>{{ $post->user->name }}</a>
+         <p>{{ $post->created_at }}</p>
                    
         <div class="content">
             
@@ -28,8 +29,11 @@
                   
                     @endif
              
-        　　<h3>行うスポーツ</h3>    
-         　<p class='sport'>{{ $post->sport }}</p>
+        　　   
+         　<h3>行うスポーツ</h3>
+                    @foreach($post->sports as $sport)
+                    <p class='sport'>{{ $sport->sport_name }}</p>
+                    @endforeach
          　
          　<h3>主な活動エリア</h3>
         　 <p class='place'>{{ $post->place }}</p>    

@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+ public function profiles(){
+    //生徒は多数の科目を履修。
+    return $this->hasOne(Profile::class);
+}
+
+public function actives(){
+    //生徒は多数の科目を履修。
+    return $this->hasMany(Active::class);
+}
+
+public function posts()   
+{
+    return $this->hasMany(Post::class);  
+}
 }

@@ -5,6 +5,7 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/post.css') }}">
     </head>
     <body class="antialiased">
         
@@ -30,19 +31,49 @@
        
         
         <h1>ClubStand</h1>
+        @if( Auth::check() )
         <a href="/hosts">サークル投稿者画面へ</a>
-        <a href="/profiles">プロフィールを登録する</a>
+        
         
         <!--プロフィール登録してない人をさせる様に実装する-->
-        <a href="/users">ユーザー画面へ</a>
+        <a href="/users">個人活動投稿画面へ</a>
+        @endif
+        
+        
+        
+        @guest
+          <p>ClubStandでできること</p>
+          
+          <p>ClubStandは様々なスポーツの団体を作ることができ、スポーツを通して人生を楽しむコミュニティの形成が可能です</p>
+        @endguest
+        
+        
+        
+        
+        
+        
+        
         
         <div class='posts'>
             
             @foreach ($posts as $post)
                 <div class='post'>
+                    
+                    <div class="post-info">
+                        <a>{{ $post->user->name }}</a>
+                        <p>{{ $post->created_at }}</p>
+                    </div>
                    
                      <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->clubname }}</h2></a>
                     
+                    
+                    <h3>活動写真</h3>
+                     @if ($post->image_path)
+                     <!-- 画像を表示 -->
+                    
+                   <img src="{{ $post->image_path }}">
+                  
+                    @endif
                     
                     <h3>行うスポーツ</h3>
                     @foreach($post->sports as $sport)
@@ -58,13 +89,7 @@
                     <h3>募集条件</h3>
                     <p class='condition'>{{ $post->condition }}</p>
                     
-                    <h3>活動写真</h3>
-                     @if ($post->image_path)
-                     <!-- 画像を表示 -->
                     
-                   <img src="{{ $post->image_path }}">
-                  
-                    @endif
                 </div>
                 
             @endforeach

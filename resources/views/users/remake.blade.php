@@ -11,7 +11,7 @@
          <h1 class="title">編集画面</h1>
     　　　　<div class="content">
     　　　　    
-    <form action="/users/" method="POST">
+    <form action="/profiles" enctype="multipart/form-data" method="POST">
             　　　@csrf
             　　　@method('PUT')
             　　　
@@ -59,10 +59,7 @@
                      <div class="sport">
                              
                       <h2>経験・興味のあるスポーツ</h2>
-                        <label><input type="checkbox" name="profile[sport]"value="サッカー">サッカー</label>
-                        <label><input type="checkbox" name="profile[sport]"value="野球">野球</label>
-                        <label><input type="checkbox" name="profile[sport]"value="バスケットボール">バスケットボール</label>
-                             
+                        <textarea name="profile[sport]" placeholder="経験年数などの記載"></textarea>
                     </div>
                             
                             

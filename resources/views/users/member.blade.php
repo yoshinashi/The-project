@@ -16,12 +16,14 @@
             @foreach ($actives as $active)
                 <div class='post'>
                    
-
+                    <div class="active-info">
+                        <a href='/users/{{$active->user_id}}'>{{ $active->user->name }}</a>
+                        <p>{{ $active->created_at }}</p>
+                    </div>
+                    
                     
                     <h3>活動詳細</h3>
                     <p class='name'>{{ $active->activity }}</p>
-                    
-                    
                     
                     <h3>活動写真</h3>
                      @if ($active->image_active)

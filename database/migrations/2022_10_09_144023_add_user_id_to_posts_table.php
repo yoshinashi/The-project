@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('actives', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained(); 
+        Schema::table('posts', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');#外部キー
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -25,7 +26,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('actives', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             //
         });
     }

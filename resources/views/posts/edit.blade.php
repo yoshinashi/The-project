@@ -23,11 +23,19 @@
             
             
             
-                     <div class="sport">
-                            <h2>行うスポーツ</h2>
-                            <label><input type="checkbox" name="post[sport]"value="サッカー">サッカー</label>
-                            <label><input type="checkbox" name="post[sport]"value="野球">野球</label>
-                            <label><input type="checkbox" name="post[sport]"value="バスケットボール">バスケットボール</label>
+                    <div class="sport">
+                        <h2>行うスポーツ</h2>
+            
+                           @foreach($sports as $sport)
+            
+                                <label>
+                                    {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
+                                    <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]">
+                                        {{$sport->sport_name}}
+                                    </input>
+                                </label>
+                        
+                            @endforeach   
                     </div>    
             
             
