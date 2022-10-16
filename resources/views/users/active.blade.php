@@ -14,7 +14,8 @@
             
                 <div class="profile">
                         <h2>自分のアクティビティを紹介する</h2>
-                        <textarea name="active[activity]" placeholder="詳細の記入"></textarea>
+                        <textarea name="active[activity]" placeholder="詳細の記入">
+                        </textarea>
                 </div>
                 
                  <h2>活動写真の投稿</h2>

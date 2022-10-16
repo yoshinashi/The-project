@@ -5,20 +5,27 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/user.css') }}">
     </head>
     <body>
-        
-        
+
        <h1>アクティヴな仲間を探す</h1>
+       
+       <div>
+          <form action="/members" method="GET">
+            <input type="text" name="keyword" value="{{ $keyword }}"placeholder="活動内容で検索：例：テニスをした" class="member-research">
+            <input type="submit" value="検索">
+          </form>
+       </div>
+       
         
-        <div class='posts'>
-            
+        <div class='grid'>
             @foreach ($actives as $active)
                 <div class='post'>
                    
                     <div class="active-info">
-                        <a href='/users/{{$active->user_id}}'>{{ $active->user->name }}</a>
                         <p>{{ $active->created_at }}</p>
+                        <a href='/users/{{$active->user_id}}'>{{ $active->user->name }}</a>
                     </div>
                     
                     
@@ -29,7 +36,7 @@
                      @if ($active->image_active)
                      <!-- 画像を表示 -->
                     
-                   <img src="{{ $active->image_active}}">
+                   <img src="{{ $active->image_active}}" class="member-image">
                   
                     @endif
                 </div>

@@ -1,0 +1,48 @@
+/*member.blade.php*/
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top:6%;
+    margin-bottom:20px;
+    gap:10px;
+}
+
+.member-image{
+    width :100%; 
+    height: auto;
+}
+
+.member-research{
+    width: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

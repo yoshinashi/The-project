@@ -30,10 +30,6 @@
                  <input type="radio" id="contactChoice2"
                    name="profile[sex]" value="女性">
                  <label for="contactChoice2">女性</label>
-
-                 <input type="radio" id="contactChoice3"
-                    name="profile[sex]"value="指定しない" >
-                 <label for="contactChoice3">指定しない</label>
   
             </div>   
             
@@ -82,7 +78,7 @@
         
         
        <div class="footer">
-            <a href="/indexes">登録をやめる</a>
+            <a href="/users">登録をやめる</a>
         </div>
         
         

@@ -5,7 +5,7 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/post.js') }}"></script>
     </head>
     <body>
         <h1>ClubStand</h1>
@@ -72,14 +72,5 @@
         </div>
         
         
-                <script>
-                    function deletePost(id) {
-                        'use strict'
-                
-                        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
-                            document.getElementById(`form_${id}`).submit();
-                        }
-                    }
-                </script>
     </body>
 </html>
