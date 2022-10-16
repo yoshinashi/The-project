@@ -5,32 +5,33 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/post.css') }}">
     </head>
     <body>
         
-         <h1 class="title">編集画面</h1>
+         <h1 class="edit-title">編集画面</h1>
          
-    <div class="content">
+    <div class="edit-club">
         <form action="/posts/{{$post->id}}" enctype="multipart/form-data" method="POST">
            
                                 @csrf
                                 @method('PUT')
                
-                             <div class="clubname">
+                             <div class="edit-clubname">
                                     <h2>サークル名</h2>
-                                    <input type="text" name="post[clubname]" value="{{ $post->clubname }}" placeholder="サークル名"/>
+                                    <input type="text" name="post[clubname]" value="{{ $post->clubname }}" placeholder="サークル名" class="edit-name"/>
                              </div>
             
             
             
-                    <div class="sport">
-                        <h2>行うスポーツ</h2>
+                    <div class="edit-sport">
+                        <h2 class="edit-subtitle">行うスポーツ</h2>
             
                            @foreach($sports as $sport)
             
                                 <label>
                                     {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
-                                    <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]">
+                                    <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]"  {{ in_array($sport->id, $selectedSport) ? "checked" : "" }} >
                                         {{$sport->sport_name}}
                                     </input>
                                 </label>
@@ -40,37 +41,39 @@
             
             
                         <div class="place">
-                            <h2>活動場所</h2>
-                            <select name="post[place]" value="post[place]">
-                        <option value="">選択してください</option>
-                        <option value="東京">東京</option>
-                        <option value="神奈川">神奈川</option>
-                        <option value="埼玉">埼玉</option>
-                        <option value="茨城">茨城</option>
-                        <option value="栃木">栃木</option>
-                        <option value="千葉">千葉</option>
-                        <option value="群馬">群馬</option>
+                            <h2 class="edit-subtitle">活動場所</h2>
+                            <select name="post[place]" value="post[place]" class="edit-place">
+                                <option value="">選択してください</option>
+                                
+                                @foreach ($places as $place)
+                                    <option value="{{$place}}" {{$post->place == $place ? "selected" :"" }}>{{$place}}</option>
+                                @endforeach
                             </select>
                             
                             
                         </div>    
             
-                       <div class="activity">
-                            <h2>活動詳細</h2>
-                            <textarea name="post[activity]"   placeholder="活動詳細の記入"></textarea>
+                       <div class="edit-activity">
+                            <h2 class="edit-subtitle">活動詳細</h2>
+                            <textarea name="post[activity]"   placeholder="活動詳細の記入"><?php
+                            echo $post->activity 
+                            ?></textarea>
                       </div>   
           
-                       <div class="condition">
-                            <h2>募集条件</h2>
-                            <textarea name="post[condition]"   placeholder="募集条件の記入"></textarea>
+                       <div class="edit-condition">
+                            <h2 class="edit-subtitle">募集条件</h2>
+                            <textarea name="post[condition]"   placeholder="募集条件の記入"><?php
+                            echo $post->condition
+                            ?></textarea>
                       </div>   
           
-          <h2>投稿画像の編集</h2>
-          <input type="file" name="image">
-               
+                    <div class="edit-image">
+                      <h2 class="edit-subtitle">投稿画像の編集</h2>
+                      <input type="file" name="image">
+                    </div>
               
                
-            <input type="submit" value="update">
+            <input type="submit" value="投稿を編集する">
         </form>
     </div>
       

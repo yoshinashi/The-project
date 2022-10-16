@@ -14,10 +14,21 @@ use Storage;
 
 class ProfileController extends Controller
 {
-    public function member(Active $active)
+    public function member(Active $active, Request $request)
 
     {
-        return view('users/member')->with(['actives' => $active->get()]);  
+         $keyword = $request->input('keyword');
+
+        $query = Active::query();
+
+        if(!empty($keyword)) {
+            $query->where('activity', 'LIKE', "%{$keyword}%");
+        
+        }
+        
+         $actives = $query->get();
+        
+        return view('users/member',compact('actives','keyword'));  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
     
@@ -62,14 +73,13 @@ public function keep(Request $request, Profile $profile)
     
     $profile->fill($input)->save();
     
-    
-    
     return redirect('/users');
 }
 
 //プロフィール画面の編集画面を開く
 public function remake(Profile $profile)
 {
+    
     return view('users/remake')->with(['profile' => $profile]);
 }
 
@@ -87,7 +97,7 @@ public function update(Request $request, Profile $profile)
       // アップロードした画像のフルパスを取得
     $input_profile['image_name']= Storage::disk('s3')->url($path);
     
-    //$profile->user_id = Auth::id();
+    $profile->user_id = Auth::id();
     
     //$profile->fill($input_profile)->save();
 

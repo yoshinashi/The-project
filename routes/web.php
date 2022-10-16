@@ -14,7 +14,7 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [PostController::class, 'index'])->name('index');
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
 
 Route::get('/indexes', [PostController::class, 'index']);     
