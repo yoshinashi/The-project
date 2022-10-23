@@ -30,7 +30,7 @@ Route::delete('/posts/{post}', [PostController::class,'delete']);
 
 Route::get('/members', [ProfileController::class, 'member']); 
 Route::get('/users', [ProfileController::class, 'user']);
-Route::get('users/{user}', [ProfileController::class ,'account']);
+Route::get('/accounts/{user}', [ProfileController::class ,'account']);
 Route::get('/profiles', [ProfileController::class, 'profile']);
 Route::post('/keeps', [ProfileController::class, 'keep']);
 Route::get('/remakes', [ProfileController::class, 'remake']);

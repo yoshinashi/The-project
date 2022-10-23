@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable;
             $table->string('sex')->nullable();
             $table->string('image_name',200)->nullable();
-            $table->string('birthday')->nullable();
+            $table->string('age')->nullable();
             $table->string('sport')->nullable();
             $table->string('place')->nullable();
             $table->string('profile',300)->nullable();

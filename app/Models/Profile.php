@@ -14,7 +14,7 @@ class Profile extends Model
     'profile',
     'sex',
     'image_name',
-    'birthday',
+    'age',
     'sport',
     'place',
 ];

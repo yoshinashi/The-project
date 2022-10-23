@@ -1,5 +1,5 @@
 /* index.blade.php */
-.index-top{
+.index-top-title{
     height: 400px;
     background-image:url(../img/sample.jpeg);
     background-size: 25% 50%;
@@ -11,24 +11,134 @@
     padding-top: 50px;
 }
 
-.grid{
+.index-grid{
     display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-    margin-top:6%;
+    grid-template-columns:1fr 1fr 1fr;
+    margin-top:1.5rem;
     margin-bottom:20px;
-    gap:10px;
+    gap:1.5rem;
 }
+
+.index-top-contents{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 3rem;
+    margin-top:3rem;
+}
+
+
 
 
 .index-subtitle{
-    font-size: 3rem;
+    font-size: 5rem;
+    margin:0.5rem 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5rem;
+}
+
+
+.index-container{
+    display: grid;
+    grid-template-rows:50px 100px 100px 150px;
+    grid-template-columns:60% 40%;
+    grid-template-areas:
+        "areaA areaA"
+        "areaB areaC"
+        "areaB areaD"
+        "areaE areaE";
+        border-style: groove;
+        border-width: 0.5rem;
+}
+
+.index-item-clubname{
+    grid-area:areaA;
+}
+
+.index-item-image{
+    grid-area:areaB;
+}
+
+.index-item-sport{
+    grid-area:areaC;
+}
+
+.index-item-place{
+    grid-area:areaD;
+}
+
+.index-item-activity{
+    grid-area:areaE;
 }
 
 .index-image{
-    width :100%; 
-    height: auto;
-    clip-path: circle(85px at 100px 100px);
+    width :95%; 
+    height: 180px;
+    border-radius:1.5rem;
 }
+
+.index-clubname{
+    margin:0px 0px;
+    font-size:2rem;
+}
+
+.index-sport{
+    margin:0px 0px;
+}
+
+.index-title-sport{
+    font-size:1.5rem;
+    margin:0px 0px;
+    border-bottom-style:groove;
+    border-bottom-width: 0.25rem;
+}
+
+.index-title-place{
+    font-size:1.5rem;
+    margin:0px 0px;
+    border-bottom-style:groove;
+    border-bottom-width: 0.25rem;
+}
+
+.index-title-activity{
+    font-size:1.5rem;
+    margin:0px 0px;
+    border-bottom-style:groove;
+    border-bottom-width: 0.25rem;
+}
+
+.index-activity{
+    margin:0px 0px;
+}
+
+.hit-title{
+    font-size:2rem;
+    margin:0.5rem 0px;
+}
+
+.user-link{
+    float: right;
+    margin-right: 5%;
+    font-size:2rem;
+    border-bottom-style:solid;
+    border-width: 0.5rem;
+    border-color: black;
+}
+
+.host-link{
+    float: left;
+    margin-left:5%;
+    font-size:2rem;
+    border-bottom-style:solid;
+    border-width: 0.5rem;
+    border-color: black;
+}
+
+.index-hit{
+    border-bottom-style:solid;
+    border-width: 0.5rem;
+}
+
+
 /* create.blade.php */
 
 .create-title{
@@ -80,6 +190,7 @@ textarea{
 /*show.blade.php*/
 article{
     width:70%;
+    margin-right:1.5rem;
 }
 
 aside{
@@ -91,25 +202,25 @@ aside{
 
 .show-container{
     display: grid;
-    grid-template-rows: 200px 200px 250px 250px;
+    grid-template-rows:75px 200px 200px 200px 200px;
     grid-template-columns:60% 40%;
     grid-template-areas:
-        "areaA areaB"
-        "areaA areaC"
-        "areaD areaD"
-        "areaE areaE";
+        "areaA areaA"
+        "areaB areaC"
+        "areaB areaD"
+        "areaE areaE"
+        "areaF areaF";
 }
 
-
 .show-image{
-    width:50%;
-    height:auto;
+    width:90%;
+    height:350px;
 }
 
 .aside-grid{
     display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:10px;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
 }
 
 .aside-title{
@@ -121,20 +232,186 @@ aside{
     height:auto;
 }
 
-.item-image{
-     grid-area:areaA;
+.show-item-clubname{
+    grid-area:areaA;
 }
 
-.item-sport{
+.show-item-image{
      grid-area:areaB;
 }
-.item-place{
-    grid-area:areaC;
-}
 
-.item-activity{
+.show-item-sport{
+     grid-area:areaC;
+}
+.show-item-place{
     grid-area:areaD;
 }
-.item-condition{
+
+.show-item-activity{
     grid-area:areaE;
+}
+.show-item-condition{
+    grid-area:areaF;
+}
+
+.show-clubname-title{
+    font-size:3rem;
+    margin:0px 0px;
+}
+
+.show-image-title{
+    font-size:1.75rem;
+    margin:1rem 0px;
+}
+
+.show-sport-title{
+    font-size:1.75rem;
+    margin:0px 0px;
+}
+
+.show-place-title{
+    font-size:1.75rem;
+    margin:0px 0px;
+}
+
+.show-activity-title{
+    font-size:1.75rem;
+    margin:0px 0px;
+}
+
+.show-condition-title{
+    font-size:1.75rem;
+    margin:0px 0px;
+}
+
+.show-sport{
+    font-size:1.25rem;
+}
+
+.show-place{
+    font-size:1.25rem;
+}
+
+.show-activity{
+     font-size:1.25rem;
+     margin:0.25rem 0px;
+}
+
+.show-condition{
+     font-size:1.25rem;
+     margin:0.25rem 0px;
+}
+
+
+
+/*host.blade.php*/
+.host-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+    margin-bottom:1rem ;
+}
+
+.host-container {
+    display: grid;
+    grid-template-rows: 100px 100px 100px 100px 150px 150px 50px;
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+        "areaA areaA"
+        "areaB areaC"
+        "areaB areaC"
+        "areaB areaD"
+        "areaE areaE"
+        "areaF areaF"
+        "areaG areaH";
+    border-style: ridge;
+    border-width:10px;
+}
+.host-clubname{
+    border-bottom-style: ridge;
+    border-width: 10px;
+}
+
+.host-image{
+   
+    width: 90%;
+    height: 275px;
+    border-radius:1.5rem;
+}
+
+.host-item-path{
+    grid-area:areaB;
+}
+
+.host-item-clubnmae{
+    grid-area:areaA;
+}
+.host-sport-title{
+    margin:0.5rem 0px;
+    border-bottom-style: ridge;
+    border-width: 10px;
+}
+
+.host-item-sport{
+    grid-area:areaC;
+   
+}
+
+.host-sport{
+    font-size:1.5rem;
+    margin:0px;
+}
+
+.host-item-place{
+    grid-area:areaD;
+    
+}
+
+.host-item-activity{
+    grid-area:areaE;
+}
+
+.host-place-title{
+    margin:0px 0px;
+    border-bottom-style: ridge;
+    border-width: 10px;
+}
+
+.host-place{
+    margin:0px 0px;
+    font-size:1.5rem;
+}
+
+.host-activity-title{
+    margin:0.5rem 0px;
+    border-bottom-style: ridge;
+    border-width: 10px;
+}
+
+.host-activity{
+    margin:0.5rem 0px;
+    font-size:1rem;
+}
+
+.host-item-condition{
+    grid-area:areaF;
+}
+
+.host-condition-title{
+    margin:0.5rem 0px;
+    border-bottom-style: ridge;
+    border-width: 10px;
+}
+
+.host-condition{
+    margin:0.5rem 0px;
+    font-size:1rem;
+}
+
+.host-item-edit{
+    grid-area:areaG;
+}
+
+.host-item-delete{
+    grid-area:areaH;
 }

@@ -23,12 +23,12 @@ class PostController extends Controller
             $query->where('place',"$keyword");
         }
 
-        
+        $posts = $query->get();
             
             
         $sportId = $request->sports_array;
       
-        //$query = Post::query();
+        
         
         if(isset($sportId)){
             $query->whereHas('sports', function($q) use($sportId)  {

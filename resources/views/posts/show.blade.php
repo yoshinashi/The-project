@@ -12,88 +12,94 @@
         <div class="show-contents">
                 <article>      
                 
-                    <div class="item-clubame">
-                        <h1 class="clubname">
-                        　{{ $post->clubname }}
-                        </h1>
-                    </div>   
-                     <div class="show-container">
+                    <div class="show-container">
+                            <div class="show-item-clubame">
+                                <h1 class="show-clubname-title">
+                                　{{ $post->clubname }}
+                                </h1>
+                            </div>   
+                     
                 
-                            <div class="item-image">    
-                                <h3>活動写真</h3>
-                                         @if ($post->image_path)
-                                         <!-- 画像を表示 -->
+                            <div class="show-item-image">    
+                                <h3 class="show-image-title">活動写真</h3>
+                                     @if ($post->image_path)
+                                 <!-- 画像を表示 -->
                                         
-                                       <img src="{{ $post->image_path }}" class="show-image">
+                                <img src="{{ $post->image_path }}" class="show-image">
+                            @endif
                             </div>          
-                                        @endif
+                                    
                                  
-                            <div class="item-sport">　   
-                             　<h3>行うスポーツ</h3>
+                            <div class="show-item-sport">　   
+                             　<h3 class="show-sport-title">行うスポーツ</h3>
                                     @foreach($post->sports as $sport)
-                                    <p class='sport'>{{ $sport->sport_name }}</p>
-                                        
-                            </div>            
-                                    @endforeach
+                                <p class='show-sport'>{{ $sport->sport_name }}</p>
+                            @endforeach
+                            </div>  
+                            
+                                    
                              　
-                            <div class="item-place">　
-                             　<h3>主な活動エリア</h3>
-                            　 <p class='place'>{{ $post->place }}</p>    
+                            <div class="show-item-place">　
+                             　<h3 class="show-place-title">主な活動エリア</h3>
+                            　 <p class='show-place'>{{ $post->place }}</p>    
                             </div>    
                                 
-                            <div class="item-activity">    
-                             　<h3>活動詳細</h3>
-                             　<p>{{ $post->activity }}</p> 
+                            <div class="show-item-activity">    
+                             　<h3 class="show-activity-title">活動詳細</h3>
+                             　<p class="show-activity">{{ $post->activity }}</p> 
                             </div>
                             
-                            
-                            <div class="item-condition"> 　
-                             　<h3>募集条件</h3>
-                             　<p class='condition'>{{ $post->condition }}</p>
+                            <div class="show-item-condition"> 　
+                             　<h3 class="show-condition-title">募集条件</h3>
+                             　<p class='show-condition'>{{ $post->condition }}</p>
                             </div>
                     
-                            <a href='/users/{{$post->user_id}}'>{{ $post->user->name }}</a>
+                            <a href='/accounts/{{$post->user_id}}'>{{ $post->user->name }}</a>
                     </div>
-                  </article>     
-                       
-                       <aside>
+                </article>     
+                     
+                    <aside>
+                        <h2>その他のサークルを見る</h2>
                            <div class="aside-grid">
+                                @foreach ($posts as $subpost)
                                 
-                                @foreach ($posts as $post)
+                                
+                                @if(!($subpost->id === $post->id))
+                                
                                     <div class='post'>
                                         
-                                         <a href="/posts/{{ $post->id }}"><h2 class='aside-title'>{{ $post->clubname }}</h2></a>
+                                         <a href="/posts/{{ $subpost->id }}"><h2 class='aside-title'>{{ $subpost->clubname }}</h2></a>
                                         <!--画像処理-->
-                                         @if ($post->image_path)
+                                         @if ($subpost->image_path)
                                          <!-- 画像を表示 -->
                                         
-                                       <img src="{{ $post->image_path }}"class="aside-image">
+                                       <img src="{{ $subpost->image_path }}"class="aside-image">
                                       
                                         @endif
                                         
                                         <div class="content-first">
                                             <h3>行うスポーツ</h3>
-                                            @foreach($post->sports as $sport)
+                                            @foreach($subpost->sports as $sport)
                                             <p class='sport'>{{ $sport->sport_name }}</p>
                                         
                                             @endforeach
                                          </div>   
                                         
                                         <h3>主な活動エリア</h3>
-                                        <p class='place'>{{ $post->place }}</p>
+                                        <p class='place'>{{ $subpost->place }}</p>
                                         
                                         <h3>活動詳細</h3>
-                                        <p class='activity'>{{ $post->activity }}</p>
+                                        <p class='activity'>{{ $subpost->activity }}</p>
                                         
                                         <h3>募集条件</h3>
-                                        <p class='condition'>{{ $post->condition }}</p>
+                                        <p class='condition'>{{ $subpost->condition }}</p>
                                         
                                         
                                     </div>
-                                    
+                                  @endif  
                                 @endforeach
                             </div>
-                     </aside>
+                    </aside>
             </div>       
            
         <div class="footer">

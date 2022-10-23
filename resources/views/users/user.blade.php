@@ -5,42 +5,32 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        
+        <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+        <script src="{{ asset('js/user.js') }}"></script>
     </head>
     <body>
         
         
-        <a href="/profiles">プロフィールを登録する</a>
-        <a href="/remakes">プロフィールの編集</a>
-        <h1>自分のアクティビティを投稿する</h1>
-        
-        
-        
-        
-        <a href="/actives">アクティビティを投稿する</a>
-        
-        
-        
-        
-        
-        <div class='profiles'>
-                <div class='profile'>
+        <header>
+            
+            <div class='profiles'>
+                <div class='user-container'>
                     @if(isset( $profile ))
 
-                    <h2 class='name'>{{ $profile->name }}</h2> 
+                    <h2 class='user-item-name'>{{ $profile->name }}</h2> 
                     
                     
                     
                      <!-- 画像を表示 -->
                     
-                   　<img src="{{ $profile->image_name}}">
+                   　<img src="{{ $profile->image_name}}" class="user-item-image">
                     
                     
-                    <p class='sex'>{{ $profile->sex }}</p>
-                    <p class='birthday'>{{ $profile->birthday }}</p>
-                    <p class='sport'>{{ $profile->sport }}</p>
-                    <p class='profile'>{{ $profile->profile }}</p>
-                    <p class='profile'>{{ $profile->place }}</p>
+                    <p class='user-item-sex'>{{ $profile->sex }}</p>
+                    <p class='user-item-age'>{{ $profile->age}}</p>
+                    <p class='user-item-sport'>{{ $profile->sport }}</p>
+                    <p class='user-item-profile'>{{ $profile->profile }}</p>
+                    <p class='user-item-place'>{{ $profile->place }}</p>
                     
                       
                     
@@ -50,60 +40,66 @@
                     @endif
                     
                     
-                </div>
-        </div>
-
-        <div class='posts'>
-            
-            @foreach ($actives as $active)
-                <div class='post'>
-                   
-                    <p>{{ $active->created_at }}</p>
-                    
-                    <h3>活動詳細</h3>
-                    <p class='name'>{{ $active->activity }}</p>
-                    
-                    
-                    
-                    <h3>活動写真</h3>
-                     @if ($active->image_active)
-                     <!-- 画像を表示 -->
-                    
-                   <img src="{{ $active->image_active}}">
-                  
-                    @endif
+                     <a href="/remakes" class="user-item-edit">プロフィール編集</a>
                 </div>
                 
-                <div class="edit">
-                   <p> [<a href="/users/{{ $active->id }}/edit">活動内容を修正する</a>]</p>
+            </div>
+            
+            
+        </header>
+        
+        
+        <h1 class="active-title">自分の投稿</h1>
+        
+        <a href="/profiles">プロフィールを登録する</a>
+        
+        <a href="/indexes">戻る</a>
+        
+        <a href="/actives">アクティビティを投稿する</a>
+    
+
+        <div class="user-main-contents">
+                @foreach ($actives as $active)
+            <div class='user-active-container'>
+                        
+                <div class="active-item-create">        
+                    <h3 class="active-create-title">投稿日</h3>
+                    <p class="active-create">{{ $active->created_at }}</p>
                 </div>    
                 
-                <form action="/users/{{ $active->id }}" id="form_{{ $active->id }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="button" onclick="deletePost({{ $active->id }})">この投稿を消去する</button> 
-                </form>
-                
-            @endforeach
+                <div class="active-item-activity">
+                    <h3 class="active-subtitle">活動詳細</h3>
+                    <p class='active-activity'>{{ $active->activity }}</p>
+                </div>        
+                        
+                <div class="active-item-image">        
+                    <h3 class="active-subtitle">活動写真</h3>
+                     @if ($active->image_active)
+                         <!-- 画像を表示 -->
+                        
+                      <img src="{{ $active->image_active}}" class="active-image">
+                      
+                    @endif
+                </div>
+                    
+                    <div class="active-item-edit">
+                       <p> [<a href="/users/{{ $active->id }}/edit" class="active-edit" >投稿を修正する</a>]</p>
+                    </div>    
+                    
+                    <div class="active-item-delete">
+                        <form action="/users/{{ $active->id }}" id="form_{{ $active->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" onclick="deletePost({{ $active->id }})"class="active-delete">この投稿を消去する</button> 
+                        </form>
+                    </div>
+               
+            </div>  
+             @endforeach
         </div>
         
-
-        
-         
-        
-         <div class="footer">
+        <div class="footer">
             <a href="/indexes">戻る</a>
         </div>
-        
-        
-        <script>
-                    function deletePost(id) {
-                    'use strict'
-        
-            if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
-                    document.getElementById(`form_${id}`).submit();
-                        }
-                    }
-        </script>
     </body>
 </html>

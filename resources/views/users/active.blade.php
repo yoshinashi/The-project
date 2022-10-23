@@ -7,7 +7,7 @@
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>活動登録</h1>
+        <h1>活動を投稿する</h1>
         
        <form action="/members"enctype="multipart/form-data"method="POST">
             @csrf
