@@ -26,8 +26,8 @@ class ProfileController extends Controller
         
         }
         
-         $actives = $query->get();
-        
+         $actives = $query->with("user.profiles")->get();
+        //dd($actives);
         return view('users/member',compact('actives','keyword'));  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
     }
@@ -43,9 +43,11 @@ class ProfileController extends Controller
        
     }
     
-    public function account(Profile $profile,Active $active,Post $post)
+    public function account(Profile $profile,Active $active,Post $post,User $user)
 {
     $active->user_id = Auth::id();
+    $profile = $profile->where('user_id', Auth::id())->first();
+    //dd($test);
     return view('users/account')->with(['profile' => $profile,'active' => $active,'actives' => $active->get(),'posts' => $post->get()]);
  //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
 }
@@ -79,15 +81,19 @@ public function keep(Request $request, Profile $profile)
 //プロフィール画面の編集画面を開く
 public function remake(Profile $profile)
 {
-    
-    return view('users/remake')->with(['profile' => $profile]);
+     $Auth_user=Auth::id();
+     $profile = Profile::find($Auth_user);
+     $places=['東京', '神奈川','千葉','群馬','栃木','埼玉','茨城','その他の地域'];
+     $ages=['20歳未満','20-29歳','30-39歳','40-49歳','50-59歳','60歳以上'];
+    //$profile->user_id = Auth::id();
+    return view('users/remake')->with(['profile' => $profile,'places' => $places,'ages' => $ages]);
 }
 
 //プロフィールの編集実行
 public function update(Request $request, Profile $profile)
 {
     $input_profile = $request['profile'];
-    
+   
     //s3アップロード開始
     $image = $request->file('image_name');
 
