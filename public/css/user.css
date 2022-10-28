@@ -72,15 +72,81 @@
     margin:0.5rem 0;
 }
 /*profile.blade.php*/
-.profile-body{
-    background-image:url(../img/profile.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+
+
+.profile-container{
+    text-align: center;
+    display:grid;
+    grid-template-columns:1fr 1fr ;
+    grid-template-rows:125px 125px 125px 125px 125px;
+    grid-template-areas:
+    "areaA areaB"
+    "areaC areaE"
+    "areaC areaF"
+    "areaD areaG"
+    "areaD areaH";
 }
 
-.profile-contens{
-    text-align: center;
+.profile-body{
+    background-image:url(../img/profile.jpeg);
+    background-size: contain;   
+    height: 100vh;
+    width: 100%;
+    background-repeat:no-repeat;
+    
+}
+.profile-left{
+    margin-left: 10%;
+    margin-top:20%;
+}
+
+.profile-right{
+    margin-top: 25%;
+}
+
+.profile-body{
+    height: 1000px;
+}
+
+.profile-item-title{
+    grid-area:areaA;
+    margin-left: 10%;
+}
+
+.profile-item-image{
+    grid-area:areaB;
+    margin-right: 25%;
+}
+
+.profile-item-sex{
+    grid-area:areaE;
+    margin-right: 25%;
+}
+
+.profile-item-age{
+    grid-area:areaF;
+    margin-right: 25%;
+}
+
+.profile-item-place{
+    grid-area:areaG;
+    margin-right: 25%;
+}
+
+.profile-item-sport{
+    grid-area:areaC;
+    margin-left: 10%;
+}
+
+.profile-item-profile{
+    grid-area:areaD;
+    margin-left: 10%;
+}
+
+.profile-item-keep{
+    grid-area:areaH;
+    margin-right: 25%;
+    margin-top:5%;
 }
 
 .profile-title{
@@ -94,13 +160,13 @@
 }
 
 .profile-name{
-    width:40%;
+    width:80%;
     height: 35px;
 }
 
 textarea{
-    width: 40%;
-    height:4rem;
+    width: 80%;
+    height:8rem;
 }
 
 .profile-age{
@@ -121,8 +187,63 @@ textarea{
 }
 
 /*remake.blade.php*/
-.remake-contents{
+
+.remake-container{
     text-align: center;
+    display:grid;
+     grid-template-columns:1fr 1fr ;
+     grid-template-rows:125px 125px 125px 125px 125px;
+    grid-template-areas:
+    "areaA areaD"
+    "areaB areaE"
+    "areaB areaF"
+    "areaC areaG"
+    "areaC areaH";
+}
+
+.remake-body{
+    background-image:url(../img/remake.jpeg);
+    background-size: contain;   
+    height: 100vh;
+    width: 100%;
+    background-repeat:no-repeat;
+}    
+
+.remake-body{
+    height: 1000px;
+}
+
+
+.remake-item-title{
+    grid-area:areaA;
+}
+
+.remake-item-sport{
+    grid-area:areaB;
+}
+
+.remake-item-profile{
+    grid-area:areaC;
+}
+
+.remake-item-image{
+    grid-area:areaD;
+}
+
+.remake-item-sex{
+    grid-area:areaE;
+}
+
+.remake-item-age{
+    grid-area:areaF;
+}
+
+.remake-item-place{
+    grid-area:areaG;
+}
+
+.remake-item-update{
+    grid-area:areaH;
 }
 
 .remake-title{
@@ -139,8 +260,6 @@ textarea{
     width:40%;
     height: 35px;
 }
-
-
 
 .remake-age{
     font-size:20px;
@@ -316,8 +435,8 @@ textarea{
     "areaA areaB areaG areaX"
     "areaA areaC areaG areaX"
     "areaA areaD areaH areaY"
-    "areaZ areaE areaH areaY"
-    "areaZ areaF areaH areaS";
+    "areaA areaE areaH areaY"
+    "areaZ areaF areaH areaY";
     border-style: ridge;
     border-width:10px;
 }
@@ -336,10 +455,11 @@ textarea{
 }
 
 .account-image{
-    width :90px; 
-    height:90px;
+    width :125px; 
+    height:125px;
     border-radius: 50%; 
     background-position: center; 
+    
 }
 
 .account-item-sex{
@@ -353,6 +473,7 @@ textarea{
 .account-item-place{
     grid-area:areaF;
 }
+
 
 .account-item-sport{
     grid-area:areaG;
@@ -508,3 +629,6 @@ textarea{
 .account-post-item-condition{
     grid-area:areaF;
 }
+
+
+

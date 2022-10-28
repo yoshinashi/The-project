@@ -40,7 +40,9 @@
             
             <div class="account-item-place">
                 <p class='account-place'>{{ $profile->place }}</p>
-            </div>    
+            </div>   
+            
+        
         </div>
        
         <div class="account-btn">

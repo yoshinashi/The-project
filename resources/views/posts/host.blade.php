@@ -9,10 +9,14 @@
         <script src="{{ asset('js/post.js') }}"></script>
     </head>
     <body>
-        <h1>ClubStand</h1>
-        
-        <h2>サークル投稿者用画面</2>
-        
+        <div class="host-title-box">
+            <img src="../img/sample.jpeg" class="host-title-image">
+            <h1 class="host-title">Back To Club</h1>
+           
+        </div>
+        <div>
+            <h2 class="host-subtitle">サークル投稿者用画面</2>
+        </div>
         
         <a href="/creates">サークルを作る</a>
         <a href="/members">メンバーを探す</a>

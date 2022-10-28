@@ -327,9 +327,35 @@ aside{
     border-style: ridge;
     border-width:10px;
 }
+
+.host-title{
+    font-size:5rem;
+    text-align: center;
+    margin:0;
+    position: absolute;
+    bottom:40%;
+    left:30%;
+    color: red;
+}
+
+.host-subtitle{
+    font-size:3rem;
+}
+
+.host-title-image{
+    display: block;
+	width: 100%;
+    
+}
+
+.host-title-box{
+    position: relative;
+}
+
 .host-clubname{
     border-bottom-style: ridge;
     border-width: 10px;
+    
 }
 
 .host-image{
