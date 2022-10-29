@@ -369,6 +369,10 @@ textarea{
     border-width: 5px;
 }
 
+.account-item-chat{
+    grid-area:areaX;
+}
+
 .account-name{
     margin:0.5rem 0;
     border-bottom-style: ridge;

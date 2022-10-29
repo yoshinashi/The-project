@@ -40,7 +40,11 @@
             
             <div class="account-item-place">
                 <p class='account-place'>{{ $profile->place }}</p>
-            </div>    
+            </div>   
+            
+            <div class="account-item-chat">
+                <a href="/chats">連絡する</a>
+            </div>
         </div>
        
         <div class="account-btn">
@@ -129,6 +133,8 @@
         <div class="footer">
             <a href="/users">戻る</a>
         </div>
+        
+        
        
         <script>
         
