@@ -72,6 +72,13 @@
                       <input type="file" name="image">
                     </div>
               
+              
+                     <div class="edit-insta">
+                        <h2 class="edit-subtitle">インスタのアカウントID</h2>
+                        <textarea name="post[insta]" placeholder="IDの記入"><?php
+                            echo $post->insta
+                            ?></textarea>
+                　　</div>   
                
             <input type="submit" value="投稿を編集する">
         </form>

@@ -18,6 +18,7 @@ class Post extends Model
     'sport',
     'place',
     'condition',
+    'insta',
     'user_id'
     ];
     

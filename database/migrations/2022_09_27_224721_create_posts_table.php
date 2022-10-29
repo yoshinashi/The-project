@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image_path',200)->nullable();
             $table->string('activity')->nullable();
             $table->string('condition')->nullable();
+            $table->string('insta')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -53,6 +53,10 @@
                              　<h3 class="show-condition-title">募集条件</h3>
                              　<p class='show-condition'>{{ $post->condition }}</p>
                             </div>
+                            
+                            <div class="account-item-instagram">
+                               <a href="https://instagram.com/{{$post->insta}}"><img src="../img/insta.jpeg"class="account-insta"></a>
+                            </div>    
                     
                             <a href='/accounts/{{$post->user_id}}'>{{ $post->user->name }}</a>
                     </div>
