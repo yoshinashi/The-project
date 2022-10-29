@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 //外部にあるPostControllerクラスをインポート。
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,10 @@ Route::get('/users/{active}/edit', [ProfileController::class, 'reactive']);
 Route::put('/users/{active}', [ProfileController::class, 'repost']);
 Route::delete('/users/{active}', [ProfileController::class,'delete']);
 
+
+Route::get('/chats', [HomeController::class, 'chat'])->name('chat'); 
+Route::post('/add', [HomeController::class,'add'])->name('add');
+Route::get('/result/ajax', [HomeController::class,'getData']);
 
 Route::get('/dashboard',function () {
     return view('dashboard');

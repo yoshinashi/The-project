@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+        <script src="{{ asset('js/user.js') }}"></script>
     </head>
     <body>
         <div class="account-top-container"> 
@@ -42,7 +43,11 @@
                 <p class='account-place'>{{ $profile->place }}</p>
             </div>   
             
-        
+
+            <div class="account-item-chat">
+                <a href="/chats">連絡する</a>
+            </div>
+
         </div>
        
         <div class="account-btn">
@@ -131,6 +136,8 @@
         <div class="footer">
             <a href="/users">戻る</a>
         </div>
+        
+        
        
         <script>
         

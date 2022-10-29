@@ -73,7 +73,6 @@
 }
 /*profile.blade.php*/
 
-
 .profile-container{
     text-align: center;
     display:grid;
@@ -93,16 +92,10 @@
     height: 100vh;
     width: 100%;
     background-repeat:no-repeat;
-    
-}
-.profile-left{
-    margin-left: 10%;
-    margin-top:20%;
 }
 
-.profile-right{
-    margin-top: 25%;
-}
+
+
 
 .profile-body{
     height: 1000px;
@@ -110,43 +103,55 @@
 
 .profile-item-title{
     grid-area:areaA;
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-top:20%;
 }
 
 .profile-item-image{
     grid-area:areaB;
     margin-right: 25%;
+    margin-top:25%;
+
 }
 
 .profile-item-sex{
     grid-area:areaE;
     margin-right: 25%;
+    margin-top:25%;
 }
 
 .profile-item-age{
     grid-area:areaF;
     margin-right: 25%;
+    margin-top:25%;
 }
 
 .profile-item-place{
     grid-area:areaG;
     margin-right: 25%;
+    margin-top:25%;
 }
 
 .profile-item-sport{
     grid-area:areaC;
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-top:20%;
+
 }
 
 .profile-item-profile{
     grid-area:areaD;
-    margin-left: 10%;
+
+    margin-left: 20%;
+    margin-top:20%;
+
 }
 
 .profile-item-keep{
     grid-area:areaH;
     margin-right: 25%;
-    margin-top:5%;
+    margin-top:25%;
+
 }
 
 .profile-title{
@@ -160,13 +165,12 @@
 }
 
 .profile-name{
-    width:80%;
+    width:70%;
     height: 35px;
 }
 
-textarea{
-    width: 80%;
-    height:8rem;
+.profile-textarea{
+    width:70%;
 }
 
 .profile-age{
@@ -185,6 +189,7 @@ textarea{
 .radio-btn{
     margin-left: 15px;
 }
+
 
 /*remake.blade.php*/
 
@@ -214,36 +219,64 @@ textarea{
 }
 
 
+
+
 .remake-item-title{
     grid-area:areaA;
+    margin-left:15%;
 }
 
 .remake-item-sport{
     grid-area:areaB;
+    margin-left:15%;
+
 }
 
 .remake-item-profile{
     grid-area:areaC;
+
+    margin-left:15%;
+}
+
+.remake-textarea{
+    width:70%;
+    height:8rem;
+
 }
 
 .remake-item-image{
     grid-area:areaD;
+    margin-right: 25%;
+    margin-top: 20%;
+
 }
 
 .remake-item-sex{
     grid-area:areaE;
+    margin-right: 25%;
+    margin-top: 20%;
+
 }
 
 .remake-item-age{
     grid-area:areaF;
+    margin-right: 25%;
+    margin-top: 20%;
+
 }
 
 .remake-item-place{
     grid-area:areaG;
+    margin-right: 25%;
+    margin-top: 20%;
+
 }
 
 .remake-item-update{
     grid-area:areaH;
+    margin-right: 25%;
+    margin-top: 20%;
+
 }
 
 .remake-title{
@@ -257,7 +290,7 @@ textarea{
 }
 
 .remake-name{
-    width:40%;
+    width: 70%;
     height: 35px;
 }
 
@@ -488,6 +521,10 @@ textarea{
     border-left-style: ridge;
     border-right-style: ridge;
     border-width: 5px;
+}
+
+.account-item-chat{
+    grid-area:areaX;
 }
 
 .account-name{

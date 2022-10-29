@@ -15,7 +15,9 @@
                 <form action="/keeps" enctype="multipart/form-data"  method="POST">
                     @csrf
                     <div class="profile-container">
-                        <div class=profile-left>
+
+                        
+
                                 <div class="profile-item-title">
                                     <h2 class="profile-subtitle">名前</h2>
                                     <input type="text" name="profile[name]" placeholder="ニックネームも可" class="profile-name"/>
@@ -24,16 +26,20 @@
                                 <div class="profile-item-sport">
                                  
                                    <h2 class="profile-subtitle">経験・興味のあるスポーツ</h2>
-                                   <textarea name="profile[sport]" placeholder="経験年数などの記載"></textarea>
+
+                                   <textarea name="profile[sport]" placeholder="経験年数などの記載" class="profile-textarea"></textarea>
+
                                 </div>
                             
                                 <div class="profile-item-profile">
                                         <h2 class="profile-subtitle">自己紹介</h2>
-                                        <textarea name="profile[profile]" placeholder="趣味や普段していること等"></textarea>
+
+                                        <textarea name="profile[profile]" placeholder="趣味や普段していること等"class="profile-textarea"></textarea>
                                 </div>
-                        </div> 
+                         
                         
-                        <div class="profile-right">
+                       
+
                                 <div class="profile-item-image">
                                     <h2 class="profile-subtitle">アイコンの設定</h2>
                                     <input type="file" name="image_name">
@@ -54,17 +60,19 @@
                                 </div>   
                                 
                               <div class="profile-item-age"> 
-                                <h2 class="profile-subtitle">年齢層</h2>
-                                <select name="profile[age]" class="profile-age">
-                    　　　　　　　　<option value="">選択してください</option>
-                    　　　　　　　　<option value="20歳未満">20歳未満</option>
-                    　　　　　　　　<option value="20-29歳">20-29歳</option>
-                    　　　　　　　　<option value="30-39歳">30-39歳</option>
-                    　　　　　　　　<option value="40-49歳">40-49歳</option>
-                    　　　　　　　　<option value="50-59歳">50-59歳</option>
-                    　　　　　　　　<option value="60歳以上">60歳以上</option>
-                    　　　　　　 </select>
-                    　　　　　</div>
+
+                                    <h2 class="profile-subtitle">年齢層</h2>
+                                    <select name="profile[age]" class="profile-age">
+                        　　　　　　　　<option value="">選択してください</option>
+                        　　　　　　　　<option value="20歳未満">20歳未満</option>
+                        　　　　　　　　<option value="20-29歳">20-29歳</option>
+                        　　　　　　　　<option value="30-39歳">30-39歳</option>
+                        　　　　　　　　<option value="40-49歳">40-49歳</option>
+                        　　　　　　　　<option value="50-59歳">50-59歳</option>
+                        　　　　　　　　<option value="60歳以上">60歳以上</option>
+                        　　　　　　 </select>
+                    　　　  　　</div>
+
                     　　　　　　
                         　<div class="profile-item-place">
                                 <h2 class="profile-subtitle">住んでいる地域</h2>
@@ -84,7 +92,8 @@
                             <div class="profile-item-keep">    
                                 <input type="submit" value="keep"/>
                             </div> 
-                        </div>    
+
+
                     </div>    
                  </form>
                 </div> 
@@ -92,7 +101,7 @@
         </div>
         
        <div class="footer">
-            <a href="/users">登録をやめる</a>
+            <a href="/users">プロフィール登録をやめる</a>
         </div>
         
     </body>
