@@ -72,11 +72,14 @@
                             <!-- アップロードフォームの作成 -->
                             <h2 class="create-subtitle">画像を投稿する</h2>
                             <input type="file" name="image">
+
                              
                             <div class="create-insta">
                                 <h2 class="create-subtitle">インスタのアカウントID</h2>
                                 <textarea name="post[insta]" placeholder="IDの記入"></textarea>
                         　　</div>   
+
+
                   
                     
                     <input type="submit" value="サークルを作る"/>

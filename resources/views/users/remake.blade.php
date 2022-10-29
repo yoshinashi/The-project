@@ -15,12 +15,15 @@
                             　　　@csrf
                             　　　@method('PUT')
                         <div class=remake-container>    　　　
+
                                <div class="remake-left">
+
                                     <div class="remake-item-title">
                                         <h2 class="remake-subtitle">名前</h2>
                                         <input type="text" name="profile[name]"value="{{$profile->name}}" placeholder="名前" class="remake-name"/>
                                     </div>
                                     
+
                                     <div class="remake-item-sport">
                                         <h2 class="remake-subtitle">経験・興味のあるスポーツ</h2>
                                         <textarea name="profile[sport]" placeholder="経験年数などの記載" class="remake-textarea"><?php
@@ -84,6 +87,7 @@
                                                     @endforeach
                                         </select>
                                     </div>    
+
                                     
                                 <div class=remake-item-update>            
                                     <input type="submit" value="update">

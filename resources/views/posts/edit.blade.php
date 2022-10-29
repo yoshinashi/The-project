@@ -73,7 +73,9 @@
                     </div>
               
               
+
                     <div class="edit-insta">
+
                         <h2 class="edit-subtitle">インスタのアカウントID</h2>
                         <textarea name="post[insta]" placeholder="IDの記入"><?php
                             echo $post->insta

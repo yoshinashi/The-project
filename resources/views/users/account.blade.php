@@ -43,9 +43,11 @@
                 <p class='account-place'>{{ $profile->place }}</p>
             </div>   
             
+
             <div class="account-item-chat">
                 <a href="/chats">連絡する</a>
             </div>
+
         </div>
        
         <div class="account-btn">
