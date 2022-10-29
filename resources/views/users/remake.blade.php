@@ -8,86 +8,95 @@
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
     </head>
     <body>
-        <div class="remake-contents">
-            <h1 class="remake-title">プロフィール編集画面</h1>
-            <form action="/profiles" enctype="multipart/form-data" method="POST">
-                    　　　@csrf
-                    　　　@method('PUT')
-                    　　　
-                        <div class="name">
-                            <h2 class="remake-subtitle">名前</h2>
-                            <input type="text" name="profile[name]"value="{{$profile->name}}" placeholder="名前" class="remake-name"/>
-                        </div>
-                        
-                        <h2 class="remake-subtitle">アイコンの設定</h2>
-                        <input type="file" name="image_name">
+        <h1 class="remake-title">プロフィール編集画面</h1>
+        <div class="remake-body">
+            <div class="remake-contents">
+                <form action="/profiles" enctype="multipart/form-data" method="POST">
+                            　　　@csrf
+                            　　　@method('PUT')
+                        <div class=remake-container>    　　　
+                               <div class="remake-left">
+                                    <div class="remake-item-title">
+                                        <h2 class="remake-subtitle">名前</h2>
+                                        <input type="text" name="profile[name]"value="{{$profile->name}}" placeholder="名前" class="remake-name"/>
+                                    </div>
                                     
-                                     
+                                    <div class="remake-item-sport">
+                                        <h2 class="remake-subtitle">経験・興味のあるスポーツ</h2>
+                                        <textarea name="profile[sport]" placeholder="経験年数などの記載" class="remake-textarea"><?php
+                                        echo $profile->sport
+                                        ?></textarea>
+                                    </div>
                                     
-                        <div class="sex">
-                             <h2 class="remake-subtitle">性別</h2>
-                             
-                                <div class="radio-box">              
-                                    <input type="radio" id="contactChoice1"
-                                        name="profile[sex]" value="男性"{{$profile->sex == "男性" ? "checked" :"" }}
-                                        style="transform:scale(3.0);" class="radio-btn">
-                                    <label for="contactChoice1" class="radio-name">男性</label>
+                                    <div class="remake-item-profile">
+                                        <h2 class="remake-subtitle">自己紹介</h2>
+                                        <textarea name="profile[profile]" placeholder="詳細の記入"class="remake-textarea"><?php
+                                        echo $profile->profile
+                                        ?></textarea>
+                                    </div>
                                 
-                                    <input type="radio" id="contactChoice2"
-                                        name="profile[sex]" value="女性"{{$profile->sex == "女性" ? "checked" :"" }}
-                                        style="transform:scale(3.0);" class="radio-btn">
-                                   <label for="contactChoice2" class="radio-name">女性</label>
-                                </div>  
+                                </div>
+                                  
                                 
-                        </div>   
+                                    <div class="remake-item-image">
+                                        <h2 class="remake-subtitle">アイコンの設定</h2>
+                                        <input type="file" name="image_name">
+                                    </div>            
+                                                 
+                                                
+                                    <div class="remake-item-sex">
+                                         <h2 class="remake-subtitle">性別</h2>
+                                         
+                                            <div class="radio-box">              
+                                                <input type="radio" id="contactChoice1"
+                                                    name="profile[sex]" value="男性"{{$profile->sex == "男性" ? "checked" :"" }}
+                                                    style="transform:scale(3.0);" class="radio-btn">
+                                                <label for="contactChoice1" class="radio-name">男性</label>
+                                            
+                                                <input type="radio" id="contactChoice2"
+                                                    name="profile[sex]" value="女性"{{$profile->sex == "女性" ? "checked" :"" }}
+                                                    style="transform:scale(3.0);" class="radio-btn">
+                                               <label for="contactChoice2" class="radio-name">女性</label>
+                                            </div>  
+                                            
+                                    </div>   
+                                                
+                                    <div class="remake-item-age">
+                                        <h2 class="remake-subtitle">年齢層</h2>
+                                            <select name="profile[age]" value="profile[age]" class="remake-age">
+                                                <option value="">選択してください</option>
+                                                    
+                                                @foreach ($ages as $age)
+                                                    <option value="{{$age}}" {{$profile->age == $age ? "selected" :"" }}>{{$age}}</option>
+                                                @endforeach
+                                            </select>
+                                    </div>    
+                                    　　　　　　
+                                                
+                                                
+                                    <div class="remake-item-place">
+                                        <h2 class="remake-subtitle">住んでいる地域</h2>
+                                        <select name="profile[place]" value="profile[place]" class="remake-place">
+                                                <option value="">選択してください</option>
+                                                    
+                                                    @foreach ($places as $place)
+                                                <option value="{{$place}}" {{$profile->place == $place ? "selected" :"" }}>{{$place}}</option>
+                                                    @endforeach
+                                        </select>
+                                    </div>    
                                     
-                        <div class="age">
-                            <h2 class="remake-subtitle">年齢</h2>
-                                <select name="profile[age]" value="profile[age]" class="remake-age">
-                                    <option value="">選択してください</option>
-                                        
-                                    @foreach ($ages as $age)
-                                        <option value="{{$age}}" {{$profile->age == $age ? "selected" :"" }}>{{$age}}</option>
-                                    @endforeach
-                                </select>
+                                <div class=remake-item-update>            
+                                    <input type="submit" value="update">
+                                </div> 
+                            </div>    
                         </div>    
-                        　　　　　　
-                                    
-                                    
-                        <div class="place">
-                            <h2 class="remake-subtitle">活動場所</h2>
-                            <select name="profile[place]" value="profile[place]" class="remake-place">
-                                    <option value="">選択してください</option>
-                                        
-                                        @foreach ($places as $place)
-                                    <option value="{{$place}}" {{$profile->place == $place ? "selected" :"" }}>{{$place}}</option>
-                                        @endforeach
-                            </select>
-                        </div>    
-                                
-                        <div class="sport">
-                             
-                             <h2 class="remake-subtitle">経験・興味のあるスポーツ</h2>
-                                <textarea name="profile[sport]" placeholder="経験年数などの記載"><?php
-                                echo $profile->sport
-                                ?></textarea>
-                        </div>
-                                
-                        <div class="profile">
-                                <h2 class="remake-subtitle">私はこんな人です</h2>
-                                <textarea name="profile[profile]" placeholder="詳細の記入"><?php
-                                echo $profile->profile
-                                ?></textarea>
-                        </div>
-                                    
-                        <input type="submit" value="update">
-                </form>
-        </div>
-      
+                    </form>
+                </div>
+            </div>
         
         
        <div class="footer">
-            <a href="/users">戻る</a>
+            <a href="/users">プロフィール編集をやめる</a>
         </div>
         
         

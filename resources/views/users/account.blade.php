@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+        <script src="{{ asset('js/user.js') }}"></script>
     </head>
     <body>
         <div class="account-top-container"> 
