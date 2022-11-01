@@ -8,12 +8,14 @@
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
     </head>
     <body>
-       
+        <h1 class="show-title">サークル詳細</h1>
+        
         <div class="show-contents">
+             
                 <article>      
                 
                     <div class="show-container">
-                            <div class="show-item-clubame">
+                            <div class="show-item-clubname">
                                 <h1 class="show-clubname-title">
                                 　{{ $post->clubname }}
                                 </h1>
@@ -54,16 +56,16 @@
                              　<p class='show-condition'>{{ $post->condition }}</p>
                             </div>
                             
-                            <div class="account-item-instagram">
-                               <a href="https://instagram.com/{{$post->insta}}"><img src="../img/insta.jpeg"class="account-insta"></a>
+                            <div class="show-item-instagram">
+                               <a href="https://instagram.com/{{$post->insta}}"><img src="../img/insta.jpeg"class="show-insta"></a>
                             </div>    
-                    
-                            <div class="account-item-instagram">
-                               <a href="https://instagram.com/{{$post->insta}}"><img src="../img/insta.jpeg"class="account-insta"></a>
-                            </div>    
-                    
-                            <a href='/accounts/{{$post->user_id}}'>{{ $post->user->name }}</a>
+                            
+                            <div class="show-item-user">
+                                <a href='/accounts/{{$post->user_id}}'>{{ $post->user->name }}</a>
+                            </div>
                     </div>
+                    
+                    
                 </article>     
                      
                     <aside>

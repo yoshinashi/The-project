@@ -72,7 +72,6 @@
     margin:0.5rem 0;
 }
 /*profile.blade.php*/
-
 .profile-container{
     text-align: center;
     display:grid;
@@ -92,8 +91,8 @@
     height: 100vh;
     width: 100%;
     background-repeat:no-repeat;
+    
 }
-
 
 
 
@@ -111,7 +110,6 @@
     grid-area:areaB;
     margin-right: 25%;
     margin-top:25%;
-
 }
 
 .profile-item-sex{
@@ -136,22 +134,18 @@
     grid-area:areaC;
     margin-left: 20%;
     margin-top:20%;
-
 }
 
 .profile-item-profile{
     grid-area:areaD;
-
     margin-left: 20%;
     margin-top:20%;
-
 }
 
 .profile-item-keep{
     grid-area:areaH;
     margin-right: 25%;
     margin-top:25%;
-
 }
 
 .profile-title{
@@ -171,6 +165,7 @@
 
 .profile-textarea{
     width:70%;
+    height:8rem;
 }
 
 .profile-age{
@@ -220,7 +215,6 @@
 
 
 
-
 .remake-item-title{
     grid-area:areaA;
     margin-left:15%;
@@ -229,54 +223,46 @@
 .remake-item-sport{
     grid-area:areaB;
     margin-left:15%;
-
 }
 
 .remake-item-profile{
     grid-area:areaC;
-
     margin-left:15%;
 }
 
 .remake-textarea{
     width:70%;
     height:8rem;
-
 }
 
 .remake-item-image{
     grid-area:areaD;
     margin-right: 25%;
     margin-top: 20%;
-
 }
 
 .remake-item-sex{
     grid-area:areaE;
     margin-right: 25%;
     margin-top: 20%;
-
 }
 
 .remake-item-age{
     grid-area:areaF;
     margin-right: 25%;
     margin-top: 20%;
-
 }
 
 .remake-item-place{
     grid-area:areaG;
     margin-right: 25%;
     margin-top: 20%;
-
 }
 
 .remake-item-update{
     grid-area:areaH;
     margin-right: 25%;
     margin-top: 20%;
-
 }
 
 .remake-title{
@@ -468,8 +454,8 @@
     "areaA areaB areaG areaX"
     "areaA areaC areaG areaX"
     "areaA areaD areaH areaY"
-    "areaA areaE areaH areaY"
-    "areaZ areaF areaH areaY";
+    "areaZ areaE areaH areaY"
+    "areaZ areaF areaH areaS";
     border-style: ridge;
     border-width:10px;
 }
@@ -488,11 +474,10 @@
 }
 
 .account-image{
-    width :125px; 
-    height:125px;
+    width :90px; 
+    height:90px;
     border-radius: 50%; 
     background-position: center; 
-    
 }
 
 .account-item-sex{
@@ -506,7 +491,6 @@
 .account-item-place{
     grid-area:areaF;
 }
-
 
 .account-item-sport{
     grid-area:areaG;
@@ -666,6 +650,3 @@
 .account-post-item-condition{
     grid-area:areaF;
 }
-
-
-

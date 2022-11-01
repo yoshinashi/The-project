@@ -188,6 +188,8 @@ textarea{
 
 
 /*show.blade.php*/
+
+
 article{
     width:70%;
     margin-right:1.5rem;
@@ -202,19 +204,26 @@ aside{
 
 .show-container{
     display: grid;
-    grid-template-rows:75px 200px 200px 200px 200px;
+    grid-template-rows:150px 200px 200px 200px 200px 100px;
     grid-template-columns:60% 40%;
     grid-template-areas:
-        "areaA areaA"
+        "areaA areaG"
         "areaB areaC"
         "areaB areaD"
         "areaE areaE"
-        "areaF areaF";
+        "areaF areaF"
+        "areaH areaH";
+    border-style: ridge;
+    border-width:10px;
 }
 
 .show-image{
     width:90%;
-    height:350px;
+    height:300px;
+}
+
+.show-title{
+    font-size:4rem;   
 }
 
 .aside-grid{
@@ -234,14 +243,18 @@ aside{
 
 .show-item-clubname{
     grid-area:areaA;
+    border-bottom-style: ridge;
+    border-bottom-width:10px;
 }
 
 .show-item-image{
      grid-area:areaB;
+     
 }
 
 .show-item-sport{
      grid-area:areaC;
+     
 }
 .show-item-place{
     grid-area:areaD;
@@ -249,9 +262,26 @@ aside{
 
 .show-item-activity{
     grid-area:areaE;
+    border-bottom-style: ridge;
+    border-bottom-width:10px;
 }
 .show-item-condition{
     grid-area:areaF;
+    border-bottom-style: ridge;
+    border-bottom-width:10px;
+}
+
+.show-item-instagram{
+    grid-area:areaG;
+}
+
+.show-item-user{
+    grid-area:areaH;
+}
+
+.show-insta{
+    width: 125px;
+    height: 125px;
 }
 
 .show-clubname-title{
