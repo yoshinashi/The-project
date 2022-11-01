@@ -13,8 +13,6 @@
     
     
     <body>
-        
-        
         <div class="chat-container row justify-content-center">
             <div class="chat-area">
                 <div class="card">
