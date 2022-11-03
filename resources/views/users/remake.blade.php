@@ -17,10 +17,13 @@
                         <div class=remake-container>    　　　
 
                                <div class="remake-left">
+                                    <div class="profile-item-title">
+                                        <h2 class="profile-subtitle">名前</h2>
 
-                                    <div class="remake-item-title">
-                                        <h2 class="remake-subtitle">名前</h2>
-                                        <input type="text" name="profile[name]"value="{{$profile->name}}" placeholder="名前" class="remake-name"/>
+                                        <textarea name="profile[name]" placeholder="ニックネームも可（10文字以内）"class="profile-textarea"><?php
+                                        echo $profile->profile
+                                        ?>{{ old('profile.name') }}</textarea>
+                                        <p class="title__error" style="color:red">{{ $errors->first('profile.name')}}</p>
                                     </div>
                                     
 
@@ -29,6 +32,7 @@
                                         <textarea name="profile[sport]" placeholder="経験年数などの記載" class="remake-textarea"><?php
                                         echo $profile->sport
                                         ?></textarea>
+                                        <p class="title__error" style="color:red">{{ $errors->first('profile.sport')}}</p>
                                     </div>
                                     
                                     <div class="remake-item-profile">
@@ -36,6 +40,7 @@
                                         <textarea name="profile[profile]" placeholder="詳細の記入"class="remake-textarea"><?php
                                         echo $profile->profile
                                         ?></textarea>
+                                        <p class="title__error" style="color:red">{{ $errors->first('profile.profile')}}</p>
                                     </div>
                                 
                                 </div>
@@ -44,6 +49,7 @@
                                     <div class="remake-item-image">
                                         <h2 class="remake-subtitle">アイコンの設定</h2>
                                         <input type="file" name="image_name">
+                                        <p class="title__error" style="color:red">{{ $errors->first('image_name') }}</p>
                                     </div>            
                                                  
                                                 

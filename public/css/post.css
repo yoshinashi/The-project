@@ -39,7 +39,7 @@
 
 .index-container{
     display: grid;
-    grid-template-rows:50px 100px 100px 150px;
+    grid-template-rows:50px 125px 75px 200px;
     grid-template-columns:60% 40%;
     grid-template-areas:
         "areaA areaA"
@@ -136,7 +136,25 @@
 .index-hit{
     border-bottom-style:solid;
     border-width: 0.5rem;
+    width:60%;
+    display:grid;
+    grid-template-columns:25% 75%;
+    grid-template-areas:
+        "areaA areaB";
 }
+
+.index-main-sub-title{
+    width:40%;
+}
+
+.hit-titem-title{
+    grid-area:areaA;
+}
+
+.hit-title-form{
+    grid-area:areaB;
+}
+
 
 
 /* create.blade.php */

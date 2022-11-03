@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\ActiveRequest;
 use App\Models\Profile;
 use App\Models\Active;
 use App\Models\User;
@@ -58,7 +60,7 @@ public function profile()
 }
 
 //プロフィールの登録
-public function keep(Request $request, Profile $profile)
+public function keep(ProfileRequest $request, Profile $profile)
 {
     $input = $request['profile'];
    
@@ -90,7 +92,7 @@ public function remake(Profile $profile)
 }
 
 //プロフィールの編集実行
-public function update(Request $request, Profile $profile)
+public function update(ProfileRequest $request, Profile $profile)
 {
     $input_profile = $request['profile'];
    
@@ -118,7 +120,7 @@ public function active()
 }
 
 //活動投稿の実行
-public function save(Request $request, Active $active)
+public function save(ActiveRequest $request, Active $active)
 {
     $input_active = $request['active'];
     
@@ -144,7 +146,7 @@ public function reactive(Active $active)
 }
 
 
-   public function repost(Request $request, Active $active)
+   public function repost(ActiveRequest $request, Active $active)
 {
     $input_active = $request['active'];
     

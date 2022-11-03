@@ -14,7 +14,7 @@ class Post extends Model
     protected $fillable = [
     'clubname',
     'activity',
-    'image_name',
+    'image_path',
     'sport',
     'place',
     'condition',

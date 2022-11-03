@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Sport;
 use Auth;
@@ -60,10 +61,10 @@ public function create(Sport $sport)
     return view('posts/create')->with(['sports' => $sport->get()]);
 }
 
-public function store(Request $request, Post $post)
+public function store(PostRequest $request, Post $post)
 {
     $input = $request['post'];
-    
+    //dd($input);
     $input_sports = $request->sports_array; 
     
     //s3アップロード開始
@@ -75,9 +76,11 @@ public function store(Request $request, Post $post)
     
       // アップロードした画像のフルパスを取得
     $post->image_path = Storage::disk('s3')->url($path);
-   
+    
     $post->user_id = Auth::id();
+    
     $post->fill($input)->save();
+    
     
     $post->sports()->attach($input_sports); 
     
@@ -97,7 +100,7 @@ public function edit(Post $post,Sport $sport)
     return view('posts/edit')->with(['post' => $post,'sports' => $sport->get(), 'selectedSport'=> $selectedSport,'places'=> $places]);
 }
 
-public function update(Request $request, Post $post)
+public function update(PostRequest $request, Post $post)
 {
     $input_post = $request['post'];
     
@@ -126,7 +129,7 @@ public function update(Request $request, Post $post)
 public function delete(Post $post)
 {
     $post->delete();
-    return redirect('/indexes');
+    return redirect('/hosts');
 }
 
 }
