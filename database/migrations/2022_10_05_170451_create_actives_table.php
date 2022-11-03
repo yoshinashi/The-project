@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('actives', function (Blueprint $table) {
             $table->id();
-            $table->string('activity', 400)->nullable();
-            $table->string('image_active', 200)->nullable();
+            $table->string('activity', 400);
+            $table->string('image_active', 200);
             $table->timestamps();
             $table->softDeletes();
         });

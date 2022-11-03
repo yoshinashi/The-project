@@ -15,26 +15,27 @@
                 <form action="/keeps" enctype="multipart/form-data"  method="POST">
                     @csrf
                     <div class="profile-container">
-
-                        
-
                                 <div class="profile-item-title">
-                                    <h2 class="profile-subtitle">名前</h2>
-                                    <input type="text" name="profile[name]" placeholder="ニックネームも可" class="profile-name"/>
+                                        <h2 class="profile-subtitle">名前</h2>
+
+                                        <textarea name="profile[name]" placeholder="ニックネームも可（10文字以内）"class="profile-textarea">{{ old('profile.name') }}</textarea>
+                                        <p class="title__error" style="color:red">{{ $errors->first('profile.name')}}</p>
                                 </div>
                                 
                                 <div class="profile-item-sport">
                                  
                                    <h2 class="profile-subtitle">経験・興味のあるスポーツ</h2>
 
-                                   <textarea name="profile[sport]" placeholder="経験年数などの記載" class="profile-textarea"></textarea>
+                                   <textarea name="profile[sport]" placeholder="経験年数などの記載" class="profile-textarea">{{ old('profile.sport') }}</textarea>
+                                   <p class="title__error" style="color:red">{{ $errors->first('profile.sport') }}</p>
 
                                 </div>
                             
                                 <div class="profile-item-profile">
                                         <h2 class="profile-subtitle">自己紹介</h2>
 
-                                        <textarea name="profile[profile]" placeholder="趣味や普段していること等"class="profile-textarea"></textarea>
+                                        <textarea name="profile[profile]" placeholder="趣味や普段していること等"class="profile-textarea">{{ old('profile.profile') }}</textarea>
+                                        <p class="title__error" style="color:red">{{ $errors->first('profile.profile') }}</p>
                                 </div>
                          
                         
@@ -43,6 +44,7 @@
                                 <div class="profile-item-image">
                                     <h2 class="profile-subtitle">アイコンの設定</h2>
                                     <input type="file" name="image_name">
+                                     <p class="title__error" style="color:red">{{ $errors->first('image_name') }}</p>
                                 </div>    
                                 
                                 <div class="profile-item-sex">

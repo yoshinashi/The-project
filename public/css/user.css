@@ -9,12 +9,14 @@
 .member-container{
     display:grid;
     grid-template-columns:1fr 1fr ;
-    grid-template-rows:50px 50px 250px 250px;
+    grid-template-rows:75px 50px 250px 175px;
     grid-template-areas:
     "areaA areaB"
     "areaA areaC"
     "areaD areaD"
     "areaE areaE";
+    border-style:ridge;
+    border-width: 5px 10px 10px 5px;
 }
 
 .member-active-item-create{
@@ -72,230 +74,12 @@
     margin:0.5rem 0;
 }
 /*profile.blade.php*/
-.profile-container{
-    text-align: center;
-    display:grid;
-    grid-template-columns:1fr 1fr ;
-    grid-template-rows:125px 125px 125px 125px 125px;
-    grid-template-areas:
-    "areaA areaB"
-    "areaC areaE"
-    "areaC areaF"
-    "areaD areaG"
-    "areaD areaH";
-}
 
-.profile-body{
-    background-image:url(../img/profile.jpeg);
-    background-size: contain;   
-    height: 100vh;
-    width: 100%;
-    background-repeat:no-repeat;
-    
-}
-
-
-
-.profile-body{
-    height: 1000px;
-}
-
-.profile-item-title{
-    grid-area:areaA;
-    margin-left: 20%;
-    margin-top:20%;
-}
-
-.profile-item-image{
-    grid-area:areaB;
-    margin-right: 25%;
-    margin-top:25%;
-}
-
-.profile-item-sex{
-    grid-area:areaE;
-    margin-right: 25%;
-    margin-top:25%;
-}
-
-.profile-item-age{
-    grid-area:areaF;
-    margin-right: 25%;
-    margin-top:25%;
-}
-
-.profile-item-place{
-    grid-area:areaG;
-    margin-right: 25%;
-    margin-top:25%;
-}
-
-.profile-item-sport{
-    grid-area:areaC;
-    margin-left: 20%;
-    margin-top:20%;
-}
-
-.profile-item-profile{
-    grid-area:areaD;
-    margin-left: 20%;
-    margin-top:20%;
-}
-
-.profile-item-keep{
-    grid-area:areaH;
-    margin-right: 25%;
-    margin-top:25%;
-}
-
-.profile-title{
-    font-size:3rem;
-    margin:1rem 0;
-}
-
-.profile-subtitle{
-    font-size:2rem;
-    margin:1rem 0;
-}
-
-.profile-name{
-    width:70%;
-    height: 35px;
-}
-
-.profile-textarea{
-    width:70%;
-    height:8rem;
-}
-
-.profile-age{
-    font-size:20px;
-}
-
-.profile-place{
-    font-size:20px;
-}
-
-.radio-name{
-    font-size:20px;
-    margin-left: 20px;
-}
-
-.radio-btn{
-    margin-left: 15px;
-}
 
 
 /*remake.blade.php*/
 
-.remake-container{
-    text-align: center;
-    display:grid;
-     grid-template-columns:1fr 1fr ;
-     grid-template-rows:125px 125px 125px 125px 125px;
-    grid-template-areas:
-    "areaA areaD"
-    "areaB areaE"
-    "areaB areaF"
-    "areaC areaG"
-    "areaC areaH";
-}
 
-.remake-body{
-    background-image:url(../img/remake.jpeg);
-    background-size: contain;   
-    height: 100vh;
-    width: 100%;
-    background-repeat:no-repeat;
-}    
-
-.remake-body{
-    height: 1000px;
-}
-
-
-
-.remake-item-title{
-    grid-area:areaA;
-    margin-left:15%;
-}
-
-.remake-item-sport{
-    grid-area:areaB;
-    margin-left:15%;
-}
-
-.remake-item-profile{
-    grid-area:areaC;
-    margin-left:15%;
-}
-
-.remake-textarea{
-    width:70%;
-    height:8rem;
-}
-
-.remake-item-image{
-    grid-area:areaD;
-    margin-right: 25%;
-    margin-top: 20%;
-}
-
-.remake-item-sex{
-    grid-area:areaE;
-    margin-right: 25%;
-    margin-top: 20%;
-}
-
-.remake-item-age{
-    grid-area:areaF;
-    margin-right: 25%;
-    margin-top: 20%;
-}
-
-.remake-item-place{
-    grid-area:areaG;
-    margin-right: 25%;
-    margin-top: 20%;
-}
-
-.remake-item-update{
-    grid-area:areaH;
-    margin-right: 25%;
-    margin-top: 20%;
-}
-
-.remake-title{
-   font-size:3rem;
-    margin:1rem 0;
-}
-
-.remake-subtitle{
-    font-size:2rem;
-    margin:1rem 0;
-}
-
-.remake-name{
-    width: 70%;
-    height: 35px;
-}
-
-.remake-age{
-    font-size:20px;
-}
-
-.remake-place{
-    font-size:20px;
-}
-
-.radio-name{
-    font-size:20px;
-    margin-left: 20px;
-}
-
-.radio-btn{
-    margin-left: 15px;
-}
 
 /*user.blade.php*/
 .user-container{

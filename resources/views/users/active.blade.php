@@ -14,12 +14,13 @@
             
                 <div class="profile">
                         <h2>自分のアクティビティを紹介する</h2>
-                        <textarea name="active[activity]" placeholder="詳細の記入">
-                        </textarea>
+                        <textarea name="active[activity]"placeholder="詳細の記入">{{ old('active.activity') }}</textarea>
+                         <p class="title__error" style="color:red">{{ $errors->first('active.activity')}}</p>
                 </div>
                 
                  <h2>活動写真の投稿</h2>
                     <input type="file" name="image_active">
+                     <p class="title__error" style="color:red">{{ $errors->first('image_active')}}</p>
                     
                     <input type="submit" value="save"/>
         </form>

@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+        <script src="{{ asset('js/post.js') }}"></script>
     </head>
     <body>
         
@@ -19,9 +20,12 @@
                
                              <div class="edit-clubname">
                                     <h2>サークル名</h2>
-                                    <input type="text" name="post[clubname]" value="{{ $post->clubname }}" placeholder="サークル名" class="edit-name"/>
+                                    
+                                    <textarea name="post[clubname]"  placeholder="活動詳細の記入（14文字まで）"class="edit-clubname"><?php
+                                        echo $post->clubname
+                                        ?></textarea>
+                                <p class="title__error" style="color:red">{{ $errors->first('post.clubname') }}</p>
                              </div>
-            
             
             
                     <div class="edit-sport">
@@ -31,7 +35,7 @@
             
                                 <label>
                                     {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
-                                    <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]"  {{ in_array($sport->id, $selectedSport) ? "checked" : "" }} >
+                                    <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]" {{ in_array($sport->id, $selectedSport) ? "checked" : "" }} class="check">
                                         {{$sport->sport_name}}
                                     </input>
                                 </label>
@@ -58,6 +62,7 @@
                             <textarea name="post[activity]"   placeholder="活動詳細の記入"><?php
                             echo $post->activity 
                             ?></textarea>
+                            <p class="title__error" style="color:red">{{ $errors->first('post.activity') }}</p>
                       </div>   
           
                        <div class="edit-condition">
@@ -65,14 +70,15 @@
                             <textarea name="post[condition]"   placeholder="募集条件の記入"><?php
                             echo $post->condition
                             ?></textarea>
+                            <p class="title__error" style="color:red">{{ $errors->first('post.condition') }}</p>
                       </div>   
           
                     <div class="edit-image">
                       <h2 class="edit-subtitle">投稿画像の編集</h2>
                       <input type="file" name="image">
+                      <p class="title__error" style="color:red">{{ $errors->first('image') }}</p>
                     </div>
-              
-              
+
 
                     <div class="edit-insta">
 
@@ -82,7 +88,7 @@
                             ?></textarea>
                 　　</div>   
                
-            <input type="submit" value="投稿を編集する">
+            <input type="submit" value="投稿を編集する" onclick="return isCheck()">
         </form>
     </div>
       

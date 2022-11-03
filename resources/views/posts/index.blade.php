@@ -50,6 +50,8 @@
             
         </header>
         
+        
+        
     <div class="index-top">   
                 <div class="index-top-title">
                         <h1 class="index-title">Back To Club</h1>
@@ -61,21 +63,30 @@
                     </div>
                     
                     <div class="index-hit">
-                        <h3 class="hit-title">検索する</h3>
-                          <form action="{{ route('posts.index') }}" method="GET">
-                            <input type="text" name="keyword" value="{{ $keyword }}" placeholder="地域で検索"><br>
-                           
-                             @foreach($sports as $sport)
-                        
-                                <label>
-                                    {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
-                                    <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]">
-                                        {{$sport->sport_name}}
-                                    </input>
-                                </label>
-                                    
-                                @endforeach   
-                            <input type="submit" value="検索">
+                            <div class="hit-item-title">
+                                <h3 class="hit-title">サークル検索</h3>
+                              </div>
+                          <form action="{{ route('posts.index') }}" method="GET" class="hit-item-form">
+                              
+                            <div class="hit-title-area">
+                                <p>活動エリアで検索する</p>  
+                                <input type="text" name="keyword" value="{{ $keyword }}" placeholder="地域で検索"><br>
+                            </div>   
+                            
+                            <div class="hit-item-sport">
+                                <p>行うスポーツで検索する</p>
+                                 @foreach($sports as $sport)
+                            
+                                    <label>
+                                        {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
+                                        <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]">
+                                            {{$sport->sport_name}}
+                                        </input>
+                                    </label>
+                                        
+                                    @endforeach 
+                            </div>        
+                            <input type="submit" value="検索" class="hit-item-input">
                           </form>
                     </div>
                 </div>    
