@@ -1,4 +1,13 @@
 /* index.blade.php */
+.index-header{
+    background-color: #87888e;
+    
+}
+
+.antialiased{
+    background-color: black;
+}
+
 .index-top-title{
     height: 400px;
     background-image:url(../img/sample.jpeg);
@@ -20,8 +29,6 @@
 }
 
 .index-top-contents{
-    display:flex;
-    justify-content:space-between;
     margin-bottom: 3rem;
     margin-top:3rem;
 }
@@ -30,10 +37,11 @@
 
 
 .index-subtitle{
-    font-size: 5rem;
+    font-size: 3rem;
     margin:0.5rem 0px;
     border-bottom-style: solid;
     border-bottom-width: 0.5rem;
+    color:white;
 }
 
 
@@ -46,10 +54,13 @@
         "areaB areaC"
         "areaB areaD"
         "areaE areaE";
-        border-style: groove;
-        border-width: 0.5rem;
+        border-radius:1.5rem;
+        background-color:black;
+        border-style:solid;
+        border-width: 0.25rem;
+        border-color: white;
+        
 }
-
 .index-item-clubname{
     grid-area:areaA;
 }
@@ -71,18 +82,25 @@
 }
 
 .index-image{
-    width :95%; 
+    width :90%; 
     height: 180px;
     border-radius:1.5rem;
+    margin-left: 1rem;
 }
 
 .index-clubname{
     margin:0px 0px;
     font-size:2rem;
+    color:white;
 }
 
 .index-sport{
     margin:0px 0px;
+    color:white;
+}
+
+.index-place{
+    color:white;
 }
 
 .index-title-sport{
@@ -90,6 +108,7 @@
     margin:0px 0px;
     border-bottom-style:groove;
     border-bottom-width: 0.25rem;
+    color:white;
 }
 
 .index-title-place{
@@ -97,6 +116,7 @@
     margin:0px 0px;
     border-bottom-style:groove;
     border-bottom-width: 0.25rem;
+    color:white;
 }
 
 .index-title-activity{
@@ -104,15 +124,36 @@
     margin:0px 0px;
     border-bottom-style:groove;
     border-bottom-width: 0.25rem;
+    color:white;
 }
 
 .index-activity{
     margin:0px 0px;
+    color:white;
 }
 
 .hit-title{
-    font-size:2rem;
+    font-size:1rem;
     margin:0.5rem 0px;
+    color:white;
+}
+
+.hit-sport-title{
+    color:white;
+}
+
+.hit-label{
+    color:white;
+}
+
+.index-hit-button{
+   margin-left: 80%;
+   margin-top:2rem;
+}
+
+.hit-area-title{
+    margin:0.5rem;
+    color:white;
 }
 
 .user-link{
@@ -120,8 +161,9 @@
     margin-right: 5%;
     font-size:2rem;
     border-bottom-style:solid;
-    border-width: 0.5rem;
-    border-color: black;
+    border-width: 0.25rem;
+    border-color: white;
+    color:white;
 }
 
 .host-link{
@@ -129,19 +171,12 @@
     margin-left:5%;
     font-size:2rem;
     border-bottom-style:solid;
-    border-width: 0.5rem;
-    border-color: black;
+    border-width: 0.25rem;
+    border-color: white;
+    color:white;
 }
 
-.index-hit{
-    border-bottom-style:solid;
-    border-width: 0.5rem;
-    width:60%;
-    display:grid;
-    grid-template-columns:25% 75%;
-    grid-template-areas:
-        "areaA areaB";
-}
+
 
 .index-main-sub-title{
     width:40%;
@@ -154,9 +189,6 @@
 .hit-title-form{
     grid-area:areaB;
 }
-
-
-
 /* create.blade.php */
 
 .create-title{
@@ -206,47 +238,62 @@ textarea{
 
 
 /*show.blade.php*/
-
-
-article{
-    width:70%;
-    margin-right:1.5rem;
-}
-
-aside{
-    width:30%;
-}
 .show-contents{
     display: flex;
 }
 
+article{
+    width:55%;
+    margin-right:3rem;
+    border-right-style: solid;
+    border-right-color: white;
+    border-right-width: 0.25rem;
+}
+
+aside{
+    width:45%;
+}
+
+.article-main-title{
+    font-size:3rem;
+    color:white;
+}
+
+.aside-contents{
+     border-style: solid;
+    border-width: 0.25rem;
+    border-color: white;
+    border-radius:1rem;
+}
+
 .show-container{
-    display: grid;
-    grid-template-rows:150px 200px 200px 200px 200px 100px;
-    grid-template-columns:60% 40%;
-    grid-template-areas:
-        "areaA areaG"
-        "areaB areaC"
-        "areaB areaD"
-        "areaE areaE"
-        "areaF areaF"
-        "areaH areaH";
-    border-style: ridge;
-    border-width:10px;
+    border-style: solid;
+    border-width: 0.5rem;
+    border-color: white;
+    border-radius:1.5rem;
+    margin-left: 2rem;
+    width: 90%;
+}
+
+.show-item{
+    margin-left: 2rem;
+    border-bottom-style: solid;
+    border-width: 0.25rem;
+    border-color: white;
+}
+
+.show-body{
+    background-color: black;
 }
 
 .show-image{
-    width:90%;
-    height:300px;
+    width:60%;
+    height:auto;
+    border-radius:1.5rem;
 }
-
-.show-title{
-    font-size:4rem;   
-}
-
 .aside-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
     gap:1rem;
 }
 
@@ -255,51 +302,43 @@ aside{
 }
 
 .aside-image{
-    width: 100%;
-    height:auto;
+    width: 90%;
+    height:8rem;
+    border-radius:1.5rem;
 }
 
-.show-item-clubname{
-    grid-area:areaA;
-    border-bottom-style: ridge;
-    border-bottom-width:10px;
+.show-clubname-title{
+    color:white;
 }
 
-.show-item-image{
-     grid-area:areaB;
-     
+.show-image-title{
+    color:white;   
 }
 
-.show-item-sport{
-     grid-area:areaC;
-     
-}
-.show-item-place{
-    grid-area:areaD;
+.show-sport-title{
+    color:white;
 }
 
-.show-item-activity{
-    grid-area:areaE;
-    border-bottom-style: ridge;
-    border-bottom-width:10px;
-}
-.show-item-condition{
-    grid-area:areaF;
-    border-bottom-style: ridge;
-    border-bottom-width:10px;
+.show-place-title{
+    color:white;
 }
 
-.show-item-instagram{
-    grid-area:areaG;
+.show-activity-title{
+    color:white;
 }
 
-.show-item-user{
-    grid-area:areaH;
+.show-condition-title{
+    color:white;
+}
+
+.show-insta-title{
+    color:white;
 }
 
 .show-insta{
     width: 125px;
     height: 125px;
+    
 }
 
 .show-clubname-title{
@@ -332,22 +371,68 @@ aside{
     margin:0px 0px;
 }
 
+.show-user-title{
+    color:white;
+}
+
 .show-sport{
     font-size:1.25rem;
+    color:white;
 }
 
 .show-place{
     font-size:1.25rem;
+    color:white;
 }
 
 .show-activity{
      font-size:1.25rem;
      margin:0.25rem 0px;
+     color:white;
 }
 
 .show-condition{
      font-size:1.25rem;
      margin:0.25rem 0px;
+     color:white;
+}
+
+.show-user{
+    color:white;
+}
+
+.aside-main-title{
+    color:white;
+    font-size:3rem;
+}
+
+.aside-title{
+    color:white;
+    font-size:1.5rem;
+    margin:0.5rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.aside-link{
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 0.25rem;
+    border-color: white;
+}
+
+.aside-subtitle{
+    color:white;
+}
+
+.aside-activity{
+    color:white;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
 }
 
 

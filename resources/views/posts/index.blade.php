@@ -11,7 +11,7 @@
     </head>
     <body class="antialiased">
         
-        <header>
+        <header　class="index-header">
             
             <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
@@ -34,13 +34,9 @@
                       
                         <a href="/hosts"><h2 class="host-link">サークル投稿者画面へ</h2></a>
                      
-                        <!--プロフィール登録してない人をさせる様に実装する-->
-                      
                         <a href="/users"><h2 class="user-link">個人活動投稿画面へ</h2></a>
                         @endif
                        
-                        
-                        
                         @guest
                           <p>Back To Clubでできること</p>
                           
@@ -58,26 +54,21 @@
                 </div>
                 
                 <div class="index-top-contents">
-                    <div class=index-main-subtitle>    
-                        <h2 class="index-subtitle">サークル一覧</h2>
-                    </div>
-                    
+                
                     <div class="index-hit">
-                            <div class="hit-item-title">
-                                <h3 class="hit-title">サークル検索</h3>
-                              </div>
+                        <h2 class="index-subtitle">サークルを検索する</h2>
                           <form action="{{ route('posts.index') }}" method="GET" class="hit-item-form">
                               
                             <div class="hit-title-area">
-                                <p>活動エリアで検索する</p>  
+                                <p class=hit-area-title>活動エリアで検索する</p>  
                                 <input type="text" name="keyword" value="{{ $keyword }}" placeholder="地域で検索"><br>
                             </div>   
                             
                             <div class="hit-item-sport">
-                                <p>行うスポーツで検索する</p>
+                                <p class="hit-sport-title">行うスポーツで検索する</p>
                                  @foreach($sports as $sport)
                             
-                                    <label>
+                                    <label class=hit-label>
                                         {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
                                         <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]">
                                             {{$sport->sport_name}}
@@ -88,6 +79,10 @@
                             </div>        
                             <input type="submit" value="検索" class="hit-item-input">
                           </form>
+                    </div>
+                    
+                    <div class=index-main-subtitle>    
+                        <h2 class="index-subtitle">サークル一覧</h2>
                     </div>
                 </div>    
     </div>       
@@ -132,7 +127,11 @@
                             </div>
                              @endforeach
                 </div>
-        </div>            
+        </div>      
+        
+        <div class='paginate'>
+            {{ $posts->links('pagination::bootstrap-5') }}
+        </div>
         
         <div class="footer">
             <a href="/indexes">戻る</a>

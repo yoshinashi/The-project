@@ -28,7 +28,7 @@ class ProfileController extends Controller
         
         }
         
-         $actives = $query->with("user.profiles")->get();
+        $actives = $query->with("user.profiles")->orderBy('updated_at', 'DESC')->paginate(20);
         //dd($actives);
         return view('users/member',compact('actives','keyword'));  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
