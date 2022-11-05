@@ -1,3 +1,4 @@
+console.log('public')
 function deletePost(id) {
     'use strict'
                 
@@ -23,3 +24,6 @@ function isCheck() {
     };
  
 }
+
+
+

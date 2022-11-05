@@ -6,13 +6,13 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+        <script src="{{ asset('js/post.js') }}"></script>
     </head>
-    <body>
-        <h1 class="show-title">サークル詳細</h1>
-        
+    <body class="show-body">
         <div class="show-contents">
              
                 <article>      
+                    <h2 class="article-main-title">サークル情報</h2>
                 
                     <div class="show-container">
                             <div class="show-item-clubname">
@@ -22,7 +22,7 @@
                             </div>   
                      
                 
-                            <div class="show-item-image">    
+                            <div class="show-item">    
                                 <h3 class="show-image-title">活動写真</h3>
                                      @if ($post->image_path)
                                  <!-- 画像を表示 -->
@@ -32,7 +32,7 @@
                             </div>          
                                     
                                  
-                            <div class="show-item-sport">　   
+                            <div class="show-item">　   
                              　<h3 class="show-sport-title">行うスポーツ</h3>
                                     @foreach($post->sports as $sport)
                                 <p class='show-sport'>{{ $sport->sport_name }}</p>
@@ -41,27 +41,29 @@
                             
                                     
                              　
-                            <div class="show-item-place">　
+                            <div class="show-item">　
                              　<h3 class="show-place-title">主な活動エリア</h3>
                             　 <p class='show-place'>{{ $post->place }}</p>    
                             </div>    
                                 
-                            <div class="show-item-activity">    
+                            <div class="show-item">    
                              　<h3 class="show-activity-title">活動詳細</h3>
                              　<p class="show-activity">{{ $post->activity }}</p> 
                             </div>
                             
-                            <div class="show-item-condition"> 　
+                            <div class="show-item"> 　
                              　<h3 class="show-condition-title">募集条件</h3>
                              　<p class='show-condition'>{{ $post->condition }}</p>
                             </div>
                             
-                            <div class="show-item-instagram">
+                            <div class="show-item">
+                                <h3 class="show-insta-title">このサークルのインスタを見る</h3>
                                <a href="https://instagram.com/{{$post->insta}}"><img src="../img/insta.jpeg"class="show-insta"></a>
                             </div>    
                             
-                            <div class="show-item-user">
-                                <a href='/accounts/{{$post->user_id}}'>{{ $post->user->name }}</a>
+                            <div class="show-item">
+                                <h3 class="show-user-title">この投稿をしたユーザー</h3>
+                                <a href='/accounts/{{$post->user_id}}' class="show-user">{{ $post->user->name }}</a>
                             </div>
                     </div>
                     
@@ -69,46 +71,41 @@
                 </article>     
                      
                     <aside>
-                        <h2>その他のサークルを見る</h2>
-                           <div class="aside-grid">
-                                @foreach ($posts as $subpost)
-                                
-                                
-                                @if(!($subpost->id === $post->id))
-                                
-                                    <div class='post'>
-                                        
-                                         <a href="/posts/{{ $subpost->id }}"><h2 class='aside-title'>{{ $subpost->clubname }}</h2></a>
-                                        <!--画像処理-->
-                                         @if ($subpost->image_path)
-                                         <!-- 画像を表示 -->
-                                        
-                                       <img src="{{ $subpost->image_path }}"class="aside-image">
-                                      
-                                        @endif
-                                        
-                                        <div class="content-first">
-                                            <h3>行うスポーツ</h3>
-                                            @foreach($subpost->sports as $sport)
-                                            <p class='sport'>{{ $sport->sport_name }}</p>
-                                        
-                                            @endforeach
-                                         </div>   
-                                        
-                                        <h3>主な活動エリア</h3>
-                                        <p class='place'>{{ $subpost->place }}</p>
-                                        
-                                        <h3>活動詳細</h3>
-                                        <p class='activity'>{{ $subpost->activity }}</p>
-                                        
-                                        <h3>募集条件</h3>
-                                        <p class='condition'>{{ $subpost->condition }}</p>
-                                        
-                                        
-                                    </div>
-                                  @endif  
-                                @endforeach
-                            </div>
+                        <div class="aside-container">
+                            <div class="aside-item-title">
+                                <h2 class="aside-main-title">その他のサークルを見る</h2>
+                            </div>    
+                               <div class="aside-grid">
+                                    @foreach ($posts as $subpost)
+                                    
+                                    
+                                    @if(!($subpost->id === $post->id))
+                                    
+                                        <div class='aside-contents'>
+                                            <div class="aside-item-clubnmae">
+                                                <a href="/posts/{{ $subpost->id }}" class="aside-link"><h2 class='aside-title'>{{ $subpost->clubname }}</h2></a>
+                                            </div>
+                                            
+                                            <div class="aside-item-image">
+                                                <!--画像処理-->
+                                                 @if ($subpost->image_path)
+                                                 <!-- 画像を表示 -->
+                                                
+                                               <img src="{{ $subpost->image_path }}"class="aside-image">
+                                              
+                                                @endif
+                                            </div>    
+                                            
+                                            <div class="aside-item-activity">
+                                                <h3 class="aside-subtitle">活動詳細</h3>
+                                            
+                                                <p class='aside-activity'>{{ $subpost->activity }}</p>
+                                            </div>    
+                                        </div>
+                                      @endif  
+                                    @endforeach
+                                </div>
+                        </div>        
                     </aside>
             </div>       
            
@@ -116,10 +113,11 @@
             <a href="/indexes">戻る</a>
         </div>
         
+
     </body>
 
         
         
        
-    </body>
+    
 </html>

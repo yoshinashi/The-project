@@ -24,7 +24,7 @@ class PostController extends Controller
             $query->where('place',"$keyword");
         }
 
-        $posts = $query->get();
+        $posts = $query->orderBy('updated_at', 'DESC')->paginate(15);
             
             
         $sportId = $request->sports_array;
@@ -37,7 +37,7 @@ class PostController extends Controller
             });
         }
         
-        $posts = $query->get();
+        //$posts = $query->get();
         $sports =$sport->get();
         
         return view('posts/index',compact('posts','keyword','sports'));  
@@ -52,7 +52,7 @@ class PostController extends Controller
     
     public function show(Post $post)
 {
-    return view('posts/show')->with(['posts' => $post->get(),'post' => $post]);
+    return view('posts/show')->with(['posts' => $post->getByLimit(),'post' => $post]);
  //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
 }
 

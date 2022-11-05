@@ -62,6 +62,10 @@
          <div class="footer">
             <a href="/indexes">ホーム画面に戻る</a>
         </div>
+        
+        <div class='paginate'>
+            {{ $actives->links() }}
+        </div>
        
     </body>
 </html>
