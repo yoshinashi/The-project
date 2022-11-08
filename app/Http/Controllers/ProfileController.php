@@ -40,7 +40,7 @@ class ProfileController extends Controller
     {
        $Auth_user=Auth::id();
        $profile = Profile::find($Auth_user);
-        return view('users/user')->with(['profile' => $profile,'actives' => $active->get()]);  
+        return view('users/user')->with(['profile' => $profile,'actives' => $active->orderBy('updated_at', 'DESC')->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
        
     }
@@ -50,7 +50,7 @@ class ProfileController extends Controller
     $active->user_id = Auth::id();
     $profile = $profile->where('user_id', Auth::id())->first();
     //dd($test);
-    return view('users/account')->with(['profile' => $profile,'active' => $active,'actives' => $active->get(),'posts' => $post->get()]);
+    return view('users/account')->with(['profile' => $profile,'active' => $active,'actives' => $active->orderBy('updated_at', 'DESC')->get(),'posts' => $post->orderBy('updated_at', 'DESC')->get()]);
  //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
 }
 

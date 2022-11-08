@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
         <script src="{{ asset('js/user.js') }}"></script>
     </head>
-    <body>
+    <body class="account-body">
         <div class="account-top-container"> 
             <div class="account-item-name">
                 <h1 class="account-name">{{ $active->user->name }}</h1>
@@ -24,28 +24,33 @@
             </div>  
             
             <div class="account-item-sex">
+                <p class="account-info">性別</p>
                 <p class="account-sex">{{$profile->sex}}</p>
             </div>
             
             <div class="account-item-age">
+                <p class="account-info">年齢</p>
                 <p class='account-age'>{{ $profile->age}}</p>
             </div>
             
             <div class="account-item-sport">
+                <p class="account-info">経験したスポーツ</p>
                 <p class='account-sport'>{{ $profile->sport }}</p>
             </div>
             
             <div class="account-item-profile">
+                <p class="account-info">プロフィール</p>
                 <p class='account-profile'>{{ $profile->profile }}</p>
             </div>
             
             <div class="account-item-place">
+                <p class="account-info">地域</p>
                 <p class='account-place'>{{ $profile->place }}</p>
             </div>   
             
 
             <div class="account-item-chat">
-                <a href="/chats">連絡する</a>
+                <a href="/chats"class="account-chat">連絡する</a>
             </div>
 
         </div>
@@ -63,12 +68,12 @@
                     <div class="account-active-container">
                        
                         <div class="account-active-item-create">
-                            <h3>投稿日</h3>
-                            <p>{{ $active->created_at }}</p>
+                            <h3 class="account-active-subtitle">投稿日</h3>
+                            <p class="account-active-create">{{ $active->created_at }}</p>
                         </div>    
                         
                         <div class="account-active-item-image">
-                            <h3>活動写真</h3>
+                            <h3 class="account-active-subtitle">活動写真</h3>
                              @if ($active->image_active)
                              <!-- 画像を表示 -->
                           
@@ -78,8 +83,8 @@
                         </div>  
                         
                         <div class="account-active-item-activity">
-                            <h3>活動詳細</h3>
-                            <p class='name'>{{ $active->activity }}</p>
+                            <h3 class="account-active-subtitle">活動詳細</h3>
+                            <p class='account-active-activity'>{{ $active->activity }}</p>
                         </div>    
                     </div>
                     
@@ -95,11 +100,11 @@
                 <div class="account-post-container">
                     
                     <div class="account-post-item-clubname">
-                        <h2 class='clubname'>{{ $post->clubname }}</h2> 
+                        <h2 class='account-post-clubname'>{{ $post->clubname }}</h2> 
                     </div>
                     
                     <div class="account-post-item-image">
-                        <h3>活動写真</h3>
+                        <h3 class="account-post-subtitle">活動写真</h3>
                          @if ($post->image_path)
                          <!-- 画像を表示 -->
                         
@@ -108,25 +113,25 @@
                     </div>  
                     
                     <div class="account-post-item-sport">
-                       <h3>行うスポーツ</h3>
+                       <h3 class="account-post-subtitle">行うスポーツ</h3>
                         @foreach($post->sports as $sport)
-                        <p class='sport'>{{ $sport->sport_name }}</p>
+                        <p class='account-post-sport'>{{ $sport->sport_name }}</p>
                         @endforeach
                     </div>   
                     
                     <div class="account-post-item-place">
-                        <h3>主な活動エリア</h3>
-                        <p class='place'>{{ $post->place }}</p>
+                        <h3 class="account-post-subtitle">主な活動エリア</h3>
+                        <p class='account-post-place'>{{ $post->place }}</p>
                     </div>
                     
                     <div class="account-post-item-activity">    
-                        <h3>活動詳細</h3>
-                        <p class='activity'>{{ $post->activity }}</p>
+                        <h3 class="account-post-subtitle">活動詳細</h3>
+                        <p class='account-post-activity'>{{ $post->activity }}</p>
                     </div>
                     
                     <div class="account-post-item-condition">    
-                        <h3>募集条件</h3>
-                        <p class='condition'>{{ $post->condition }}</p>
+                        <h3 class="account-post-subtitle">募集条件</h3>
+                        <p class='account-post-condition'>{{ $post->condition }}</p>
                     </div>
                  </div>   
                     @endforeach
@@ -134,11 +139,9 @@
          
     </div>     
         <div class="footer">
-            <a href="/users">戻る</a>
+            <a href="/indexes">戻る</a>
         </div>
         
-        
-       
         <script>
         
         const active = document.getElementById('active');

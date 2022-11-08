@@ -9,18 +9,20 @@
         <script src="{{ asset('js/post.js') }}"></script>
         
     </head>
-    <body>
-        <div class="host-title-box">
-            <img src="../img/sample.jpeg" class="host-title-image">
-            <h1 class="host-title">Back To Club</h1>
-           
-        </div>
-        <div>
-            <h2 class="host-subtitle">サークル投稿者用画面</2>
+    <body class="host-body">
+        
+        <header>
+            <div class="host-header">    
+                <a href="/creates" class="host-create-link">サークルを作る・活動を投稿する</a>
+                <a href="/members" class="host-member-link">メンバーを探す</a>
+            </div>
+        </header>
+        
+        <div class="host-top-title">
+            <h1 class="host-title">サークルホスト</2>
         </div>
         
-        <a href="/creates">サークルを作る</a>
-        <a href="/members">メンバーを探す</a>
+        <h2 class="host-main-title">投稿一覧</h2>
         
         <div class="host-grid">
             @foreach ($posts as $post)
@@ -42,7 +44,7 @@
                     @endif      
                         
                     <div class="host-item-sport">    
-                       <h3 class="host-sport-title">行うスポーツ</h3>
+                       <h3 class="host-subtitle">行うスポーツ</h3>
                         @foreach($post->sports as $sport)
                         <p class='host-sport'>{{ $sport->sport_name }}</p>
                         @endforeach
@@ -50,17 +52,17 @@
                         
                         
                     <div class="host-item-place">   
-                        <h3 class="host-place-title">主な活動エリア</h3>
+                        <h3 class="host-subtitle">主な活動エリア</h3>
                         <p class='host-place'>{{ $post->place }}</p>
                     </div>    
                     
                     <div class="host-item-activity">    
-                        <h3 class=host-activity-title>活動詳細</h3>
+                        <h3 class=host-subtitle>活動詳細</h3>
                         <p class='host-activity'>{{ $post->activity }}</p>
                     </div>
                     
                     <div class="host-item-condition">    
-                        <h3 class="host-condition-title">募集条件</h3>
+                        <h3 class="host-subtitle">募集条件</h3>
                         <p class='host-condition'>{{ $post->condition }}</p>
                     </div>    
                         
