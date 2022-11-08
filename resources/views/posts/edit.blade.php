@@ -8,32 +8,32 @@
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
         <script src="{{ asset('js/post.js') }}"></script>
     </head>
-    <body>
-        
-         <h1 class="edit-title">編集画面</h1>
-         
+    <body class="edit-body">
+        <div class="edit-top-contents">
+            <h1 class="edit-title">投稿を編集する</h1>
+        </div> 
     <div class="edit-club">
         <form action="/posts/{{$post->id}}" enctype="multipart/form-data" method="POST">
-           
-                                @csrf
-                                @method('PUT')
+          @csrf
+            @method('PUT')
+            <div class="edit-container">
                
-                             <div class="edit-clubname">
-                                    <h2>サークル名</h2>
-                                    
-                                    <textarea name="post[clubname]"  placeholder="活動詳細の記入（14文字まで）"class="edit-clubname"><?php
-                                        echo $post->clubname
-                                        ?></textarea>
-                                <p class="title__error" style="color:red">{{ $errors->first('post.clubname') }}</p>
-                             </div>
+                     <div class="edit-item-clubname">
+                            <h2 class="edit-subtitle">サークル名</h2>
+                            
+                            <textarea name="post[clubname]"  placeholder="活動詳細の記入（14文字まで）"class="edit-textarea"><?php
+                                echo $post->clubname
+                                ?></textarea>
+                        <p class="title__error" style="color:red">{{ $errors->first('post.clubname') }}</p>
+                     </div>
             
             
-                    <div class="edit-sport">
+                    <div class="edit-item-sport">
                         <h2 class="edit-subtitle">行うスポーツ</h2>
             
                            @foreach($sports as $sport)
             
-                                <label>
+                                <label class="edit-check">
                                     {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
                                     <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]" {{ in_array($sport->id, $selectedSport) ? "checked" : "" }} class="check">
                                         {{$sport->sport_name}}
@@ -44,7 +44,7 @@
                     </div>    
             
             
-                        <div class="place">
+                        <div class="edit-item-place">
                             <h2 class="edit-subtitle">活動場所</h2>
                             <select name="post[place]" value="post[place]" class="edit-place">
                                 <option value="">選択してください</option>
@@ -53,44 +53,46 @@
                                     <option value="{{$place}}" {{$post->place == $place ? "selected" :"" }}>{{$place}}</option>
                                 @endforeach
                             </select>
-                            
-                            
                         </div>    
             
-                       <div class="edit-activity">
+                        <div class="edit-item-activity">
                             <h2 class="edit-subtitle">活動詳細</h2>
-                            <textarea name="post[activity]"   placeholder="活動詳細の記入"><?php
+                            <textarea name="post[activity]"   placeholder="活動詳細の記入"class="edit-textarea"><?php
                             echo $post->activity 
                             ?></textarea>
                             <p class="title__error" style="color:red">{{ $errors->first('post.activity') }}</p>
-                      </div>   
+                        </div>   
           
-                       <div class="edit-condition">
+                       <div class="edit-item-condition">
                             <h2 class="edit-subtitle">募集条件</h2>
-                            <textarea name="post[condition]"   placeholder="募集条件の記入"><?php
+                            <textarea name="post[condition]"   placeholder="募集条件の記入"class="edit-textarea"><?php
                             echo $post->condition
                             ?></textarea>
                             <p class="title__error" style="color:red">{{ $errors->first('post.condition') }}</p>
                       </div>   
           
-                    <div class="edit-image">
-                      <h2 class="edit-subtitle">投稿画像の編集</h2>
-                      <input type="file" name="image">
-                      <p class="title__error" style="color:red">{{ $errors->first('image') }}</p>
-                    </div>
+                        <div class="edit-item-image">
+                          <h2 class="edit-subtitle">投稿画像の編集</h2>
+                          <input type="file" name="image" class="edit-input-image">
+                          <p class="title__error" style="color:red">{{ $errors->first('image') }}</p>
+                        </div>
 
 
-                    <div class="edit-insta">
-
-                        <h2 class="edit-subtitle">インスタのアカウントID</h2>
-                        <textarea name="post[insta]" placeholder="IDの記入"><?php
-                            echo $post->insta
-                            ?></textarea>
-                　　</div>   
+                        <div class="edit-item-insta">
+    
+                            <h2 class="edit-subtitle">インスタのアカウントID</h2>
+                            <textarea name="post[insta]" placeholder="IDの記入"class="edit-textarea"><?php
+                                echo $post->insta
+                                ?></textarea>
+                    　　</div>   
                
-            <input type="submit" value="投稿を編集する" onclick="return isCheck()">
+                        <div class="edit-item-input">
+                            <input type="submit" value="投稿を編集する" onclick="return isCheck()">
+                        </div>
+            </div>
+        
         </form>
-    </div>
+    
       
         
         

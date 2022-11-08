@@ -6,8 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
-        
-
+        <meta name="viewport" content="width=device-width,initial-scale=1">s
     </head>
     <body class="antialiased">
         
@@ -17,7 +16,7 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">会員登録</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline index-account">会員登録</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ログイン</a>
 
@@ -38,9 +37,9 @@
                         @endif
                        
                         @guest
-                          <p>Back To Clubでできること</p>
+                          <p class="index-info">Back To Clubでできること</p>
                           
-                          <p>Back To Clubは様々なスポーツの団体を作ることができ、スポーツを通して人生を楽しむコミュニティの形成が可能です</p>
+                          <p class="index-info">Back To Clubは様々なスポーツの団体を作ることができ、スポーツを通して人生を楽しむコミュニティの形成が可能です</p>
                         @endguest
                </div> 
             

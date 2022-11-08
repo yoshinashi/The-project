@@ -5,24 +5,33 @@
         <title>ClubStand</title>
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/user.css') }}">
     </head>
-    <body>
-        <h1>活動を投稿する</h1>
-        
+    <body class="active-body">
+        <div class="active-top-contents">
+            <h1 class="active-title">活動を投稿する</h1>
+        </div>
        <form action="/members"enctype="multipart/form-data"method="POST">
             @csrf
+            <div class="active-container">
             
-                <div class="profile">
-                        <h2>自分のアクティビティを紹介する</h2>
-                        <textarea name="active[activity]"placeholder="詳細の記入">{{ old('active.activity') }}</textarea>
+                <div class="active-item-activity">
+                        <h2 class="active-subtitle">自分の活動を紹介する</h2>
+                        <textarea name="active[activity]"placeholder="詳細の記入"class="active-textarea">{{ old('active.activity') }}</textarea>
                          <p class="title__error" style="color:red">{{ $errors->first('active.activity')}}</p>
                 </div>
                 
-                 <h2>活動写真の投稿</h2>
-                    <input type="file" name="image_active">
-                     <p class="title__error" style="color:red">{{ $errors->first('image_active')}}</p>
-                    
+                
+                <div class="active-item-image">
+                    <h2 class="active-subtitle">活動写真の投稿</h2>
+                    <input type="file" name="image_active" class="active-input-image">
+                    <p class="title__error" style="color:red">{{ $errors->first('image_active')}}</p>
+                </div> 
+                
+                <div class="active-item-save">    
                     <input type="submit" value="save"/>
+                </div>    
+            </div>        
         </form>
         
         

@@ -24,7 +24,7 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'profile.name' => 'required|string|max:10',
+            'profile.name' => 'required|string|between:1,14',
             'image_name' => 'required|mimes:jpeg,png',
             'profile.sport' => 'required|string|max:150',
             'profile.profile' => 'required|string|max:150',

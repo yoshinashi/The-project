@@ -24,7 +24,7 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'post.clubname' => 'required|string|max:14',
+            'post.clubname' => 'required|string|between:1,14',
             'post.activity' => 'required|string|max:150',
             'post.condition' => 'required|string|max:150',
             'image' => 'required|mimes:jpeg,png',

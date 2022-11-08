@@ -1,4 +1,12 @@
 /* index.blade.php */
+.index-info{
+    color:white;
+}
+
+.index-account{
+    color:white;
+}
+
 .index-header{
     background-color: #87888e;
     
@@ -6,6 +14,8 @@
 
 .antialiased{
     background-color: black;
+    width:90%;
+    margin:0 5%;
 }
 
 .index-top-title{
@@ -24,7 +34,7 @@
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
     margin-top:1.5rem;
-    margin-bottom:20px;
+    margin-bottom:1.5rem;
     gap:1.5rem;
 }
 
@@ -106,25 +116,28 @@
 .index-title-sport{
     font-size:1.5rem;
     margin:0px 0px;
-    border-bottom-style:groove;
+    border-bottom-style:solid;
     border-bottom-width: 0.25rem;
     color:white;
+    display: inline-block;
 }
 
 .index-title-place{
     font-size:1.5rem;
     margin:0px 0px;
-    border-bottom-style:groove;
+    border-bottom-style:solid;
     border-bottom-width: 0.25rem;
     color:white;
+    display: inline-block;
 }
 
 .index-title-activity{
     font-size:1.5rem;
     margin:0px 0px;
-    border-bottom-style:groove;
+    border-bottom-style:solid;
     border-bottom-width: 0.25rem;
     color:white;
+    display: inline-block;
 }
 
 .index-activity{
@@ -191,49 +204,215 @@
 }
 /* create.blade.php */
 
+.create-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.create-top-contents{
+    height: 400px;
+    background-image:url(../img/create.jpeg);
+    background-size: 25% 50%;
+}
+
+
+
 .create-title{
-    font-size:5rem;
+    font-size:7.5rem;
     text-align: center;
+    padding-top:7rem;
     
 }
 
 .create-subtitle{
     font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
 }
 
-.create-name{
-    width:40%;
-    height: 35px;
+.create-check{
+    color:white;
+}
+
+.create-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
+}
+
+.create-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 17rem 15rem;
+    grid-template-columns:50% 50%;
+    grid-template-areas:
+        "areaA areaE"
+        "areaB areaF"
+        "areaC areaG"
+        "areaD areaH";
+}
+
+.create-item-clubname{
+    grid-area:areaA;
+    margin-left: 10%;
+}
+
+.create-item-activity{
+    grid-area:areaB; 
+    margin-left: 10%;
+}
+
+.create-item-condition{
+    grid-area:areaE;
+    margin-right: 10%;
+}
+
+
+.create-item-sport{
+    grid-area:areaC;
+    margin-left: 10%;
+}
+
+.create-item-place{
+    grid-area:areaD;
+    margin-left: 10%;
+}
+
+
+.create-item-image{
+    grid-area:areaG;
+    margin-right: 10%;
+}
+
+.create-item-insta{
+    grid-area:areaF;
+    margin-right: 10%;
+}
+
+.create-item-input{
+    grid-area:areaH;
+    margin-right: 10%;
 }
 
 .create-place{
     font-size:20px;
 }
 
-textarea{
-    width: 40%;
-    height: 40px;
+.create-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+.create-check{
+   display:block;
 }
 
 
 /*edit.blade.php*/
 
+.edit-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.edit-top-contents{
+    height: 400px;
+    background-image:url(../img/edit.jpeg);
+    background-size: 25% 50%;
+}
+
+
+
 .edit-title{
-    font-size:5rem;
+    font-size:7.5rem;
     text-align: center;
+    padding-top:7rem;
+    
 }
 
 .edit-subtitle{
-    font-size:2rem;
+    font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
 }
 
-.edit-name{
-    width:40%;
-    height: 35px;
+.edit-check{
+    color:white;
+}
+
+.edit-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
+}
+
+.edit-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 17rem 15rem;
+    grid-template-columns:50% 50%;
+    grid-template-areas:
+        "areaA areaE"
+        "areaB areaF"
+        "areaC areaG"
+        "areaD areaH";
+}
+
+.edit-item-clubname{
+    grid-area:areaA;
+    margin-left: 10%;
+}
+
+.edit-item-activity{
+    grid-area:areaB; 
+    margin-left: 10%;
+}
+
+.edit-item-condition{
+    grid-area:areaE;
+    margin-right: 10%;
+}
+
+
+.edit-item-sport{
+    grid-area:areaC;
+    margin-left: 10%;
+}
+
+.edit-item-place{
+    grid-area:areaD;
+    margin-left: 10%;
+}
+
+
+.edit-item-image{
+    grid-area:areaG;
+    margin-right: 10%;
+}
+
+.edit-item-insta{
+    grid-area:areaF;
+    margin-right: 10%;
+}
+
+.edit-item-input{
+    grid-area:areaH;
+    margin-right: 10%;
 }
 
 .edit-place{
     font-size:20px;
+}
+
+.edit-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+.edit-check{
+   display:block;
 }
 
 
@@ -438,6 +617,45 @@ aside{
 
 
 /*host.blade.php*/
+
+.host-header{
+    display:flex;
+     justify-content: space-between;
+}
+
+.host-create-link{
+    font-size:2rem;
+    margin-top: 1rem;
+    margin-left: 10%;
+    color:white;
+}
+
+.host-member-link{
+    font-size:2rem;
+    margin-top: 1rem;
+    margin-right: 15%;
+    color:white;
+}
+
+.host-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.host-top-title{
+    height: 400px;
+    background-image:url(../img/host.jpeg);
+    background-size: 25% 50%;
+    margin-bottom: 3rem;
+}
+
+.host-title{
+    font-size:7rem;
+    text-align: center;
+    padding-top: 6rem;
+}
+
 .host-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -447,7 +665,7 @@ aside{
 
 .host-container {
     display: grid;
-    grid-template-rows: 100px 100px 100px 100px 150px 150px 50px;
+    grid-template-rows: 6.5rem 6.5rem 6.5rem 6.5rem 10rem 10rem 3rem;
     grid-template-columns: 60% 40%;
     grid-template-areas:
         "areaA areaA"
@@ -457,42 +675,27 @@ aside{
         "areaE areaE"
         "areaF areaF"
         "areaG areaH";
-    border-style: ridge;
-    border-width:10px;
+    border-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    border-radius: 1.5rem;
 }
 
-.host-title{
-    font-size:5rem;
-    text-align: center;
-    margin:0;
-    position: absolute;
-    bottom:40%;
-    left:30%;
-    color: red;
-}
-
-.host-subtitle{
-    font-size:3rem;
-}
-
-.host-title-image{
-    display: block;
-	width: 100%;
-    
-}
-
-.host-title-box{
-    position: relative;
+.host-main-title{
+    font-size:4rem;
+    color:white;
 }
 
 .host-clubname{
-    border-bottom-style: ridge;
-    border-width: 10px;
+    border-bottom-style:solid;
+    border-width:0.25rem;
+    border-bottom-color: white;
+    display: inline-block;
+    color:white;
     
 }
 
 .host-image{
-   
     width: 90%;
     height: 275px;
     border-radius:1.5rem;
@@ -502,13 +705,13 @@ aside{
     grid-area:areaB;
 }
 
-.host-item-clubnmae{
+.host-item-clubname{
     grid-area:areaA;
+    margin-left:5%;
 }
 .host-sport-title{
     margin:0.5rem 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-item-sport{
@@ -519,6 +722,7 @@ aside{
 .host-sport{
     font-size:1.5rem;
     margin:0px;
+    color:white;
 }
 
 .host-item-place{
@@ -528,49 +732,105 @@ aside{
 
 .host-item-activity{
     grid-area:areaE;
+     margin-left:5%;
 }
 
 .host-place-title{
     margin:0px 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-place{
     margin:0px 0px;
     font-size:1.5rem;
+    color:white;
 }
 
 .host-activity-title{
     margin:0.5rem 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-activity{
     margin:0.5rem 0px;
     font-size:1rem;
+    color:white;
 }
 
 .host-item-condition{
     grid-area:areaF;
+     margin-left:5%;
 }
 
 .host-condition-title{
     margin:0.5rem 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-condition{
     margin:0.5rem 0px;
     font-size:1rem;
+    color:white;
 }
 
 .host-item-edit{
     grid-area:areaG;
+    color:white;
 }
 
 .host-item-delete{
     grid-area:areaH;
+}
+
+.host-subtitle{
+    color:white;
+    border-bottom-style: solid;
+    border-width: 0.25rem;
+    border-bottom-color: white;
+    display: inline-block;
+}
+
+/*モバイル対応*/
+
+@media screen and (max-width:600px) {
+    
+    /*index.blade.php*/
+    
+    .antialiased{
+        width:100%;
+        margin:0;
+    }
+    
+   .host-link{
+       font-size:1rem;
+   } 
+    
+    .user-link{
+        font-size:1rem;
+    }
+    
+    .index-title{
+        font-size:2rem;
+    }
+    
+    .index-top-title{
+        height: 10rem;
+         background-image:url(../img/subindex.jpeg);
+        background-size: 50% 50%;
+        margin-top:5rem;
+    }
+    
+    .index-subtitle{
+        font-size:1.25rem;
+        border-bottom-width: 0.25rem;
+    }
+    
+    .hit-sport-title{
+        margin:0.5rem;
+    }
+    
+    .hit-label{
+        font-size:0.5rem;
+    }
+    
 }

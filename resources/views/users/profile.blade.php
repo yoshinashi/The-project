@@ -7,17 +7,16 @@
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
          <link rel="stylesheet" href="{{ asset('css/user.css') }}">
     </head>
-    <body>
-        <h1 class="profile-title">プロフィールを登録する</h1>
-        <div class="profile-body">
-            
-            <div class="profile-contents">
+    <body class="profile-body">
+        <div class="profile-top-contents">
+            <h1 class="profile-title">プロフィールを登録する</h1>
+        </div>    
+        
                 <form action="/keeps" enctype="multipart/form-data"  method="POST">
                     @csrf
                     <div class="profile-container">
-                                <div class="profile-item-title">
+                                <div class="profile-item-name">
                                         <h2 class="profile-subtitle">名前</h2>
-
                                         <textarea name="profile[name]" placeholder="ニックネームも可（10文字以内）"class="profile-textarea">{{ old('profile.name') }}</textarea>
                                         <p class="title__error" style="color:red">{{ $errors->first('profile.name')}}</p>
                                 </div>
@@ -25,7 +24,6 @@
                                 <div class="profile-item-sport">
                                  
                                    <h2 class="profile-subtitle">経験・興味のあるスポーツ</h2>
-
                                    <textarea name="profile[sport]" placeholder="経験年数などの記載" class="profile-textarea">{{ old('profile.sport') }}</textarea>
                                    <p class="title__error" style="color:red">{{ $errors->first('profile.sport') }}</p>
 
@@ -33,7 +31,6 @@
                             
                                 <div class="profile-item-profile">
                                         <h2 class="profile-subtitle">自己紹介</h2>
-
                                         <textarea name="profile[profile]" placeholder="趣味や普段していること等"class="profile-textarea">{{ old('profile.profile') }}</textarea>
                                         <p class="title__error" style="color:red">{{ $errors->first('profile.profile') }}</p>
                                 </div>
@@ -43,7 +40,7 @@
 
                                 <div class="profile-item-image">
                                     <h2 class="profile-subtitle">アイコンの設定</h2>
-                                    <input type="file" name="image_name">
+                                    <input type="file" name="image_name"class="profile-input-image">
                                      <p class="title__error" style="color:red">{{ $errors->first('image_name') }}</p>
                                 </div>    
                                 
@@ -52,11 +49,11 @@
                                     
                                         <div class="radio-box">
                                              <input type="radio" id="contactChoice1"
-                                               name="profile[sex]" value="男性"style="transform:scale(3.0);" class="radio-btn">
+                                               name="profile[sex]" value="男性"style="transform:scale(3.0);" class="profile-radio-btn">
                                              <label for="contactChoice1"class="radio-name">男性</label>
                             
                                              <input type="radio" id="contactChoice2"
-                                               name="profile[sex]" value="女性"style="transform:scale(3.0);" class="radio-btn">
+                                               name="profile[sex]" value="女性"style="transform:scale(3.0);" class="profile-radio-btn">
                                              <label for="contactChoice2" class="radio-name">女性</label>
                                         </div>
                                 </div>   
@@ -98,9 +95,7 @@
 
                     </div>    
                  </form>
-                </div> 
-            </div>
-        </div>
+        
         
        <div class="footer">
             <a href="/users">プロフィール登録をやめる</a>
