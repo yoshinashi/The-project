@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable;
+            $table->string('name');
             $table->string('sex')->nullable();
-            $table->string('image_name',200)->nullable();
+            $table->string('image_name',200);
             $table->string('age')->nullable();
-            $table->string('sport')->nullable();
+            $table->string('sport',300);
             $table->string('place')->nullable();
-            $table->string('profile',300)->nullable();
+            $table->string('profile',300);
             $table->timestamps();
         });
     }

@@ -7,11 +7,13 @@
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
     </head>
-    <body>
-
-       <h1 class="member-title">アクティヴな仲間を探す</h1>
-       
+    <body class="member-body">
+        <div class="member-top-title">
+            <h1 class="member-title">メンバーを探す</h1>
+        </div>
+        
         <div class="member-hit">
+            <h2 class="member-hit-title">メンバーを探す</h2>  
           <form action="/members" method="GET">
             <input type="text" name="keyword" value="{{ $keyword }}"placeholder="活動内容で検索：例：テニスをした" class="member-research">
             <input type="submit" value="検索">
@@ -24,7 +26,7 @@
                 <div class="member-container">
                    
                     <div class="member-active-item-create">
-                        <p class="member-contents">{{ $active->created_at }}</p>
+                        <p class="member-active-create">{{ $active->created_at }}</p>
                     </div>
                     
                     <div class="member-user-item-name">
@@ -35,7 +37,7 @@
                          <img src="{{ $active->user->profiles->image_name}}" class="member-profile-image">
                     </div>
                 
-                    <div class="member-item-image">
+                    <div class="member-active-item-image">
                         <h3 class="member-subtitle">活動写真</h3>
                          @if ($active->image_active)
                          <!-- 画像を表示 -->
@@ -44,9 +46,9 @@
                         @endif
                     </div> 
                     
-                    <div class="member-item-activity">
+                    <div class="member-active-item-activity">
                         <h3 class="member-subtitle">活動詳細</h3>
-                        <p class="member-contents">{{ $active->activity }}</p>
+                        <p class="member-active-activity">{{ $active->activity }}</p>
                     </div>    
                     
                 </div>
@@ -61,6 +63,10 @@
         
          <div class="footer">
             <a href="/indexes">ホーム画面に戻る</a>
+        </div>
+        
+        <div class='paginate'>
+            {{ $actives->links() }}
         </div>
        
     </body>

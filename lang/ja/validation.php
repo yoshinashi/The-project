@@ -28,7 +28,7 @@ return [
         'array' => 'The :attribute must have between :min and :max items.',
         'file' => 'The :attribute must be between :min and :max kilobytes.',
         'numeric' => 'The :attribute must be between :min and :max.',
-        'string' => 'The :attribute must be between :min and :max characters.',
+        'string' => ':attributeは1~14文字で入力して下さい.',
     ],
     'boolean' => 'The :attribute field must be true or false.',
     'confirmed' => 'The :attribute confirmation does not match.',
@@ -88,10 +88,10 @@ return [
         'array' => 'The :attribute must not have more than :max items.',
         'file' => 'The :attribute must not be greater than :max kilobytes.',
         'numeric' => 'The :attribute must not be greater than :max.',
-        'string' => 'attribute 150文字以下にして下さい.',
+        'string' => ':attribute は140文字以下にして下さい.',
     ],
     'max_digits' => 'The :attribute must not have more than :max digits.',
-    'mimes' => 'The :attribute must be a file of type: :values.',
+    'mimes' => ':attribute 可能です',
     'mimetypes' => 'The :attribute must be a file of type: :values.',
     'min' => [
         'array' => 'The :attribute must have at least :min items.',
@@ -117,7 +117,7 @@ return [
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
     'regex' => 'The :attribute format is invalid.',
-    'required' => 'The :attribute field は必須です.',
+    'required' => ':attribute は必須です.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_if_accepted' => 'The :attribute field is required when :other is accepted.',
@@ -170,8 +170,17 @@ return [
     */
 
     'attributes' => [
-        'post.activity' => 'この項目',
+        'post.clubname' => 'サークル名',
+        'post.activity' => '活動詳細',
         'post.condition' => '募集条件',
+        'post.place' => '活動場所',
+        'image' => '画像（Jpeg,pngのみ）',
+        'profile.name' => '名前',
+        'profile.sport' => 'この項目',
+        'profile.profile' => 'この項目',
+        'image_name' => '画像（Jpeg,pngのみ）',
+        'active.activity' => 'この項目',
+        'image_active' => '画像（Jpeg,pngのみ）',
         ],
 
 ];

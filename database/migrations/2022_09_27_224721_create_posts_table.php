@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('clubname')->nullable();
-            $table->string('sport')->nullable();
-            $table->string('place')->nullable();
-            $table->string('image_path',200)->nullable();
-            $table->string('activity')->nullable();
-            $table->string('condition')->nullable();
+            $table->string('clubname');
+            $table->string('place');
+            $table->string('image_path',200);
+            $table->string('activity');
+            $table->string('condition');
             $table->string('insta')->nullable();
             $table->softDeletes();
             $table->timestamps();

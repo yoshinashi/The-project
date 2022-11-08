@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Sport;
 use Auth;
@@ -23,7 +24,7 @@ class PostController extends Controller
             $query->where('place',"$keyword");
         }
 
-        $posts = $query->get();
+        $posts = $query->orderBy('updated_at', 'DESC')->paginate(15);
             
             
         $sportId = $request->sports_array;
@@ -36,7 +37,7 @@ class PostController extends Controller
             });
         }
         
-        $posts = $query->get();
+        //$posts = $query->get();
         $sports =$sport->get();
         
         return view('posts/index',compact('posts','keyword','sports'));  
@@ -45,13 +46,13 @@ class PostController extends Controller
     
     public function host(Post $post)
 {
-    return view('posts/host')->with(['posts' => $post->get()]);  
+    return view('posts/host')->with(['posts' => $post->orderBy('updated_at', 'DESC')->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
  }
     
     public function show(Post $post)
 {
-    return view('posts/show')->with(['posts' => $post->get(),'post' => $post]);
+    return view('posts/show')->with(['posts' => $post->getByLimit(),'post' => $post]);
  //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
 }
 
@@ -60,10 +61,10 @@ public function create(Sport $sport)
     return view('posts/create')->with(['sports' => $sport->get()]);
 }
 
-public function store(Request $request, Post $post)
+public function store(PostRequest $request, Post $post)
 {
     $input = $request['post'];
-    
+    //dd($input);
     $input_sports = $request->sports_array; 
     
     //s3アップロード開始
@@ -75,9 +76,11 @@ public function store(Request $request, Post $post)
     
       // アップロードした画像のフルパスを取得
     $post->image_path = Storage::disk('s3')->url($path);
-   
+    
     $post->user_id = Auth::id();
+    
     $post->fill($input)->save();
+    
     
     $post->sports()->attach($input_sports); 
     
@@ -97,7 +100,7 @@ public function edit(Post $post,Sport $sport)
     return view('posts/edit')->with(['post' => $post,'sports' => $sport->get(), 'selectedSport'=> $selectedSport,'places'=> $places]);
 }
 
-public function update(Request $request, Post $post)
+public function update(PostRequest $request, Post $post)
 {
     $input_post = $request['post'];
     
@@ -126,7 +129,7 @@ public function update(Request $request, Post $post)
 public function delete(Post $post)
 {
     $post->delete();
-    return redirect('/indexes');
+    return redirect('/hosts');
 }
 
 }

@@ -1,4 +1,23 @@
 /* index.blade.php */
+.index-info{
+    color:white;
+}
+
+.index-account{
+    color:white;
+}
+
+.index-header{
+    background-color: #87888e;
+    
+}
+
+.antialiased{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
 .index-top-title{
     height: 400px;
     background-image:url(../img/sample.jpeg);
@@ -15,13 +34,11 @@
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
     margin-top:1.5rem;
-    margin-bottom:20px;
+    margin-bottom:1.5rem;
     gap:1.5rem;
 }
 
 .index-top-contents{
-    display:flex;
-    justify-content:space-between;
     margin-bottom: 3rem;
     margin-top:3rem;
 }
@@ -30,26 +47,30 @@
 
 
 .index-subtitle{
-    font-size: 5rem;
+    font-size: 3rem;
     margin:0.5rem 0px;
     border-bottom-style: solid;
     border-bottom-width: 0.5rem;
+    color:white;
 }
 
 
 .index-container{
     display: grid;
-    grid-template-rows:50px 100px 100px 150px;
+    grid-template-rows:50px 125px 75px 200px;
     grid-template-columns:60% 40%;
     grid-template-areas:
         "areaA areaA"
         "areaB areaC"
         "areaB areaD"
         "areaE areaE";
-        border-style: groove;
-        border-width: 0.5rem;
+        border-radius:1.5rem;
+        background-color:black;
+        border-style:solid;
+        border-width: 0.25rem;
+        border-color: white;
+        
 }
-
 .index-item-clubname{
     grid-area:areaA;
 }
@@ -71,48 +92,81 @@
 }
 
 .index-image{
-    width :95%; 
+    width :90%; 
     height: 180px;
     border-radius:1.5rem;
+    margin-left: 1rem;
 }
 
 .index-clubname{
     margin:0px 0px;
     font-size:2rem;
+    color:white;
 }
 
 .index-sport{
     margin:0px 0px;
+    color:white;
+}
+
+.index-place{
+    color:white;
 }
 
 .index-title-sport{
     font-size:1.5rem;
     margin:0px 0px;
-    border-bottom-style:groove;
+    border-bottom-style:solid;
     border-bottom-width: 0.25rem;
+    color:white;
+    display: inline-block;
 }
 
 .index-title-place{
     font-size:1.5rem;
     margin:0px 0px;
-    border-bottom-style:groove;
+    border-bottom-style:solid;
     border-bottom-width: 0.25rem;
+    color:white;
+    display: inline-block;
 }
 
 .index-title-activity{
     font-size:1.5rem;
     margin:0px 0px;
-    border-bottom-style:groove;
+    border-bottom-style:solid;
     border-bottom-width: 0.25rem;
+    color:white;
+    display: inline-block;
 }
 
 .index-activity{
     margin:0px 0px;
+    color:white;
 }
 
 .hit-title{
-    font-size:2rem;
+    font-size:1rem;
     margin:0.5rem 0px;
+    color:white;
+}
+
+.hit-sport-title{
+    color:white;
+}
+
+.hit-label{
+    color:white;
+}
+
+.index-hit-button{
+   margin-left: 80%;
+   margin-top:2rem;
+}
+
+.hit-area-title{
+    margin:0.5rem;
+    color:white;
 }
 
 .user-link{
@@ -120,8 +174,9 @@
     margin-right: 5%;
     font-size:2rem;
     border-bottom-style:solid;
-    border-width: 0.5rem;
-    border-color: black;
+    border-width: 0.25rem;
+    border-color: white;
+    color:white;
 }
 
 .host-link{
@@ -129,106 +184,295 @@
     margin-left:5%;
     font-size:2rem;
     border-bottom-style:solid;
-    border-width: 0.5rem;
-    border-color: black;
-}
-
-.index-hit{
-    border-bottom-style:solid;
-    border-width: 0.5rem;
+    border-width: 0.25rem;
+    border-color: white;
+    color:white;
 }
 
 
+
+.index-main-sub-title{
+    width:40%;
+}
+
+.hit-titem-title{
+    grid-area:areaA;
+}
+
+.hit-title-form{
+    grid-area:areaB;
+}
 /* create.blade.php */
 
+.create-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.create-top-contents{
+    height: 400px;
+    background-image:url(../img/create.jpeg);
+    background-size: 25% 50%;
+}
+
+
+
 .create-title{
-    font-size:5rem;
+    font-size:7.5rem;
     text-align: center;
+    padding-top:7rem;
     
 }
 
 .create-subtitle{
     font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
 }
 
-.create-name{
-    width:40%;
-    height: 35px;
+.create-check{
+    color:white;
+}
+
+.create-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
+}
+
+.create-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 17rem 15rem;
+    grid-template-columns:50% 50%;
+    grid-template-areas:
+        "areaA areaE"
+        "areaB areaF"
+        "areaC areaG"
+        "areaD areaH";
+}
+
+.create-item-clubname{
+    grid-area:areaA;
+    margin-left: 10%;
+}
+
+.create-item-activity{
+    grid-area:areaB; 
+    margin-left: 10%;
+}
+
+.create-item-condition{
+    grid-area:areaE;
+    margin-right: 10%;
+}
+
+
+.create-item-sport{
+    grid-area:areaC;
+    margin-left: 10%;
+}
+
+.create-item-place{
+    grid-area:areaD;
+    margin-left: 10%;
+}
+
+
+.create-item-image{
+    grid-area:areaG;
+    margin-right: 10%;
+}
+
+.create-item-insta{
+    grid-area:areaF;
+    margin-right: 10%;
+}
+
+.create-item-input{
+    grid-area:areaH;
+    margin-right: 10%;
 }
 
 .create-place{
     font-size:20px;
 }
 
-textarea{
-    width: 40%;
-    height: 40px;
+.create-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+.create-check{
+   display:block;
 }
 
 
 /*edit.blade.php*/
 
+.edit-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.edit-top-contents{
+    height: 400px;
+    background-image:url(../img/edit.jpeg);
+    background-size: 25% 50%;
+}
+
+
+
 .edit-title{
-    font-size:5rem;
+    font-size:7.5rem;
     text-align: center;
+    padding-top:7rem;
+    
 }
 
 .edit-subtitle{
-    font-size:2rem;
+    font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
 }
 
-.edit-name{
-    width:40%;
-    height: 35px;
+.edit-check{
+    color:white;
+}
+
+.edit-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
+}
+
+.edit-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 17rem 15rem;
+    grid-template-columns:50% 50%;
+    grid-template-areas:
+        "areaA areaE"
+        "areaB areaF"
+        "areaC areaG"
+        "areaD areaH";
+}
+
+.edit-item-clubname{
+    grid-area:areaA;
+    margin-left: 10%;
+}
+
+.edit-item-activity{
+    grid-area:areaB; 
+    margin-left: 10%;
+}
+
+.edit-item-condition{
+    grid-area:areaE;
+    margin-right: 10%;
+}
+
+
+.edit-item-sport{
+    grid-area:areaC;
+    margin-left: 10%;
+}
+
+.edit-item-place{
+    grid-area:areaD;
+    margin-left: 10%;
+}
+
+
+.edit-item-image{
+    grid-area:areaG;
+    margin-right: 10%;
+}
+
+.edit-item-insta{
+    grid-area:areaF;
+    margin-right: 10%;
+}
+
+.edit-item-input{
+    grid-area:areaH;
+    margin-right: 10%;
 }
 
 .edit-place{
     font-size:20px;
 }
 
+.edit-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+.edit-check{
+   display:block;
+}
+
 
 /*show.blade.php*/
-
-
-article{
-    width:70%;
-    margin-right:1.5rem;
-}
-
-aside{
-    width:30%;
-}
 .show-contents{
     display: flex;
 }
 
+article{
+    width:55%;
+    margin-right:3rem;
+    border-right-style: solid;
+    border-right-color: white;
+    border-right-width: 0.25rem;
+}
+
+aside{
+    width:45%;
+}
+
+.article-main-title{
+    font-size:3rem;
+    color:white;
+}
+
+.aside-contents{
+     border-style: solid;
+    border-width: 0.25rem;
+    border-color: white;
+    border-radius:1rem;
+}
+
 .show-container{
-    display: grid;
-    grid-template-rows:150px 200px 200px 200px 200px 100px;
-    grid-template-columns:60% 40%;
-    grid-template-areas:
-        "areaA areaG"
-        "areaB areaC"
-        "areaB areaD"
-        "areaE areaE"
-        "areaF areaF"
-        "areaH areaH";
-    border-style: ridge;
-    border-width:10px;
+    border-style: solid;
+    border-width: 0.5rem;
+    border-color: white;
+    border-radius:1.5rem;
+    margin-left: 2rem;
+    width: 90%;
+}
+
+.show-item{
+    margin-left: 2rem;
+    border-bottom-style: solid;
+    border-width: 0.25rem;
+    border-color: white;
+}
+
+.show-body{
+    background-color: black;
 }
 
 .show-image{
-    width:90%;
-    height:300px;
+    width:60%;
+    height:auto;
+    border-radius:1.5rem;
 }
-
-.show-title{
-    font-size:4rem;   
-}
-
 .aside-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
     gap:1rem;
 }
 
@@ -237,51 +481,43 @@ aside{
 }
 
 .aside-image{
-    width: 100%;
-    height:auto;
+    width: 90%;
+    height:8rem;
+    border-radius:1.5rem;
 }
 
-.show-item-clubname{
-    grid-area:areaA;
-    border-bottom-style: ridge;
-    border-bottom-width:10px;
+.show-clubname-title{
+    color:white;
 }
 
-.show-item-image{
-     grid-area:areaB;
-     
+.show-image-title{
+    color:white;   
 }
 
-.show-item-sport{
-     grid-area:areaC;
-     
-}
-.show-item-place{
-    grid-area:areaD;
+.show-sport-title{
+    color:white;
 }
 
-.show-item-activity{
-    grid-area:areaE;
-    border-bottom-style: ridge;
-    border-bottom-width:10px;
-}
-.show-item-condition{
-    grid-area:areaF;
-    border-bottom-style: ridge;
-    border-bottom-width:10px;
+.show-place-title{
+    color:white;
 }
 
-.show-item-instagram{
-    grid-area:areaG;
+.show-activity-title{
+    color:white;
 }
 
-.show-item-user{
-    grid-area:areaH;
+.show-condition-title{
+    color:white;
+}
+
+.show-insta-title{
+    color:white;
 }
 
 .show-insta{
     width: 125px;
     height: 125px;
+    
 }
 
 .show-clubname-title{
@@ -314,27 +550,112 @@ aside{
     margin:0px 0px;
 }
 
+.show-user-title{
+    color:white;
+}
+
 .show-sport{
     font-size:1.25rem;
+    color:white;
 }
 
 .show-place{
     font-size:1.25rem;
+    color:white;
 }
 
 .show-activity{
      font-size:1.25rem;
      margin:0.25rem 0px;
+     color:white;
 }
 
 .show-condition{
      font-size:1.25rem;
      margin:0.25rem 0px;
+     color:white;
+}
+
+.show-user{
+    color:white;
+}
+
+.aside-main-title{
+    color:white;
+    font-size:3rem;
+}
+
+.aside-title{
+    color:white;
+    font-size:1.5rem;
+    margin:0.5rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.aside-link{
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 0.25rem;
+    border-color: white;
+}
+
+.aside-subtitle{
+    color:white;
+}
+
+.aside-activity{
+    color:white;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
 }
 
 
 
 /*host.blade.php*/
+
+.host-header{
+    display:flex;
+     justify-content: space-between;
+}
+
+.host-create-link{
+    font-size:2rem;
+    margin-top: 1rem;
+    margin-left: 10%;
+    color:white;
+}
+
+.host-member-link{
+    font-size:2rem;
+    margin-top: 1rem;
+    margin-right: 15%;
+    color:white;
+}
+
+.host-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.host-top-title{
+    height: 400px;
+    background-image:url(../img/host.jpeg);
+    background-size: 25% 50%;
+    margin-bottom: 3rem;
+}
+
+.host-title{
+    font-size:7rem;
+    text-align: center;
+    padding-top: 6rem;
+}
+
 .host-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -344,7 +665,7 @@ aside{
 
 .host-container {
     display: grid;
-    grid-template-rows: 100px 100px 100px 100px 150px 150px 50px;
+    grid-template-rows: 6.5rem 6.5rem 6.5rem 6.5rem 10rem 10rem 3rem;
     grid-template-columns: 60% 40%;
     grid-template-areas:
         "areaA areaA"
@@ -354,42 +675,27 @@ aside{
         "areaE areaE"
         "areaF areaF"
         "areaG areaH";
-    border-style: ridge;
-    border-width:10px;
+    border-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    border-radius: 1.5rem;
 }
 
-.host-title{
-    font-size:5rem;
-    text-align: center;
-    margin:0;
-    position: absolute;
-    bottom:40%;
-    left:30%;
-    color: red;
-}
-
-.host-subtitle{
-    font-size:3rem;
-}
-
-.host-title-image{
-    display: block;
-	width: 100%;
-    
-}
-
-.host-title-box{
-    position: relative;
+.host-main-title{
+    font-size:4rem;
+    color:white;
 }
 
 .host-clubname{
-    border-bottom-style: ridge;
-    border-width: 10px;
+    border-bottom-style:solid;
+    border-width:0.25rem;
+    border-bottom-color: white;
+    display: inline-block;
+    color:white;
     
 }
 
 .host-image{
-   
     width: 90%;
     height: 275px;
     border-radius:1.5rem;
@@ -399,13 +705,13 @@ aside{
     grid-area:areaB;
 }
 
-.host-item-clubnmae{
+.host-item-clubname{
     grid-area:areaA;
+    margin-left:5%;
 }
 .host-sport-title{
     margin:0.5rem 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-item-sport{
@@ -416,6 +722,7 @@ aside{
 .host-sport{
     font-size:1.5rem;
     margin:0px;
+    color:white;
 }
 
 .host-item-place{
@@ -425,49 +732,105 @@ aside{
 
 .host-item-activity{
     grid-area:areaE;
+     margin-left:5%;
 }
 
 .host-place-title{
     margin:0px 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-place{
     margin:0px 0px;
     font-size:1.5rem;
+    color:white;
 }
 
 .host-activity-title{
     margin:0.5rem 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-activity{
     margin:0.5rem 0px;
     font-size:1rem;
+    color:white;
 }
 
 .host-item-condition{
     grid-area:areaF;
+     margin-left:5%;
 }
 
 .host-condition-title{
     margin:0.5rem 0px;
-    border-bottom-style: ridge;
-    border-width: 10px;
+    
 }
 
 .host-condition{
     margin:0.5rem 0px;
     font-size:1rem;
+    color:white;
 }
 
 .host-item-edit{
     grid-area:areaG;
+    color:white;
 }
 
 .host-item-delete{
     grid-area:areaH;
+}
+
+.host-subtitle{
+    color:white;
+    border-bottom-style: solid;
+    border-width: 0.25rem;
+    border-bottom-color: white;
+    display: inline-block;
+}
+
+/*モバイル対応*/
+
+@media screen and (max-width:600px) {
+    
+    /*index.blade.php*/
+    
+    .antialiased{
+        width:100%;
+        margin:0;
+    }
+    
+   .host-link{
+       font-size:1rem;
+   } 
+    
+    .user-link{
+        font-size:1rem;
+    }
+    
+    .index-title{
+        font-size:2rem;
+    }
+    
+    .index-top-title{
+        height: 10rem;
+         background-image:url(../img/subindex.jpeg);
+        background-size: 50% 50%;
+        margin-top:5rem;
+    }
+    
+    .index-subtitle{
+        font-size:1.25rem;
+        border-bottom-width: 0.25rem;
+    }
+    
+    .hit-sport-title{
+        margin:0.5rem;
+    }
+    
+    .hit-label{
+        font-size:0.5rem;
+    }
+    
 }

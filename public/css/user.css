@@ -1,4 +1,22 @@
+
 /*member.blade.php*/
+.member-body{
+    background-color:black;
+    width:90%;
+    margin:0 5%;
+}
+
+.member-top-title{
+    height: 400px;
+    background-image:url(../img/member.jpeg);
+    background-size: 25% 50%;
+}
+
+.member-title{
+    text-align: center;
+    padding-top:7rem;
+    font-size:7.5rem;
+}
 
 .member-grid{
     display:grid;
@@ -9,12 +27,16 @@
 .member-container{
     display:grid;
     grid-template-columns:1fr 1fr ;
-    grid-template-rows:50px 50px 250px 250px;
+    grid-template-rows:75px 50px 250px 175px;
     grid-template-areas:
     "areaA areaB"
     "areaA areaC"
     "areaD areaD"
     "areaE areaE";
+    border-style:solid;
+    border-width:0.25rem;
+    border-color: white;
+    border-radius: 1.5rem;
 }
 
 .member-active-item-create{
@@ -36,8 +58,9 @@
     background-position: center; 
 }
 
-.member-item-image{
+.member-active-item-image{
     grid-area:areaD;
+    margin-left:5%;
 }
 
 .member-image{
@@ -46,418 +69,496 @@
     border-radius:1.5rem;
 }
 
-.member-item-activity{
+.member-active-item-activity{
     grid-area:areaE;
+    width:90%;
+    margin-left: 5%;
+    
 }
 
 .member-subtitle{
     margin:0.25rem 0;
+    color:white;
+    margin-left:5%;
+    border-bottom-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    display: inline-block;
 }
 
-.member-contents{
+.member-active-activity{
     margin:0.25rem 0;
-}
-
-.member-title{
-    font-size:3rem;
-    text-align: center;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    
 }
 
 .member-hit{
     margin-bottom: 2rem;
+    margin-top:3rem;
 }
 
 .member-user-name{
     font-size:1.5rem;
     margin:0.5rem 0;
-}
-/*profile.blade.php*/
-.profile-container{
-    text-align: center;
-    display:grid;
-    grid-template-columns:1fr 1fr ;
-    grid-template-rows:125px 125px 125px 125px 125px;
-    grid-template-areas:
-    "areaA areaB"
-    "areaC areaE"
-    "areaC areaF"
-    "areaD areaG"
-    "areaD areaH";
+    color:white;
 }
 
+.member-active-create{
+    color:white;
+}
+
+.member-active-activity{
+    color:white;
+}
+
+.member-hit-title{
+    color:white;
+    font-size:3rem;
+    border-bottom-style:solid;
+    border-width: 0.5rem;
+    border-color: white;
+}
+
+.member-research{
+    width: 20%;
+}
+
+/*profile.blade.php*/
+
 .profile-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.profile-top-contents{
+    height: 400px;
     background-image:url(../img/profile.jpeg);
-    background-size: contain;   
-    height: 100vh;
-    width: 100%;
-    background-repeat:no-repeat;
+    background-size: 25% 50%;
+}
+
+
+
+.profile-title{
+    font-size:7.5rem;
+    text-align: center;
+    padding-top:7rem;
     
 }
 
-
-
-.profile-body{
-    height: 1000px;
+.profile-subtitle{
+    font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
 }
 
-.profile-item-title{
+.profile-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
+}
+
+.profile-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 10rem 10rem;
+    grid-template-columns:50% 50%;
+    grid-template-areas:
+        "areaA areaE"
+        "areaB areaF"
+        "areaC areaG"
+        "areaD areaH";
+}
+
+.profile-item-name{
     grid-area:areaA;
-    margin-left: 20%;
-    margin-top:20%;
+    margin-left: 10%;
 }
+
+.profile-item-sport{
+    grid-area:areaE; 
+    margin-right: 10%;
+}
+
+.profile-item-profile{
+    grid-area:areaB;
+    margin-left: 10%;
+}
+
 
 .profile-item-image{
-    grid-area:areaB;
-    margin-right: 25%;
-    margin-top:25%;
+    grid-area:areaF;
+    margin-right: 10%;
 }
 
 .profile-item-sex{
-    grid-area:areaE;
-    margin-right: 25%;
-    margin-top:25%;
+    grid-area:areaC;
+    margin-left: 10%;
 }
 
+
 .profile-item-age{
-    grid-area:areaF;
-    margin-right: 25%;
-    margin-top:25%;
+    grid-area:areaD;
+    margin-left: 10%;
 }
 
 .profile-item-place{
     grid-area:areaG;
-    margin-right: 25%;
-    margin-top:25%;
-}
-
-.profile-item-sport{
-    grid-area:areaC;
-    margin-left: 20%;
-    margin-top:20%;
-}
-
-.profile-item-profile{
-    grid-area:areaD;
-    margin-left: 20%;
-    margin-top:20%;
+    margin-right: 10%;
 }
 
 .profile-item-keep{
     grid-area:areaH;
-    margin-right: 25%;
-    margin-top:25%;
-}
-
-.profile-title{
-    font-size:3rem;
-    margin:1rem 0;
-}
-
-.profile-subtitle{
-    font-size:2rem;
-    margin:1rem 0;
-}
-
-.profile-name{
-    width:70%;
-    height: 35px;
-}
-
-.profile-textarea{
-    width:70%;
-    height:8rem;
-}
-
-.profile-age{
-    font-size:20px;
+    margin-right: 10%;
 }
 
 .profile-place{
-    font-size:20px;
+    font-size:1.5rem;
+}
+
+.profile-age{
+    font-size:1.5rem;
+}
+
+.profile-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
 }
 
 .radio-name{
-    font-size:20px;
-    margin-left: 20px;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    font-size:1.5rem;
+    color:white;
 }
-
-.radio-btn{
-    margin-left: 15px;
-}
-
 
 /*remake.blade.php*/
 
-.remake-container{
-    text-align: center;
-    display:grid;
-     grid-template-columns:1fr 1fr ;
-     grid-template-rows:125px 125px 125px 125px 125px;
-    grid-template-areas:
-    "areaA areaD"
-    "areaB areaE"
-    "areaB areaF"
-    "areaC areaG"
-    "areaC areaH";
+.remake-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
 }
 
-.remake-body{
+.remake-top-contents{
+    height: 400px;
     background-image:url(../img/remake.jpeg);
-    background-size: contain;   
-    height: 100vh;
-    width: 100%;
-    background-repeat:no-repeat;
-}    
-
-.remake-body{
-    height: 1000px;
+    background-size: 25% 50%;
 }
 
 
 
-.remake-item-title{
+.remake-title{
+    font-size:7rem;
+    text-align: center;
+    padding-top:7rem;
+    
+}
+
+.remake-subtitle{
+    font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
+}
+
+.remake-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
+}
+
+.remake-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 10rem 10rem;
+    grid-template-columns:50% 50%;
+    grid-template-areas:
+        "areaA areaE"
+        "areaB areaF"
+        "areaC areaG"
+        "areaD areaH";
+}
+
+.remake-item-name{
     grid-area:areaA;
-    margin-left:15%;
+    margin-left: 10%;
 }
 
 .remake-item-sport{
-    grid-area:areaB;
-    margin-left:15%;
+    grid-area:areaE; 
+    margin-right: 10%;
 }
 
 .remake-item-profile{
-    grid-area:areaC;
-    margin-left:15%;
+    grid-area:areaB;
+    margin-left: 10%;
 }
 
-.remake-textarea{
-    width:70%;
-    height:8rem;
-}
 
 .remake-item-image{
-    grid-area:areaD;
-    margin-right: 25%;
-    margin-top: 20%;
+    grid-area:areaF;
+    margin-right: 10%;
 }
 
 .remake-item-sex{
-    grid-area:areaE;
-    margin-right: 25%;
-    margin-top: 20%;
+    grid-area:areaC;
+    margin-left: 10%;
 }
 
+
 .remake-item-age{
-    grid-area:areaF;
-    margin-right: 25%;
-    margin-top: 20%;
+    grid-area:areaD;
+    margin-left: 10%;
 }
 
 .remake-item-place{
     grid-area:areaG;
-    margin-right: 25%;
-    margin-top: 20%;
+    margin-right: 10%;
 }
 
 .remake-item-update{
     grid-area:areaH;
-    margin-right: 25%;
-    margin-top: 20%;
-}
-
-.remake-title{
-   font-size:3rem;
-    margin:1rem 0;
-}
-
-.remake-subtitle{
-    font-size:2rem;
-    margin:1rem 0;
-}
-
-.remake-name{
-    width: 70%;
-    height: 35px;
-}
-
-.remake-age{
-    font-size:20px;
+    margin-right: 10%;
 }
 
 .remake-place{
-    font-size:20px;
+    font-size:1.5rem;
 }
 
-.radio-name{
-    font-size:20px;
-    margin-left: 20px;
+.remake-age{
+    font-size:1.5rem;
 }
 
-.radio-btn{
-    margin-left: 15px;
+.remake-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
 }
+
+
 
 /*user.blade.php*/
-.user-container{
+
+.user-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+/*プロフィール部分*/
+.user-profile-container{
     display: grid;
-    grid-template-rows:50px 30px 30px 30px ;
-    grid-template-columns:10% 20% 70%;
+    grid-template-rows:4rem 4rem 4rem 4rem;
+    grid-template-columns:1fr 1fr 1fr 60%;
     grid-template-areas:
-        "areaA areaB areaF"
-        "areaA areaC areaF"
-        "areaA areaD areaG"
-        "areaZ areaE areaG";
-        border-style:outset;
-        border-width: 5px 10px 10px 5px;
+        "areaA areaB areaB areaG"
+        "areaA areaC areaE areaG"
+        "areaZ areaD areaF areaH"
+        "areaZ areaX areaX areaH";
+        border-bottom-style:dotted;
+        border-width: 0.25rem;
+        border-color: white;
 }
 
-.active-title{
-    font-size:4rem;
-    margin:2rem;
-}
-
-.user-item-name{
-    font-size:2rem;
-    grid-area:areaB;
-    margin:0px 0px;
-}
-
-.user-item-image{
-    width :100px; 
-    height:100px;
+.user-profile-image{
+    width :120px; 
+    height:120px;
     border-radius: 50%; 
     background-position: center; 
+    border-style: solid;
+    border-width: 0.25rem;
+    border-color: white;
+
+}
+
+.user-profile-item-image{
     grid-area:areaA;
 }
 
-.user-item-sex{
+.user-profile-item-name{
+    grid-area:areaB;
+}
+
+.user-profile-item-sex{
     grid-area:areaC;
-    margin:0px 0px;
 }
 
-.user-item-age{
+.user-profile-item-place{
     grid-area:areaD;
-    margin:0px 0px;
 }
 
-.user-item-place{
+.user-profile-item-age{
     grid-area:areaE;
-    margin:0px 0px;
-    
 }
 
-.user-item-sport{
-    grid-area:areaF;
-    margin:0px 0px;
-}
-
-.user-item-profile{
+.user-profile-item-sport{
     grid-area:areaG;
-    margin:0px 0px;
 }
 
-.user-item-edit{
+.user-profile-item-profile{
+    grid-area:areaH;
+}
+
+.user-profile-item-edit{
     grid-area:areaZ;
+    margin-top:1rem;
 }
 
-/*user-blade.phpメインの部分*/
+.user-profile-edit{
+    color:white;
+}
+
+.user-profile-info{
+    font-size:0.75rem;
+    margin: 0;
+    color:white;
+    border-bottom-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    display: inline-block;
+}
+
+.user-profile-sport{
+    margin:0;
+    color:white;
+}
+
+.user-profile-profile{
+    margin:0;
+    color:white;
+}
+
+.user-profile-name{
+    color:white;
+}
+
+.user-profile-sex{
+    color:white;
+}
+
+.user-profile-age{
+    color:white;
+}
+
+.user-profile-place{
+    color:white;
+}
+
+
+/*投稿部分*/
+
+.user-main-title{
+    font-size:3rem;
+    color:white;
+}
 
 .user-main-contents{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
     gap:1.5rem;
-    margin-bottom:1rem ;
-}
-
-.active-image{
-    width: 85%;
-    height: 300px;
-    border-radius:1.5rem;
 }
 
 .user-active-container{
     display: grid;
-    grid-template-rows:100px 300px 75px;
-    grid-template-columns:60% 40%;
+    grid-template-columns:75% 25%;
+    grid-template-rows:5rem 17.5rem 15rem 5rem;
     grid-template-areas:
-    "areaA areaB"
-    "areaA areaC"
-    "areaD areaE";
-    border-style: ridge;
-    border-width:10px;
+    "area1 area4"
+    "area2 area2"
+    "area3 area3"
+    "area10 area5";
+    border-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    border-radius:1.5rem;
 }
 
-.active-item-create{
-    grid-area:areaB;
-    font-size:1.25rem;
-    border-bottom-style: ridge;
-    border-left-style: ridge;
-    border-width: 10px
+.user-active-item-create{
+    grid-area:area1;
 }
 
-.active-item-activity{
-    grid-area:areaC;
+.user-active-item-activity{
+    grid-area:area3;
 }
 
-.active-item-image{
-    grid-area:areaA;
-    margin-left:1rem;
+.user-active-item-image{
+    grid-area:area2;
 }
 
-.active-item-edit{
-    grid-area:areaD;
-    border-top-style: ridge;
-    border-width:10px;
+.user-active-item-edit{
+    grid-area:area4;
 }
 
-.active-item-delete{
-    grid-area:areaE;
-     border-top-style: ridge;
-     border-width:10px;
+.user-active-item-delete{
+    grid-area:area5;
 }
 
-.active-create-title{
-    margin:1rem;
+.user-active-image{
+    width: 85% ;
+    height: 14rem;
+    margin-left: 5%;
+    border-radius:1.5rem;
 }
 
-.active-subtitle{
-    font-size:1.5rem;
-    margin:1rem 0;
-}
-
-.active-create{
+.user-active-subtitle{
     margin:0;
+    margin-left: 5%;
+    color:white;
+    border-bottom-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    display: inline-block;
 }
 
-.active-edit{
-    font-size:1.5rem;
+.user-create-subtitle{
     margin:0;
+    margin-left: 5%;
+    color:white;
+    border-bottom-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    display: inline-block;
 }
 
-.active-delete{
-    height: 3rem;
-    margin:0.5rem;
+.user-active-create{
+    color:white;
 }
 
-.active-subtitle{
-    border-bottom-style: ridge;
-    border-width: 10px;
+.user-active-activity{
+    color:white;
+    width: 90%;
+    margin-left:5%;
+}
+
+.user-active-edit{
+    color:white;
 }
 
 /*account.blade.php*/
+.account-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
 
 .account-top-container{
     display: grid;
-    grid-template-rows:60px 40px 30px 30px 30px;
-    grid-template-columns:10% 20% 60% 10%;
+    grid-template-rows:5rem 4rem 3rem 3rem 3rem;
+    grid-template-columns:12.5% 12.5% 15% 60%;
     grid-template-areas:
-    "areaA areaB areaG areaX"
-    "areaA areaC areaG areaX"
-    "areaA areaD areaH areaY"
-    "areaZ areaE areaH areaY"
-    "areaZ areaF areaH areaS";
-    border-style: ridge;
-    border-width:10px;
+    "areaA areaB areaB areaG"
+    "areaA areaC areaC areaG"
+    "areaA areaD areaE areaH"
+    "areaZ areaF areaI areaH"
+    "areaZ areaU areaI areaH";
+    border-bottom-style: dotted;
+    border-bottom-color: white;
+    border-bottom-width: 0.25rem;
 }
 
 .account-item-name{
@@ -474,84 +575,116 @@
 }
 
 .account-image{
-    width :90px; 
-    height:90px;
+    width :8rem; 
+    height:8rem;
     border-radius: 50%; 
     background-position: center; 
+    border-style: solid;
+    border-width: 0.25rem;
+    border-color: white;
 }
 
 .account-item-sex{
     grid-area:areaD;
+    display: inline-block;
 }
 
 .account-item-age{
     grid-area:areaE;
+    display: inline-block;
 }
 
 .account-item-place{
     grid-area:areaF;
+    display: inline-block;
 }
 
 .account-item-sport{
     grid-area:areaG;
-    border-left-style: ridge;
-    border-bottom-style: ridge;
-    border-right-style: ridge;
-    border-width: 5px;
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
+    
 }
 
 .account-item-profile{
     grid-area:areaH;
-    border-left-style: ridge;
-    border-right-style: ridge;
-    border-width: 5px;
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .account-item-chat{
-    grid-area:areaX;
+    grid-area:areaZ;
 }
+
+.account-chat{
+    color:white;
+}
+
 
 .account-name{
     margin:0.5rem 0;
-    border-bottom-style: ridge;
-    border-width: 5px;
+    color:white;
 }
 
 .name-p{
     margin:0;
+    color:white;
 }
 
 .second-name{
     margin:0 0 0 1rem;
     font-size:1.25rem;
+    color:white;
 }
 
 .account-sex{
     margin:0.25rem 0;
+    color:white;
 }
 
 .account-age{
     margin:0.25rem 0;
+    color:white;
 }
 
 .account-place{
     margin:0.25rem 0;
+    color:white;
 }
 
 .account-sport{
     margin:0.25rem 0;
+    color:white;
 }
 
 .account-profile{
     margin:0.25rem 0;
+    color:white;
+}
+
+.account-info{
+    font-size:0.75rem;
+    color:white;
+    margin:0;
+    border-bottom-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    display: inline-block;
 }
 
 .account-btn{
     margin-top: 3rem;
+    display:flex;
+    justify-content: space-between;
+    background-color: white;
+    
+    
 }
 
 .account-button{
-    font-size:2rem;
+    font-size:1.25rem;
     margin:0 2rem;
 }
 
@@ -570,69 +703,100 @@
 .account-active-title{
     margin:2rem 15rem;
     font-size:2rem;
+    color:white;
 }
 
 .account-post-title{
     margin:2rem 15rem;
     font-size:2rem;
+    color:white;
 }
 
 .account-active-image{
     width:90%;
     height:270px;
+    margin-left: 5%;
     
+}
+
+.account-active-subtitle{
+    color:white;
+    border-bottom-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    display: inline-block;
+    margin:0.5rem 0;
+}
+
+.account-active-create{
+    color:white;
+}
+
+.account-active-activity{
+    color:white;
 }
 
 .account-active-container{
     display:grid;
-    grid-template-rows:150px 250px;
-    grid-template-columns:70% 30%;
+    grid-template-rows:10rem 20rem;
+    grid-template-columns:60% 40%;
     grid-template-areas:
     "areaA areaB"
     "areaA areaC";
     margin-bottom: 1rem;
-    border-style: ridge;
-    border-width:10px;
+    border-style: solid;
+    border-color:white;
+    border-width:0.25rem;
+    border-radius: 1.5rem;
 }
 
 .account-active-item-create{
     grid-area:areaB;
+     margin-left: 5%;
 }
 
 .account-active-item-image{
     grid-area:areaA;
+     margin-left: 5%;
 }
 
 .account-active-item-activity{
     grid-area:areaC;
+     margin-left: 5%;
 }
 
 .account-post-container{
     display:grid;
-    grid-template-rows:50px 125px 125px 150px 150px;
+    grid-template-rows: 4rem 4rem 8rem 8rem 10rem 10rem;
     grid-template-columns:60% 40%;
     grid-template-areas:
-    "areaB areaA"
+    "areaA areaA"
+    "areaB areaC"
     "areaB areaC"
     "areaB areaD"
     "areaE areaE"
     "areaF areaF";
-    border-style: ridge;
-    border-width:10px;
+    border-style: solid;
+    border-color:white;
+    border-width:0.25rem;
+    border-radius: 1.5rem;
     margin-bottom: 1rem;
 }
 
 .account-post-item-clubname{
     grid-area:areaA;
+    margin-left: 5%;
 }
 
 .account-post-item-image{
     grid-area:areaB;
+    margin-left:5%;
 }
 
 .account-post-image{
     width:85%;
     height: 225px;
+    margin-left: 5%;
 }
 
 .account-post-item-sport{
@@ -645,8 +809,162 @@
 
 .account-post-item-activity{
     grid-area:areaE;
+     margin-left: 5%;
 }
 
 .account-post-item-condition{
     grid-area:areaF;
+     margin-left: 5%;
+}
+
+.account-post-subtitle{
+    color:white;
+    border-bottom-style:solid;
+    border-width: 0.25rem;
+    border-color: white;
+    display: inline-block;
+    margin:0.5rem 0;
+}
+
+.account-post-clubname{
+    color:white;
+}
+
+.account-post-sport{
+    color:white;
+    margin:0.5rem 0;
+}
+
+.account-post-place{
+    color:white;
+}
+
+.account-post-activity{
+    color:white;
+}
+
+.account-post-condition{
+    color:white;
+    margin:0.5rem 0;
+}
+
+/*active.blade.php*/
+
+.active-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.active-top-contents{
+    height: 400px;
+    background-image:url(../img/active.jpeg);
+    background-size: 25% 50%;
+}
+
+.active-title{
+    font-size:7.5rem;
+    text-align: center;
+    padding-top:7rem;
+    
+}
+
+.active-subtitle{
+    font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
+}
+
+.active-container{
+    display:grid;
+    grid-template-rows:45% 45% 10%;
+    height: 15rem;
+    grid-template-areas:
+    "areaA areaB areaC";
+    margin-top:3rem;
+}
+
+.active-item-activity{
+    grid-area:areaA;
+}
+
+.active-item-image{
+    grid-area:areaB;
+}
+
+.active-item-save{
+    grid-area:areaC;
+}
+
+.active-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+
+.active-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
+}
+
+/*reactive.blade.php*/
+.reactive-body{
+    background-color: black;
+    width:90%;
+    margin:0 5%;
+}
+
+.reactive-top-contents{
+    height: 400px;
+    background-image:url(../img/reactive.jpeg);
+    background-size: 25% 50%;
+}
+
+.reactive-title{
+    font-size:7.5rem;
+    text-align: center;
+    padding-top:7rem;
+    
+}
+
+.reactive-subtitle{
+    font-size: 2rem;
+    margin:0.5rem 0;
+    color:white;
+}
+
+.reactive-container{
+    display:grid;
+    grid-template-rows:45% 45% 10%;
+    height: 15rem;
+    grid-template-areas:
+    "areaA areaB areaC";
+    margin-top:3rem;
+}
+
+.reactive-item-activity{
+    grid-area:areaA;
+}
+
+.reactive-item-image{
+    grid-area:areaB;
+}
+
+.reactive-item-save{
+    grid-area:areaC;
+}
+
+.reactive-textarea{
+    width: 70%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+
+.reactive-input-image{
+    background-color: white;
+    height: 7rem;
+    width: 70%;
+    border-radius: 1rem;
 }

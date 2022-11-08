@@ -6,18 +6,17 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
-        
-
+        <meta name="viewport" content="width=device-width,initial-scale=1">s
     </head>
     <body class="antialiased">
         
-        <header>
+        <header　class="index-header">
             
             <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">会員登録</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline index-account">会員登録</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ログイン</a>
 
@@ -34,21 +33,19 @@
                       
                         <a href="/hosts"><h2 class="host-link">サークル投稿者画面へ</h2></a>
                      
-                        <!--プロフィール登録してない人をさせる様に実装する-->
-                      
                         <a href="/users"><h2 class="user-link">個人活動投稿画面へ</h2></a>
                         @endif
                        
-                        
-                        
                         @guest
-                          <p>Back To Clubでできること</p>
+                          <p class="index-info">Back To Clubでできること</p>
                           
-                          <p>Back To Clubは様々なスポーツの団体を作ることができ、スポーツを通して人生を楽しむコミュニティの形成が可能です</p>
+                          <p class="index-info">Back To Clubは様々なスポーツの団体を作ることができ、スポーツを通して人生を楽しむコミュニティの形成が可能です</p>
                         @endguest
                </div> 
             
         </header>
+        
+        
         
     <div class="index-top">   
                 <div class="index-top-title">
@@ -56,27 +53,35 @@
                 </div>
                 
                 <div class="index-top-contents">
-                    <div class=index-main-subtitle>    
-                        <h2 class="index-subtitle">サークル一覧</h2>
+                
+                    <div class="index-hit">
+                        <h2 class="index-subtitle">サークルを検索する</h2>
+                          <form action="{{ route('posts.index') }}" method="GET" class="hit-item-form">
+                              
+                            <div class="hit-title-area">
+                                <p class=hit-area-title>活動エリアで検索する</p>  
+                                <input type="text" name="keyword" value="{{ $keyword }}" placeholder="地域で検索"><br>
+                            </div>   
+                            
+                            <div class="hit-item-sport">
+                                <p class="hit-sport-title">行うスポーツで検索する</p>
+                                 @foreach($sports as $sport)
+                            
+                                    <label class=hit-label>
+                                        {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
+                                        <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]">
+                                            {{$sport->sport_name}}
+                                        </input>
+                                    </label>
+                                        
+                                    @endforeach 
+                            </div>        
+                            <input type="submit" value="検索" class="hit-item-input">
+                          </form>
                     </div>
                     
-                    <div class="index-hit">
-                        <h3 class="hit-title">検索する</h3>
-                          <form action="{{ route('posts.index') }}" method="GET">
-                            <input type="text" name="keyword" value="{{ $keyword }}" placeholder="地域で検索"><br>
-                           
-                             @foreach($sports as $sport)
-                        
-                                <label>
-                                    {{-- valueを'$subjectのid'に、nameを'配列名[]'に --}}
-                                    <input type="checkbox" value="{{ $sport->id }}" name="sports_array[]">
-                                        {{$sport->sport_name}}
-                                    </input>
-                                </label>
-                                    
-                                @endforeach   
-                            <input type="submit" value="検索">
-                          </form>
+                    <div class=index-main-subtitle>    
+                        <h2 class="index-subtitle">サークル一覧</h2>
                     </div>
                 </div>    
     </div>       
@@ -121,7 +126,11 @@
                             </div>
                              @endforeach
                 </div>
-        </div>            
+        </div>      
+        
+        <div class='paginate'>
+            {{ $posts->links('pagination::bootstrap-5') }}
+        </div>
         
         <div class="footer">
             <a href="/indexes">戻る</a>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\ActiveRequest;
 use App\Models\Profile;
 use App\Models\Active;
 use App\Models\User;
@@ -26,7 +28,7 @@ class ProfileController extends Controller
         
         }
         
-         $actives = $query->with("user.profiles")->get();
+        $actives = $query->with("user.profiles")->orderBy('updated_at', 'DESC')->paginate(20);
         //dd($actives);
         return view('users/member',compact('actives','keyword'));  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
@@ -38,7 +40,7 @@ class ProfileController extends Controller
     {
        $Auth_user=Auth::id();
        $profile = Profile::find($Auth_user);
-        return view('users/user')->with(['profile' => $profile,'actives' => $active->get()]);  
+        return view('users/user')->with(['profile' => $profile,'actives' => $active->orderBy('updated_at', 'DESC')->get()]);  
        //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
        
     }
@@ -48,7 +50,7 @@ class ProfileController extends Controller
     $active->user_id = Auth::id();
     $profile = $profile->where('user_id', Auth::id())->first();
     //dd($test);
-    return view('users/account')->with(['profile' => $profile,'active' => $active,'actives' => $active->get(),'posts' => $post->get()]);
+    return view('users/account')->with(['profile' => $profile,'active' => $active,'actives' => $active->orderBy('updated_at', 'DESC')->get(),'posts' => $post->orderBy('updated_at', 'DESC')->get()]);
  //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
 }
 
@@ -58,7 +60,7 @@ public function profile()
 }
 
 //プロフィールの登録
-public function keep(Request $request, Profile $profile)
+public function keep(ProfileRequest $request, Profile $profile)
 {
     $input = $request['profile'];
    
@@ -90,7 +92,7 @@ public function remake(Profile $profile)
 }
 
 //プロフィールの編集実行
-public function update(Request $request, Profile $profile)
+public function update(ProfileRequest $request, Profile $profile)
 {
     $input_profile = $request['profile'];
    
@@ -118,7 +120,7 @@ public function active()
 }
 
 //活動投稿の実行
-public function save(Request $request, Active $active)
+public function save(ActiveRequest $request, Active $active)
 {
     $input_active = $request['active'];
     
@@ -144,7 +146,7 @@ public function reactive(Active $active)
 }
 
 
-   public function repost(Request $request, Active $active)
+   public function repost(ActiveRequest $request, Active $active)
 {
     $input_active = $request['active'];
     

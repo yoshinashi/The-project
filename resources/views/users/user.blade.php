@@ -8,94 +8,98 @@
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
         <script src="{{ asset('js/user.js') }}"></script>
     </head>
-    <body>
-        
-        
-        <header>
-            
-            <div class='profiles'>
-                <div class='user-container'>
+    <body class="user-body">
+                <div class='user-profile-container'>
                     @if(isset( $profile ))
-
-                    <h2 class='user-item-name'>{{ $profile->name }}</h2> 
+                    <div class="user-profile-item-name">
+                        <h2 class='user-profile-name'>{{ $profile->name }}</h2> 
+                    </div>    
                     
+                    <div class="user-profile-item-image">
+                        <img src="{{ $profile->image_name}}" class="user-profile-image">
+                    </div>    
                     
+                    <div class="user-profile-item-sex">
+                        <p class="user-profile-info">性別<p>
+                        <p class='user-profile-sex'>{{ $profile->sex }}</p>
+                    </div>
                     
-                     <!-- 画像を表示 -->
+                    <div class="user-profile-item-age">
+                        <p class="user-profile-info">年齢<p>
+                        <p class='user-profile-age'>{{ $profile->age}}</p>
+                    </div>
                     
-                   　<img src="{{ $profile->image_name}}" class="user-item-image">
+                    <div class="user-profile-item-sport">
+                        <p class="user-profile-info">経験したスポーツ<p>
+                        <p class='user-profile-sport'>{{ $profile->sport }}</p>
+                    </div>
                     
+                    <div class="user-profile-item-profile">
+                        <p class="user-profile-info">プロフィール<p>
+                        <p class='user-profile-profile'>{{ $profile->profile }}</p>
+                    </div>
                     
-                    <p class='user-item-sex'>{{ $profile->sex }}</p>
-                    <p class='user-item-age'>{{ $profile->age}}</p>
-                    <p class='user-item-sport'>{{ $profile->sport }}</p>
-                    <p class='user-item-profile'>{{ $profile->profile }}</p>
-                    <p class='user-item-place'>{{ $profile->place }}</p>
-                    
+                    <div class="user-profile-item-place">
+                        <p class="user-profile-info">地域<p>
+                        <p class='user-profile-place'>{{ $profile->place }}</p>
+                    </div>
                       
-                    
-                    
+                    <div class="user-profile-item-edit">    
+                        <a href="/remakes" class="user-profile-edit">プロフィール編集</a>
+                    </div>    
                     @else
                         <p>プロフィールが登録されていません</p>
+                        <a href="/profiles">プロフィールを登録する</a>
                     @endif
                     
-                    
-                     <a href="/remakes" class="user-item-edit">プロフィール編集</a>
                 </div>
                 
-            </div>
+        <div>
+            <a href="/indexes">戻る</a>
             
-            
-        </header>
+            <a href="/actives">アクティビティを投稿する</a>
+        </div>
         
-        
-        <h1 class="active-title">自分の投稿</h1>
-        
-        <a href="/profiles">プロフィールを登録する</a>
-        
-        <a href="/indexes">戻る</a>
-        
-        <a href="/actives">アクティビティを投稿する</a>
+        <h1 class="user-main-title">活動の投稿</h1>
     
 
         <div class="user-main-contents">
-                @foreach ($actives as $active)
-            <div class='user-active-container'>
-                        
-                <div class="active-item-create">        
-                    <h3 class="active-create-title">投稿日</h3>
-                    <p class="active-create">{{ $active->created_at }}</p>
-                </div>    
-                
-                <div class="active-item-activity">
-                    <h3 class="active-subtitle">活動詳細</h3>
-                    <p class='active-activity'>{{ $active->activity }}</p>
-                </div>        
-                        
-                <div class="active-item-image">        
-                    <h3 class="active-subtitle">活動写真</h3>
-                     @if ($active->image_active)
-                         <!-- 画像を表示 -->
-                        
-                      <img src="{{ $active->image_active}}" class="active-image">
-                      
-                    @endif
-                </div>
-                    
-                    <div class="active-item-edit">
-                       <p> [<a href="/users/{{ $active->id }}/edit" class="active-edit" >投稿を修正する</a>]</p>
+            @foreach ($actives as $active)
+                <div class='user-active-container'>
+                            
+                    <div class="user-active-item-create">        
+                        <h3 class="user-create-subtitle">投稿日</h3>
+                        <p class="user-active-create">{{ $active->created_at }}</p>
                     </div>    
                     
-                    <div class="active-item-delete">
-                        <form action="/users/{{ $active->id }}" id="form_{{ $active->id }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" onclick="deletePost({{ $active->id }})"class="active-delete">この投稿を消去する</button> 
-                        </form>
+                    <div class="user-active-item-activity">
+                        <h3 class="user-active-subtitle">活動詳細</h3>
+                        <p class='user-active-activity'>{{ $active->activity }}</p>
+                    </div>        
+                            
+                    <div class="user-active-item-image">        
+                        <h3 class="user-active-subtitle">活動写真</h3>
+                         @if ($active->image_active)
+                             <!-- 画像を表示 -->
+                            
+                          <img src="{{ $active->image_active}}" class="user-active-image">
+                          
+                        @endif
                     </div>
-               
-            </div>  
-             @endforeach
+                        
+                        <div class="user-active-item-edit">
+                           <p><a href="/users/{{ $active->id }}/edit" class="user-active-edit">投稿の修正</a></p>
+                        </div>    
+                        
+                        <div class="user-active-item-delete">
+                            <form action="/users/{{ $active->id }}" id="form_{{ $active->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" onclick="deletePost({{ $active->id }})"class="active-delete">この投稿を消去する</button> 
+                            </form>
+                        </div>
+                </div> 
+            @endforeach
         </div>
         
         <div class="footer">
