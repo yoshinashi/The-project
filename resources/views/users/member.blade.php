@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body class="member-body">
         <div class="member-top-title">
@@ -56,13 +57,9 @@
         </div>
         
         
-        <div class="footer">
-            <a href="/members">一覧に戻る</a>
-        </div>
-        
-        
-         <div class="footer">
-            <a href="/indexes">ホーム画面に戻る</a>
+        <div class="back-div">
+            <a href="/members"class="back-member">[一覧に戻る]</a>
+            <a href="/indexes"class="back-index">[ホーム画面に戻る]</a>
         </div>
         
         <div class='paginate'>

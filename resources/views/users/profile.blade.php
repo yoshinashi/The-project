@@ -6,10 +6,13 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
          <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body class="profile-body">
+        
+        
         <div class="profile-top-contents">
-            <h1 class="profile-title">プロフィールを登録する</h1>
+            <h1 class="profile-title">プロフィール登録する</h1>
         </div>    
         
                 <form action="/keeps" enctype="multipart/form-data"  method="POST">
@@ -70,6 +73,7 @@
                         　　　　　　　　<option value="50-59歳">50-59歳</option>
                         　　　　　　　　<option value="60歳以上">60歳以上</option>
                         　　　　　　 </select>
+                        　　　　　　 <p class="title__error" style="color:red">{{ $errors->first('profile.age') }}</p>
                     　　　  　　</div>
 
                     　　　　　　
@@ -86,6 +90,7 @@
                     　　　　　　　　<option value="群馬">群馬</option>
                     　　　　　　　　<option value="その他の地域">その他の地域</option>
                                 </select>
+                                <p class="title__error" style="color:red">{{ $errors->first('profile.place') }}</p>
                             </div>    
                     
                             <div class="profile-item-keep">    
@@ -98,7 +103,7 @@
         
         
        <div class="footer">
-            <a href="/users">プロフィール登録をやめる</a>
+            <a href="/users" class="back-user">[プロフィール登録をやめる]</a>
         </div>
         
     </body>

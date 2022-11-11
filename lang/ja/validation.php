@@ -181,6 +181,8 @@ return [
         'image_name' => '画像（Jpeg,pngのみ）',
         'active.activity' => 'この項目',
         'image_active' => '画像（Jpeg,pngのみ）',
+        'profile.place' => '住んでいる地域',
+        'profile.age' => '年齢',
         ],
 
 ];

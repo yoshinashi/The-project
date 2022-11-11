@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body class="remake-body">
         <div class="remake-top-contents">
@@ -21,7 +22,7 @@
 
                                         <textarea name="profile[name]" placeholder="ニックネームも可（10文字以内）"class="remake-textarea"><?php
                                         echo $profile->name
-                                        ?>{{ old('profile.name') }}</textarea>
+                                        ?></textarea>
                                         <p class="title__error" style="color:red">{{ $errors->first('profile.name')}}</p>
                                     </div>
                                     
@@ -78,6 +79,7 @@
                                                     <option value="{{$age}}" {{$profile->age == $age ? "selected" :"" }}>{{$age}}</option>
                                                 @endforeach
                                             </select>
+                                            <p class="title__error" style="color:red">{{ $errors->first('profile.age') }}</p>
                                     </div>    
                                     　　　　　　
                                                 
@@ -91,6 +93,7 @@
                                                 <option value="{{$place}}" {{$profile->place == $place ? "selected" :"" }}>{{$place}}</option>
                                                     @endforeach
                                         </select>
+                                         <p class="title__error" style="color:red">{{ $errors->first('profile.place') }}</p>
                                     </div>    
 
                                     
@@ -103,7 +106,7 @@
         
         
        <div class="footer">
-            <a href="/users">プロフィール編集をやめる</a>
+            <a href="/users"class="back-user">[プロフィール編集をやめる]</a>
         </div>
         
         

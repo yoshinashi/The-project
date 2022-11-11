@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <script src="{{ asset('js/post.js') }}"></script>
         
     </head>
@@ -70,14 +71,14 @@
                         
                     <div class="host-item-edit">    
                         
-                        [<a href="/posts/{{ $post->id }}/edit">投稿を編集する</a>]
+                        <a href="/posts/{{ $post->id }}/edit"class="host-edit">[投稿を編集する]</a>
                     </div> 
                     
                     <div class="host-item-delete">
                         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                               @csrf
                                @method('DELETE')
-                               <button type="button" onclick="deletePost({{ $post->id }})">投稿を削除する</button> 
+                               <button type="button" onclick="deletePost({{ $post->id }})"class="host-delete">投稿を削除する</button> 
                                
                          </form>
                     </div>
