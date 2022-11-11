@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <script src="{{ asset('js/user.js') }}"></script>
     </head>
     <body class="account-body">
@@ -50,14 +51,14 @@
             
 
             <div class="account-item-chat">
-                <a href="/chats"class="account-chat">連絡する</a>
+                <a href="/chats"class="account-chat">[連絡する]</a>
             </div>
 
         </div>
        
         <div class="account-btn">
             <button type="button" name="active" id="active_button"class="account-button">個人活動の投稿</button>
-            <button type="button" name="post" id ="post_button"class="account-button">このアカウントが運営しているサークルの投稿</button>
+            <button type="button" name="post" id ="post_button"class="account-button">このアカウントが運営している<br>サークルの投稿</button>
             <button typd="button" name="all" id ="all_button"class="account-button">全投稿表示</button>
         </div>
         

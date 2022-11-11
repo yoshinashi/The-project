@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+         <meta name="viewport" content="width=device-width,initial-scale=1">
         <script src="{{ asset('js/user.js') }}"></script>
     </head>
     <body class="user-body">
@@ -45,7 +46,7 @@
                     </div>
                       
                     <div class="user-profile-item-edit">    
-                        <a href="/remakes" class="user-profile-edit">プロフィール編集</a>
+                        <a href="/remakes" class="user-profile-edit">[プロフィール編集]</a>
                     </div>    
                     @else
                         <p>プロフィールが登録されていません</p>
@@ -54,10 +55,10 @@
                     
                 </div>
                 
-        <div>
-            <a href="/indexes">戻る</a>
+        <div class="user-div">
+            <a href="/indexes"class="back-index">[ホームに戻る]</a>
             
-            <a href="/actives">アクティビティを投稿する</a>
+            <a href="/actives"class="jump-act">[アクティビティを投稿する]</a>
         </div>
         
         <h1 class="user-main-title">活動の投稿</h1>

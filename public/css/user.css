@@ -126,6 +126,23 @@
     width: 20%;
 }
 
+.back-div{
+        display:flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+    
+    
+    .back-member{
+        font-size:1.5rem;
+        color:white;
+    }
+    
+    .back-index{
+        font-size:1.5rem;
+        color:white;
+    }
+
 /*profile.blade.php*/
 
 .profile-body{
@@ -236,6 +253,10 @@
     color:white;
 }
 
+.back-user{
+    font-size:1.5rem;
+    color:white;
+}
 /*remake.blade.php*/
 
 .remake-body{
@@ -471,7 +492,7 @@
     "area1 area4"
     "area2 area2"
     "area3 area3"
-    "area10 area5";
+    "area5 area5";
     border-style:solid;
     border-width: 0.25rem;
     border-color: white;
@@ -496,6 +517,7 @@
 
 .user-active-item-delete{
     grid-area:area5;
+    margin-left: 60%;
 }
 
 .user-active-image{
@@ -536,6 +558,17 @@
 }
 
 .user-active-edit{
+    color:white;
+}
+
+.user-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top:1rem;
+}
+
+.jump-act{
+    font-size:1.5rem;
     color:white;
 }
 
@@ -631,11 +664,12 @@
 .name-p{
     margin:0;
     color:white;
+    font-size:0.75rem;
 }
 
 .second-name{
     margin:0 0 0 1rem;
-    font-size:1.25rem;
+    font-size:1rem;
     color:white;
 }
 
@@ -662,6 +696,10 @@
 .account-profile{
     margin:0.25rem 0;
     color:white;
+}
+
+.account-chat{
+font-size:1.25rem;    
 }
 
 .account-info{
@@ -909,6 +947,11 @@
     border-radius: 1rem;
 }
 
+.footer{
+    margin-left: 10%;
+    margin-top:12rem;
+}
+
 /*reactive.blade.php*/
 .reactive-body{
     background-color: black;
@@ -967,4 +1010,506 @@
     height: 7rem;
     width: 70%;
     border-radius: 1rem;
+}
+
+/*レスポンシブ*/
+
+@media screen and (max-width:600px) {
+    
+    /*profile.blade.php*/
+    .profile-body{
+        width: 100%;
+        margin:0;
+    }
+    
+    .profile-top-contents{
+        height: 10rem;
+        background-size: 50% 50%;
+        margin:0;
+        
+    }
+    
+    .profile-title{
+        font-size:2rem;
+        padding-top: 3.5rem;
+    }
+    
+    .profile-container{
+        display:flex;
+        flex-flow: column;
+    }
+    
+    .profile-subtitle{
+        font-size:1.5rem;
+    }
+    
+    .profile-textarea{
+        width:90%;
+        height: 6rem;
+    }
+    
+    .profile-input-image{
+        height: 3rem;
+        width: 90%;
+    }
+    
+    .profile-item-sport{
+        margin-right: 0;
+        margin-left: 10%;
+    }
+    
+    .profile-item-image{
+        margin-right: 0;
+        margin-left: 10%;
+    }
+    
+    .profile-item-place{
+        margin-right: 0;
+        margin-left: 10%;
+    }
+    
+    .profile-item-keep{
+        margin:2rem 0 0 10%;
+    }
+    
+    
+    /*remake.blade.php*/
+    .remake-body{
+        width: 100%;
+        margin:0;
+    }
+    
+    .remake-top-contents{
+        height: 10rem;
+        background-size: 50% 50%;
+        margin:0;
+        
+    }
+    
+    .remake-title{
+        font-size:2rem;
+        padding-top: 3.5rem;
+    }
+    
+    .remake-container{
+        display:flex;
+        flex-flow: column;
+    }
+    
+    .remake-subtitle{
+        font-size:1.5rem;
+    }
+    
+    .remake-textarea{
+        width:90%;
+        height: 6rem;
+    }
+    
+    .remake-input-image{
+        height: 3rem;
+        width: 90%;
+    }
+    
+    .remake-item-sport{
+        margin-right: 0;
+        margin-left: 10%;
+    }
+    
+    .remake-item-image{
+        margin-right: 0;
+        margin-left: 10%;
+    }
+    
+    .remake-item-place{
+        margin-right: 0;
+        margin-left: 10%;
+    }
+    
+    .remake-item-update{
+        margin:2rem 0 0 10%;
+    }
+    
+    /*active.blade.php*/
+    
+    .active-body{
+        width: 100%;
+        margin:0;
+    }
+    
+    .active-top-contents{
+        height: 10rem;
+        background-size: 50% 50%;
+        margin:0;
+        
+    }
+    
+    .active-title{
+        font-size:2rem;
+        padding-top: 3.5rem;
+    }
+    
+    .active-container{
+        display:flex;
+        flex-flow: column;
+    }
+    
+    .active-subtitle{
+        font-size:1.5rem;
+    }
+    
+    .active-textarea{
+        width:90%;
+        height: 6rem;
+    }
+    
+    .active-item-activity{
+        margin-left: 10%;
+    }
+    
+    .active-item-image{
+        margin-left:10%;
+    }
+    
+    .active-input-image{
+        height: 3rem;
+        width: 90%;
+    }
+    
+    .active-item-save{
+        margin-left: 10%;
+    }
+    
+   
+   /*reactive.blade.php*/
+   .reactive-body{
+        width: 100%;
+        margin:0;
+    }
+    
+    .reactive-top-contents{
+        height: 10rem;
+        background-size: 50% 50%;
+        margin:0;
+        
+    }
+    
+    .reactive-title{
+        font-size:2rem;
+        padding-top: 3.5rem;
+    }
+    
+    .reactive-container{
+        display:flex;
+        flex-flow: column;
+    }
+    
+    .reactive-subtitle{
+        font-size:1.5rem;
+    }
+    
+    .reactive-textarea{
+        width:90%;
+        height: 6rem;
+    }
+    
+    .reactive-item-activity{
+        margin-left: 10%;
+    }
+    
+    .reactive-item-image{
+        margin-left:10%;
+    }
+    
+    .reactive-input-image{
+        height: 3rem;
+        width: 90%;
+    }
+    
+    .reactive-item-repost{
+        margin-left: 10%;
+    }
+    
+    /*member.blade.php*/
+    
+    .member-body{
+        width:100%;
+        margin:0;
+    }
+    
+      .member-grid{
+        display:flex;
+        flex-flow: column;
+        gap:1.25rem;
+    }
+    
+    .member-top-title{
+        height: 10rem;
+        background-size: 50% 50%;
+        margin:0;
+        
+    }
+    
+    .member-title{
+        font-size:2rem;
+        margin:0;
+        padding-top:3.5rem;
+    }
+    
+    .member-hit-title{
+        font-size:1.25rem;
+        margin:0.5rem 0;
+    }
+    
+    .member-research{
+        width:60%;
+    }
+    
+    .member-container{
+        display:grid;
+        grid-template-columns:1fr 1fr ;
+        grid-template-rows:2.5rem 1.5rem 12rem 12rem;
+        grid-template-areas:
+        "areaA areaB"
+        "areaA areaC"
+        "areaD areaD"
+        "areaE areaE";
+        width:90%;
+        margin-left: 5%;
+    }
+    
+    .member-profile-image{
+        width :3rem; 
+        height:3rem;
+        
+    }
+    
+    .member-active-create{
+        font-size:0.75rem;
+        margin:0.5rem 0;
+    }
+    
+    .member-subtitle{
+        font-size:1rem;
+    }
+    
+    .member-image{
+        width: 75%;
+        height: 8.5rem;
+    }
+    
+    /*user.blade.php*/
+    
+    .user-profile-container{
+    display: grid;
+    grid-template-rows:4rem 3rem 6rem;
+    grid-template-columns:35% 65%;
+    grid-template-areas:
+        "areaA areaB"
+        "areaA areaC"
+        "areaD areaC";
+    }
+    
+    .user-profile-image{
+        height: 6.5rem;
+        width: 6.5rem;
+    }
+    
+    .user-profile-item-name{
+        grid-area:areaB;
+    }
+    
+    .user-profile-item-image{
+        grid-area:areaA;
+    }
+    
+    .user-profile-item-sex{
+        display: none;
+    }
+    
+    .user-profile-item-age{
+        display: none;    
+    }
+    
+    .user-profile-item-sport{
+        display: none;
+    }
+    
+    .user-profile-item-profile{
+        grid-area:areaC;
+    }
+    
+    .user-profile-item-place{
+        display: none;
+    }
+    
+    .user-profile-item-edit{
+        grid-area:areaD;
+    }
+    
+    .user-profile-name{
+        margin:0;
+        font-size:1.25rem;
+    }
+    
+    .user-profile-profile{
+        font-size:0.75rem;
+    }
+    
+    .user-profile-edit{
+        font-size:0.75rem;
+    }
+    
+    .back-index{
+        font-size:1rem;
+    }
+    
+    .jump-act{
+        font-size:1rem;
+    }
+    
+    .user-main-title{
+        font-size:1.5rem;
+    }
+    
+    .user-main-contents{
+        display:flex;
+        flex-flow: column;
+    }
+    
+    .user-active-container{
+    
+        grid-template-rows:4rem 13rem 12rem 3rem;
+    }
+    
+    .user-create-subtitle{
+        font-size:1rem;
+    }
+    
+    .user-active-create{
+        margin:0;  
+    }
+    
+    .user-active-subtitle{
+        font-size:1rem;
+    }
+    
+    .user-active-image{
+        width:75%;
+        height: 10rem;
+    }
+    
+    .user-active-activity{
+        margin:0.5rem 0 0 5%;
+        font-size:0.8rem;
+        
+    }
+    
+    .user-active-item-delete{
+        margin-left: 55%;
+    }
+    
+    /*account.blade.php*/
+    
+    .account-top-container{
+        display: grid;
+        grid-template-rows:8rem 3rem 4rem 4rem 4rem 4rem 4rem;
+        grid-template-columns:35% 65%;
+        grid-template-areas:
+        "areaA areaG"
+        "areaB areaG"
+        "areaC areaG"
+        "areaD areaH"
+        "areaE areaH"
+        "areaF areaH"
+        "areaI areaH";
+        border-bottom-style: dotted;
+        border-bottom-color: white;
+        border-bottom-width: 0.25rem;
+    }
+    
+    .account-image{
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .account-name{
+        font-size:1rem;
+    }
+    
+    .account-item-image{
+        grid-area:areaA;
+    }
+    
+    .account-item-name{
+        grid-area:areaB;
+    }
+    
+    .account-item-profile-name{
+        grid-area:areaC;
+        display: block;
+    }
+    
+    .account-item-sex{
+        grid-area:areaD;
+    }
+    .account-item-age{
+        grid-area:areaE;
+    }
+    
+    .account-item-place{
+        grid-area:areaF;
+    }
+    
+    .account-item-sport{
+        grid-area:areaG;
+    }
+    
+    .account-item-profile{
+        grid-area:areaH;
+    }
+    
+    .account-item-chat{
+        grid-area:areaI;
+    }
+    
+    .second-name{
+        font-size:0.75rem;
+    }
+    
+    .account-sport{
+        font-size:0.75rem;
+    }
+    
+    .account-profile{
+        font-size:0.75rem;
+    }
+    
+    .account-btn{
+        margin-top: 3rem;
+        display:flex;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    .account-button{
+            font-size:0.7rem;
+            margin:1.5px;
+    }
+    
+    .account-chat{
+        font-size:1rem;
+    }
+        
+        
+
+    
+    
+    
+    #active{
+        display: none;
+    }
+    
+    #post{
+        display: none;
+    }
 }

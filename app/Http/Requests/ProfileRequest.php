@@ -28,6 +28,8 @@ class ProfileRequest extends FormRequest
             'image_name' => 'required|mimes:jpeg,png',
             'profile.sport' => 'required|string|max:150',
             'profile.profile' => 'required|string|max:150',
+            'profile.age' => 'required',
+            'profile.place' => 'required'
         ];
     }
 }

@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <script src="{{ asset('js/post.js') }}"></script>
     </head>
     <body class="edit-body">
@@ -19,7 +20,7 @@
             <div class="edit-container">
                
                      <div class="edit-item-clubname">
-                            <h2 class="edit-subtitle">サークル名</h2>
+                            <h2 class="edit-subtitle">サークル名<br>（4つまで選択可能）</h2>
                             
                             <textarea name="post[clubname]"  placeholder="活動詳細の記入（14文字まで）"class="edit-textarea"><?php
                                 echo $post->clubname
@@ -29,7 +30,7 @@
             
             
                     <div class="edit-item-sport">
-                        <h2 class="edit-subtitle">行うスポーツ</h2>
+                        <h2 class="edit-subtitle">行うスポーツ<br>（4つまで選択可能）</h2>
             
                            @foreach($sports as $sport)
             
