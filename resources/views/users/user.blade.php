@@ -48,9 +48,16 @@
                     <div class="user-profile-item-edit">    
                         <a href="/remakes" class="user-profile-edit">[プロフィール編集]</a>
                     </div>    
+                    
+                    
+                    <div class="user-profile-item-active">
+                        <a href="/actives"class="jump-act">[アクティビティを投稿する]</a>
+                    </div>    
                     @else
-                        <p>プロフィールが登録されていません</p>
-                        <a href="/profiles">プロフィールを登録する</a>
+                    <div class="profile-attention-box">
+                        <p class="profile-attention">プロフィール登録されていません</p>
+                        <a href="/profiles"class="profile-on">[プロフィールを登録する]</a>
+                    </div>    
                     @endif
                     
                 </div>
@@ -58,7 +65,7 @@
         <div class="user-div">
             <a href="/indexes"class="back-index">[ホームに戻る]</a>
             
-            <a href="/actives"class="jump-act">[アクティビティを投稿する]</a>
+            
         </div>
         
         <h1 class="user-main-title">活動の投稿</h1>

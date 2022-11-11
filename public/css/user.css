@@ -369,16 +369,32 @@
     width:90%;
     margin:0 5%;
 }
+
+.profile-attention{
+    font-size:0.725rem;
+    color:white;
+}
+
+.profile-on{
+    font-size:0.75rem;
+    color:white;
+}
+
+.profile-attention-box{
+    display:block;
+    
+}
 /*プロフィール部分*/
 .user-profile-container{
     display: grid;
-    grid-template-rows:4rem 4rem 4rem 4rem;
+    grid-template-rows:4rem 4rem 4rem 4rem 3rem;
     grid-template-columns:1fr 1fr 1fr 60%;
     grid-template-areas:
         "areaA areaB areaB areaG"
         "areaA areaC areaE areaG"
         "areaZ areaD areaF areaH"
-        "areaZ areaX areaX areaH";
+        "areaZ areaX areaX areaH"
+        "areaP areap areaQ areaQ";
         border-bottom-style:dotted;
         border-width: 0.25rem;
         border-color: white;
@@ -426,6 +442,11 @@
 .user-profile-item-edit{
     grid-area:areaZ;
     margin-top:1rem;
+}
+
+.user-profile-item-active{
+    grid-area:areaQ;
+    margin-left: 60%;
 }
 
 .user-profile-edit{
@@ -1301,12 +1322,13 @@ font-size:1.25rem;
     
     .user-profile-container{
     display: grid;
-    grid-template-rows:4rem 3rem 6rem;
+    grid-template-rows:4rem 3rem 6rem 3rem;
     grid-template-columns:35% 65%;
     grid-template-areas:
         "areaA areaB"
         "areaA areaC"
-        "areaD areaC";
+        "areaD areaC"
+        "areaE areaF";
     }
     
     .user-profile-image{
@@ -1344,6 +1366,11 @@ font-size:1.25rem;
     
     .user-profile-item-edit{
         grid-area:areaD;
+    }
+    
+    .user-profile-item-active{
+        grid-area:areaF; 
+        margin-left: 10%;
     }
     
     .user-profile-name{
