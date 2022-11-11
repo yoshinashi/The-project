@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <script src="{{ asset('js/post.js') }}"></script>
     </head>
     <body class="create-body">
@@ -24,7 +25,7 @@
                 　　</div>  
     
                     <div class="create-item-sport">
-                        <h2 class="create-subtitle">行うスポーツ（4つまで選択可能）</h2>
+                        <h2 class="create-subtitle res-sub">行うスポーツ<br>（4つまで選択可能）</h2>
                         
                            @foreach($sports as $sport)
             

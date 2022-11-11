@@ -6,6 +6,7 @@
         <!-- Fonts -->
         <link href="https:fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/user.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body class="active-body">
         <div class="active-top-contents">
@@ -31,16 +32,15 @@
                 <div class="active-item-save">    
                     <input type="submit" value="save"/>
                 </div>    
-            </div>        
+            </div>    
         </form>
         
         
-       <div class="footer">
-            <a href="/users">投稿をやめる</a>
-        </div>
-        
-        
-        
-        
+         
+            <div class="footer">
+                <a href="/users" class="back-user">[投稿をやめる]</a>
+            </div>
+    
+            
     </body>
 </html>
