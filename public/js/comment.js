@@ -1,10 +1,14 @@
 $(function() {
-    get_data();
+    splits=location.pathname.split('/');
+   
+    const user=splits[2];
+    console.log(user);
+    get_data(user);
 });
 
-function get_data() {
+function get_data(user) {
     $.ajax({
-        url: "result/ajax/",
+        url: `/result/ajax/${user}`,
         dataType: "json",
         success: data => {
             $("#comment-data")

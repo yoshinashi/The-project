@@ -17,6 +17,7 @@ class Profile extends Model
     'age',
     'sport',
     'place',
+    'user_id'
 ];
 
 public function users(){
