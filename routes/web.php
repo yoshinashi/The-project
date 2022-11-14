@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -54,9 +55,9 @@ Route::put('/users/{active}', [ProfileController::class, 'repost']);
 Route::delete('/users/{active}', [ProfileController::class,'delete']);
 
 
-Route::get('/chats/{user}', [HomeController::class, 'chat'])->name('chat'); 
+Route::get('/chats', [HomeController::class, 'chat'])->name('chat'); 
 Route::post('/add', [HomeController::class,'add'])->name('add');
-Route::get('/result/ajax/{user}', [HomeController::class,'getData']);
+Route::get('/result/ajax', [HomeController::class,'getData']);
 
 Route::get('/dashboard',function () {
     return view('dashboard');

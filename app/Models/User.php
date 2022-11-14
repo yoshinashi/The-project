@@ -57,9 +57,5 @@ public function posts()
     return $this->hasMany(Post::class);  
 }
 
-public function comments(){
-    //生徒は多数の科目を履修。
-    return $this->hasMany(Comment::class);
-}
 
 }

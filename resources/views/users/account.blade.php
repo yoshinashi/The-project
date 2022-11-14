@@ -51,7 +51,7 @@
             
 
             <div class="account-item-chat">
-                <a href="/chats/{{$profile->user_id}}"class="account-chat">[連絡する]</a>
+                <a href="/chats"class="account-chat">[連絡する]</a>
             </div>
 
         </div>

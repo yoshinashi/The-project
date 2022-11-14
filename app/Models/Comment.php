@@ -8,15 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $fillable = [
-        'login_id', 'send_id','receive_id', 'comment',
+        'login_id','name', 'comment','recieve_id',
     ];
 
     protected $guarded = [
         'create_at', 'update_at'
     ];
     
-    public function user()
-{
-    return $this->belongsTo(User::class);
-}
 }
