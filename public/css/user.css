@@ -1322,7 +1322,7 @@ font-size:1.25rem;
     
     .user-profile-container{
     display: grid;
-    grid-template-rows:4rem 3rem 6rem 3rem;
+    grid-template-rows:4rem 3rem 10rem 3rem;
     grid-template-columns:35% 65%;
     grid-template-areas:
         "areaA areaB"
@@ -1370,7 +1370,7 @@ font-size:1.25rem;
     
     .user-profile-item-active{
         grid-area:areaF; 
-        margin-left: 10%;
+        margin-left:0;
     }
     
     .user-profile-name{

@@ -12,7 +12,7 @@
     <body class="account-body">
         <div class="account-top-container"> 
             <div class="account-item-name">
-                <h1 class="account-name">{{ $active->user->name }}</h1>
+                <h1 class="account-name">{{ $account->name}}</h1>
             </div>   
             
             <div class="account-item-profile-name">

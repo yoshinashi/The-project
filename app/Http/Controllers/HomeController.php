@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,27 +24,39 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function chat()
+    public function chat(User $user)
 {
-    $comments = Comment::get();
-    return view('chat', ['comments' => $comments]);
+    
+    //dd($user->name);
+    $comments = Comment::where(
+        'send_id','=',auth()->id())->where('receive_id','=',$user->id
+        );
+        //->orWhere('send_id','=','user_id'
+        //)->where('receive_id','=','auth()->id');
+    return view('chat', ['comments' => $comments->get(),'user' => $user]);
 }
 
     public function add(Request $request)
 {
-    $user = Auth::user();
+    $user = $request->user;
+    
     $comment = $request->input('comment');
     Comment::create([
-        'login_id' => $user->id,
-        'name' => $user->name,
+        'login_id' => auth()->id(),
+        'send_id' => auth()->id(),
+        'receive_id' => $user,
         'comment' => $comment
     ]);
-    return redirect()->route('chat');
+    return redirect('/chats/'.$user);
 }
     
-    public function getData()
-{
-    $comments = Comment::orderBy('created_at', 'desc')->get();
+    public function getData(User $user)
+{   
+    //$comments = Comment::orderBy('created_at', 'desc')->get();
+    $comments = Comment::where(
+        'send_id','=',auth()->id())->where('receive_id','=',$user->id
+        )->get();
+        //dd($comments);
     $json = ["comments" => $comments];
     return response()->json($json);
 }

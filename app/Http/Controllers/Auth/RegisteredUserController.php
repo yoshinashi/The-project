@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Socialite;
+
 
 class RegisteredUserController extends Controller
 {
@@ -50,5 +52,38 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+    
+    public function redirectToGoogle()
+    {
+        //dd(Socialite::driver('google'));
+        // Google へのリダイレクト
+        return Socialite::driver('google')->redirect();
+    }
+    
+     public function handleGoogleCallback()
+    {
+        // Google 認証後の処理
+        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
+         $gUser = Socialite::driver('google')->stateless()->user();
+        // email が合致するユーザーを取得
+        $user = User::where('email', $gUser->email)->first();
+        // 見つからなければ新しくユーザーを作成
+        if ($user == null) {
+            $user = $this->createUserByGoogle($gUser);
+        }
+        // ログイン処理
+        \Auth::login($user, true);
+        return redirect('/indexes');
+    }
+    
+     public function createUserByGoogle($gUser)
+    {
+        $user = User::create([
+            'name'     => $gUser->name,
+            'email'    => $gUser->email,
+            'password' => \Hash::make(uniqid()),
+        ]);
+        return $user;
     }
 }
