@@ -5,6 +5,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\Auth\RegisteredUserController;
+
 //外部にあるPostControllerクラスをインポート。
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,9 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login/google', [RegisteredUserController::class, 'redirectToGoogle']);
+Route::get('/login/google/callback', [RegisteredUserController::class, 'handleGoogleCallback']);
+
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
 

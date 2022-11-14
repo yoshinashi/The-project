@@ -14,8 +14,8 @@
         
         <header>
             <div class="host-header">    
-                <a href="/creates" class="host-create-link">サークルを作る・活動を投稿する</a>
-                <a href="/members" class="host-member-link">メンバーを探す</a>
+                <a href="/creates" class="host-create-link">[サークルを作る・活動を投稿する]</a>
+                <a href="/members" class="host-member-link">[メンバーを探す]</a>
             </div>
         </header>
         
