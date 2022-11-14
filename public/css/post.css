@@ -124,7 +124,7 @@
 }
 
 .index-title-place{
-    font-size:1.5rem;
+    font-size:1.35rem;
     margin:0px 0px;
     border-bottom-style:solid;
     border-bottom-width: 0.25rem;
@@ -1272,7 +1272,10 @@ aside{
         display: inline;
     }
     
- 
+
+    
+    
+
 }
 
 /*タブレット・小型PC*/

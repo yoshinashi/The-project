@@ -52,6 +52,8 @@ class HomeController extends Controller
     
     public function getData(User $user)
 {   
+
+
     //$comments = Comment::orderBy('created_at', 'desc')->get();
     $comments = Comment::where(
         'send_id','=',auth()->id())->where('receive_id','=',$user->id

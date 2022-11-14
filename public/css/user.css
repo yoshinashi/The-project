@@ -1519,24 +1519,40 @@ font-size:1.25rem;
     }
 
     .account-button{
-            font-size:0.7rem;
-            margin:1.5px;
+        font-size:0.7rem;
+        margin:1.5px;
     }
     
     .account-chat{
         font-size:1rem;
     }
         
-        
-
-    
-    
-    
-    #active{
-        display: none;
+    .account-grid{
+        display:flex;
+        flex-flow: column;
     }
     
-    #post{
-        display: none;
+   .account-active-title{
+       display: none;
+   }
+   
+   .account-post-title{
+       display: none;
+   }
+   
+   .account-post-image{
+       height: 10rem;
+   }
+   
+    .account-active-container{
+        display:flex;
+        flex-flow: column;
     }
+    
+    .account-active-container{
+        display:flex;
+        flex-flow: column;
+    }
+    
+    
 }

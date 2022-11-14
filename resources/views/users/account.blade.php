@@ -51,7 +51,7 @@
             
 
             <div class="account-item-chat">
-                <a href="/chats"class="account-chat">[連絡する]</a>
+                <a href="/chats/{{$profile->user_id}}"class="account-chat">[連絡する]</a>
             </div>
 
         </div>
@@ -64,7 +64,9 @@
         
     <div class="account-grid">  
             <div id='active'>
+                
                 <h2 class="account-active-title">個人活動</h2> 
+                
                 @foreach ($actives as $active)
                     <div class="account-active-container">
                        
