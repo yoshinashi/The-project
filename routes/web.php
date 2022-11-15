@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -5,7 +6,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+
+
 use App\Http\Controllers\Auth\RegisteredUserController;
+
+
 //外部にあるPostControllerクラスをインポート。
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +57,9 @@ Route::put('/users/{active}', [ProfileController::class, 'repost']);
 Route::delete('/users/{active}', [ProfileController::class,'delete']);
 
 
-Route::get('/chats', [HomeController::class, 'chat'])->name('chat'); 
+Route::get('/chats/{user}', [HomeController::class, 'chat'])->name('chat'); 
 Route::post('/add', [HomeController::class,'add'])->name('add');
-Route::get('/result/ajax', [HomeController::class,'getData']);
+Route::get('/result/ajax/{user}', [HomeController::class,'getData']);
 
 Route::get('/dashboard',function () {
     return view('dashboard');

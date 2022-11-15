@@ -12,7 +12,7 @@
         
         
         <div class="profile-top-contents">
-            <h1 class="profile-title">プロフィール登録する</h1>
+            <h1 class="profile-title">プロフィール<br>登録する</h1>
         </div>    
         
                 <form action="/keeps" enctype="multipart/form-data"  method="POST">
