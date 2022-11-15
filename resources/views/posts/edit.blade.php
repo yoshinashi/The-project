@@ -20,7 +20,7 @@
             <div class="edit-container">
                
                      <div class="edit-item-clubname">
-                            <h2 class="edit-subtitle">サークル名<br>（4つまで選択可能）</h2>
+                            <h2 class="edit-subtitle">サークル名</h2>
                             
                             <textarea name="post[clubname]"  placeholder="活動詳細の記入（14文字まで）"class="edit-textarea"><?php
                                 echo $post->clubname
@@ -30,7 +30,7 @@
             
             
                     <div class="edit-item-sport">
-                        <h2 class="edit-subtitle">行うスポーツ<br>（4つまで選択可能）</h2>
+                        <h2 class="edit-subtitle res-sub">行うスポーツ<br>（4つまで選択可能）</h2>
             
                            @foreach($sports as $sport)
             
@@ -73,7 +73,7 @@
                       </div>   
           
                         <div class="edit-item-image">
-                          <h2 class="edit-subtitle">投稿画像の編集</h2>
+                          <h2 class="edit-subtitle ">投稿画像の編集</h2>
                           <input type="file" name="image" class="edit-input-image">
                           <p class="title__error" style="color:red">{{ $errors->first('image') }}</p>
                         </div>
@@ -81,7 +81,7 @@
 
                         <div class="edit-item-insta">
     
-                            <h2 class="edit-subtitle">インスタのアカウントID</h2>
+                            <h2 class="edit-subtitle res-sub">インスタのアカウントID</h2>
                             <textarea name="post[insta]" placeholder="IDの記入"class="edit-textarea"><?php
                                 echo $post->insta
                                 ?></textarea>

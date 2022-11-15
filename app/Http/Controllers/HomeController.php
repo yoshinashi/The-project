@@ -52,17 +52,26 @@ class HomeController extends Controller
     
     public function getData(User $user)
 {   
-
-
+    
     //$comments = Comment::orderBy('created_at', 'desc')->get();
-    $comments = Comment::where(
-        'send_id','=',auth()->id())->where('receive_id','=',$user->id
-        )->get();
+    // $comments = Comment::where(
+    //     'send_id','=',auth()->id())->where('receive_id','=',$user->id
+    //     )->orWhere([["send_id", $user->id], ["recieve_id", auth()->id()]])
+    //         ->orderBy("created_at", "asc")->get();
+    //     //dd($comments);
+    
+    
+    //  $comments = Comment::where(
+    //     'send_id','=',auth()->id())->where('receive_id','=',$user->id
+    //     )->get();
         //dd($comments);
+        
+        $comments = Comment::where([["send_id", auth()->id()], ["receive_id", $user->id]])
+            ->orWhere([["send_id", $user->id], ["receive_id", auth()->id()]])
+            ->get();
+            //logger($comments);
     $json = ["comments" => $comments];
     return response()->json($json);
 }
     
 }
-
-
