@@ -33,6 +33,7 @@
                     <textarea class="form-control" id="comment" name="comment" placeholder="(shift + Enter)でメッセージの送信"
                         aria-label="With textarea"
                         onkeydown="if(event.shiftKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+                        <input  id="user" type="hidden" value="{{$user->id}}" name="user"></input>
                     <button type="submit" id="submit" class="btn btn-outline-primary comment-btn">Submit</button>
                 </div>
             </div>

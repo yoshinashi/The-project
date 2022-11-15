@@ -81,7 +81,7 @@
 
                              
                             <div class="create-item-insta">
-                                <h2 class="create-subtitle">インスタのアカウントID</h2>
+                                <h2 class="create-subtitle res-sub">インスタのアカウントID</h2>
                                 <textarea name="post[insta]" placeholder="IDの記入"class="create-textarea"></textarea>
                         　　</div>   
 

@@ -1423,6 +1423,132 @@ aside{
     .host-condition{
         font-size:0.85rem;
     }
+    
+    /*create.blade.php*/
+    
+    .create-title{
+    margin-top:2rem;
+    margin-bottom: 1rem;
+    font-size:4rem;
+    padding-top: 6rem;
+    
+    }
+    
+    .create-top-contents{
+    height: 300px;
+    background-size: 33% 50%;
+    }
+    
+    .create-item-clubname{
+        margin-left: 0;
+    }
+    
+    .create-item-condition{
+        margin-right: 0;    
+    }
+    
+    .create-item-activity{
+        margin-left: 0;
+    }
+    
+    .create-item-insta{
+        margin-right: 0;
+        margin-top: 0.85rem;
+    }
+    
+    .create-item-image{
+        margin-right: 0;
+    }
+    
+    .create-item-input{
+        margin-right: 0;
+    }
+    
+    .create-item-sport{
+        margin-left: 0;    
+    }
+    
+    .create-item-place{
+        margin-left: 0;
+    }
+    
+    .create-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 20rem 10rem;
+    grid-template-columns:50% 50%;
+    }
+    
+    br{
+        display: inline;
+    }
+    
+    .res-sub{
+        font-size:1.5rem;    
+    }
+    
+    /*edot.blade.php*/
+    
+    .edit-title{
+    margin-top:2rem;
+    margin-bottom: 1rem;
+    font-size:4rem;
+    padding-top: 6rem;
+    
+    }
+    
+    .edit-top-contents{
+    height: 300px;
+    background-size: 33% 50%;
+    }
+    
+    .edit-item-clubname{
+        margin-left: 0;
+    }
+    
+    .edit-item-condition{
+        margin-right: 0;    
+    }
+    
+    .edit-item-activity{
+        margin-left: 0;
+    }
+    
+    .edit-item-insta{
+        margin-right: 0;
+        margin-top: 0.85rem;
+    }
+    
+    .edit-item-image{
+        margin-right: 0;
+    }
+    
+    .edit-item-input{
+        margin-right: 0;
+    }
+    
+    .edit-item-sport{
+        margin-left: 0;    
+    }
+    
+    .edit-item-place{
+        margin-left: 0;
+    }
+    
+    .edit-container{
+    display: grid;
+    grid-template-rows:15rem 15rem 20rem 10rem;
+    grid-template-columns:50% 50%;
+    }
+    
+    br{
+        display: inline;
+    }
+    
+    .res-sub{
+        font-size:1.5rem;    
+    }
+    
+    
 
 }
 
