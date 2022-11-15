@@ -55,8 +55,10 @@ class HomeController extends Controller
 
 
 
+
     //$comments = Comment::orderBy('created_at', 'desc')->get();
    
+
     
     //$comments = Comment::orderBy('created_at', 'desc')->get();
     // $comments = Comment::where(

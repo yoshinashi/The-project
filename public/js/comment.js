@@ -1,6 +1,10 @@
 $(function() {
     splits=location.pathname.split('/');
 
+
+    console.log(splits)
+
+
     console.log(splits)
 
    
