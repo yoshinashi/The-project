@@ -38,7 +38,7 @@ class ProfileController extends Controller
     
     public function user(Profile $profile, Active $active)
     {
-       $Auth_user=Auth::id();
+       //$Auth_user=Auth::id();
        $profile = Profile::find($Auth_user);
        $active_desc = $active->where('user_id', Auth::id())>orderBy('updated_at', 'DESC')->get();
        //$active->where('user_id', Auth::id())>orderBy('updated_at', 'DESC')->get();

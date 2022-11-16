@@ -33,7 +33,7 @@ class UserController extends Controller
         //$profile = Profile::where('user_id',\Auth::user()->id)->first();
         
         $Auth_user=Auth::id();
-        $profile = Profile::find($Auth_user);
+        $profile = Auth::user()->profiles;
         $active_desc = Active::where('user_id', Auth::id())->orderBy('updated_at', 'DESC')->get();
   //idが、リクエストされた$userのidと一致するuserを取得
         //$posts = Post::where('user_id', User::id())->get()->orderBy('created_at', 'desc'); //$userによる投稿を取得
