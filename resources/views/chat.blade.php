@@ -18,7 +18,7 @@
         <div class="chat-container row justify-content-center">
             <div class="chat-area">
                 <div class="card">
-                    <div class="card-header">連絡を取る</div>
+                    <div class="card-header">{{ $user->name}}と連絡を取る</div>
                     <div class="card-body chat-card">
                          <div id="comment-data"></div>
                     </div>
