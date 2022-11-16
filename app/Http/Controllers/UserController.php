@@ -32,8 +32,8 @@ class UserController extends Controller
         $actives = Active::where('user_id', \Auth::user()->id)->get();
         //$profile = Profile::where('user_id',\Auth::user()->id)->first();
         
-        $Auth_user=Auth::id();
-        $profile = Auth::user()->profiles;
+        //$Auth_user=Auth::id();
+        $profile =Auth::user()->profiles;
         $active_desc = Active::where('user_id', Auth::id())->orderBy('updated_at', 'DESC')->get();
   //idが、リクエストされた$userのidと一致するuserを取得
         //$posts = Post::where('user_id', User::id())->get()->orderBy('created_at', 'desc'); //$userによる投稿を取得
@@ -49,10 +49,11 @@ class UserController extends Controller
         $posts = Post::where('user_id',$user->id)->get();
         $actives = Active::where('user_id',$user->id)->get();
         
-        $post_desc = Post::where('user_id', Auth::id())->orderBy('updated_at', 'DESC')->get();
-        $active_desc = Active::where('user_id', Auth::id())->orderBy('updated_at', 'DESC')->get();
+        $post_desc = Post::where('user_id', $user->id)->orderBy('updated_at', 'DESC')->get();
+        $active_desc = Active::where('user_id', $user->id)->orderBy('updated_at', 'DESC')->get();
         
         $profile = $user->profiles;
+        //dd($user);
         
         return view('users/account')->with(['actives' => $active_desc,'posts' => $post_desc,'profile' => $profile,'account' => $user]);
         
