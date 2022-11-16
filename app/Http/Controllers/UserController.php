@@ -52,7 +52,7 @@ class UserController extends Controller
         $post_desc = Post::where('user_id', Auth::id())->orderBy('updated_at', 'DESC')->get();
         $active_desc = Active::where('user_id', Auth::id())->orderBy('updated_at', 'DESC')->get();
         
-        $profile = Profile::find($user->id);
+        $profile = $user->profiles;
         
         return view('users/account')->with(['actives' => $active_desc,'posts' => $post_desc,'profile' => $profile,'account' => $user]);
         
