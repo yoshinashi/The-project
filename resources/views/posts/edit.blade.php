@@ -82,7 +82,7 @@
                         <div class="edit-item-insta">
     
                             <h2 class="edit-subtitle res-sub">インスタのアカウントID</h2>
-                            <textarea name="post[insta]" placeholder="IDの記入"class="edit-textarea"><?php
+                            <textarea name="post[insta]" placeholder="IDの記入（空欄可能）"class="edit-textarea"><?php
                                 echo $post->insta
                                 ?></textarea>
                     　　</div>   
