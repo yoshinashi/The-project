@@ -88,7 +88,7 @@
 
                   
                             <div class="create-item-input">
-                                <input type="submit" value="サークルを作る" onclick="return isCheck()"/>
+                                <input type="submit" value="サークルを作る" onclick="return isCheck()" class="create-input"/>
                            </div>
                 </div>
         </form>
@@ -98,7 +98,7 @@
         
         
         <div class="footer">
-            <a href="/hosts">戻る</a>
+            <a href="/hosts" class="create-return">[戻る]</a>
         </div>
         
         

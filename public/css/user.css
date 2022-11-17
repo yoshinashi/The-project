@@ -212,13 +212,13 @@
 }
 
 .profile-item-sex{
-    grid-area:areaC;
+    grid-area:areaD;
     margin-left: 10%;
 }
 
 
 .profile-item-age{
-    grid-area:areaD;
+    grid-area:areaC;
     margin-left: 10%;
 }
 
@@ -261,6 +261,22 @@
 br{
     display:none;
 }
+
+.profile-input{
+    width:10rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}
+
+.profile-item-keep{
+    margin-right:0;    
+}
+
+.back-user{
+    margin-left: 0;
+}
+
+
 /*remake.blade.php*/
 
 .remake-body{
@@ -364,7 +380,11 @@ br{
     border-radius: 1rem;
 }
 
-
+.remake-input{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+}
 
 /*user.blade.php*/
 
@@ -511,7 +531,7 @@ br{
 
 .user-active-container{
     display: grid;
-    grid-template-columns:75% 25%;
+    grid-template-columns:70% 30%;
     grid-template-rows:5rem 17.5rem 15rem 5rem;
     grid-template-areas:
     "area1 area4"
@@ -550,6 +570,7 @@ br{
     height: 14rem;
     margin-left: 5%;
     border-radius:1.5rem;
+    margin-top: 0.5rem;
 }
 
 .user-active-subtitle{
@@ -595,6 +616,15 @@ br{
 .jump-act{
     font-size:1.5rem;
     color:white;
+}
+
+.user-return{
+    color:white;
+    font-size:1.5rem;
+}
+
+.active-delete{
+    border-radius: 1.5rem;
 }
 
 /*account.blade.php*/
@@ -779,7 +809,7 @@ font-size:1.25rem;
     width:90%;
     height:270px;
     margin-left: 5%;
-    
+    border-radius:1.5rem;
 }
 
 .account-active-subtitle{
@@ -860,6 +890,7 @@ font-size:1.25rem;
     width:85%;
     height: 225px;
     margin-left: 5%;
+    border-radius: 1.5rem;
 }
 
 .account-post-item-sport{
@@ -968,20 +999,31 @@ font-size:1.25rem;
 .active-input-image{
     background-color: white;
     height: 7rem;
-    width: 70%;
+    width: 90%;
     border-radius: 1rem;
 }
 
 .footer{
-    margin-left: 10%;
-    margin-top:12rem;
+    margin-left: 70%;
+}
+
+.active-input{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    margin-top:4rem;
+}
+
+.account-return{
+    font-size:1.5rem;
+    color:white;
 }
 
 /*reactive.blade.php*/
 .reactive-body{
     background-color: black;
     width:90%;
-    margin:0 5%;
+    margin:5%;
 }
 
 .reactive-top-contents{
@@ -1037,6 +1079,12 @@ font-size:1.25rem;
     border-radius: 1rem;
 }
 
+.reactive-input{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    margin-top:4rem;
+}
 /*レスポンシブ*/
 
 @media screen and (max-width:600px) {
@@ -1050,8 +1098,8 @@ font-size:1.25rem;
     .profile-top-contents{
         height: 10rem;
         background-size: 50% 50%;
-        margin:0;
-        
+        margin-left: 5%;
+        width: 90%;
     }
     
     .profile-title{
@@ -1097,6 +1145,10 @@ font-size:1.25rem;
         margin:2rem 0 0 10%;
     }
     
+    .profile-footer{
+        margin-top: 3rem;
+    }
+    
     
     /*remake.blade.php*/
     .remake-body{
@@ -1107,8 +1159,8 @@ font-size:1.25rem;
     .remake-top-contents{
         height: 10rem;
         background-size: 50% 50%;
-        margin:0;
-        
+        margin-left: 5%;
+        width: 90%;
     }
     
     .remake-title{
@@ -1154,6 +1206,10 @@ font-size:1.25rem;
         margin:2rem 0 0 10%;
     }
     
+    .remake-footer{
+        margin-top: 3rem;
+    }
+    
     /*active.blade.php*/
     
     .active-body{
@@ -1164,7 +1220,8 @@ font-size:1.25rem;
     .active-top-contents{
         height: 10rem;
         background-size: 50% 50%;
-        margin:0;
+        margin-left: 5%;
+        width: 90%;
         
     }
     
@@ -1204,6 +1261,11 @@ font-size:1.25rem;
         margin-left: 10%;
     }
     
+    .footer{
+        margin-top: 12rem;
+        margin-left: 0;
+    }
+    
    
    /*reactive.blade.php*/
    .reactive-body{
@@ -1214,8 +1276,9 @@ font-size:1.25rem;
     .reactive-top-contents{
         height: 10rem;
         background-size: 50% 50%;
-        margin:0;
-        
+        margin-left: 5%;
+        width: 90%;
+        margin-top: 1.5rem;
     }
     
     .reactive-title{
@@ -1256,10 +1319,6 @@ font-size:1.25rem;
     
     /*member.blade.php*/
     
-    .member-body{
-        width:100%;
-        margin:0;
-    }
     
       .member-grid{
         display:flex;
@@ -1270,8 +1329,8 @@ font-size:1.25rem;
     .member-top-title{
         height: 10rem;
         background-size: 50% 50%;
-        margin:0;
-        
+        margin-left: 5%;
+        width: 90%;
     }
     
     .member-title{
@@ -1298,8 +1357,8 @@ font-size:1.25rem;
         "areaA areaC"
         "areaD areaD"
         "areaE areaE";
-        width:90%;
-        margin-left: 5%;
+        width:80%;
+        margin-left: 10%;
     }
     
     .member-profile-image{
@@ -1326,13 +1385,16 @@ font-size:1.25rem;
     
     .user-profile-container{
     display: grid;
-    grid-template-rows:4rem 3rem 10rem 3rem;
+    grid-template-rows:4rem 3rem 5rem 5rem 5rem 5rem 3rem;
     grid-template-columns:35% 65%;
     grid-template-areas:
-        "areaA areaB"
-        "areaA areaC"
-        "areaD areaC"
-        "areaE areaF";
+        "areaA areaG"
+        "areaA areaH"
+        "areaB areaH"
+        "areaC areaH"
+        "areaD areaI"
+        "areaE areaI"
+        "areaF areaI";
     }
     
     .user-profile-image{
@@ -1341,7 +1403,7 @@ font-size:1.25rem;
     }
     
     .user-profile-item-name{
-        grid-area:areaB;
+        grid-area:areaG;
     }
     
     .user-profile-item-image{
@@ -1349,27 +1411,27 @@ font-size:1.25rem;
     }
     
     .user-profile-item-sex{
-        display: none;
-    }
-    
-    .user-profile-item-age{
-        display: none;    
-    }
-    
-    .user-profile-item-sport{
-        display: none;
-    }
-    
-    .user-profile-item-profile{
         grid-area:areaC;
     }
     
+    .user-profile-item-age{
+         grid-area:areaD; 
+    }
+    
+    .user-profile-item-sport{
+       grid-area:areaH;
+    }
+    
+    .user-profile-item-profile{
+        grid-area:areaI;
+    }
+    
     .user-profile-item-place{
-        display: none;
+        grid-area:areaE;
     }
     
     .user-profile-item-edit{
-        grid-area:areaD;
+        grid-area:areaB;
     }
     
     .user-profile-item-active{
@@ -1382,12 +1444,16 @@ font-size:1.25rem;
         font-size:1.25rem;
     }
     
-    .user-profile-profile{
+    .user-profile-edit{
         font-size:0.75rem;
     }
     
-    .user-profile-edit{
+    .user-profile-sport{
         font-size:0.75rem;
+    }
+    
+    .user-profile-profile{
+        font-size:0.75rem;    
     }
     
     .back-index{
@@ -1395,7 +1461,7 @@ font-size:1.25rem;
     }
     
     .jump-act{
-        font-size:1rem;
+        font-size:0.9rem;
     }
     
     .user-main-title{
@@ -1430,7 +1496,7 @@ font-size:1.25rem;
     }
     
     .user-active-activity{
-        margin:0.5rem 0 0 5%;
+        margin:0.5rem;
         font-size:0.8rem;
         
     }
@@ -1580,34 +1646,366 @@ font-size:1.25rem;
         flex-flow: column;
     }
     
+    .account-post-activity{
+        font-size:0.8rem;
+    }
+    
+    .account-post-condition{
+        font-size:0.8rem;
+    }
+    
+    .account-post-container{
+        display:grid;
+        grid-template-rows: 4rem 4rem 8rem 8rem 12rem 12rem;
+    }
 }   
     /*タブレット・小型PC*/
 
   @media only screen and (min-width:601px) and (max-width:1280px) {
       
-      /*profile.blade.php*/
-      
-      .profile-top-contents{
+  /*profile.blade.php*/
+  
+    .profile-top-contents{
         height: 300px;
         background-size: 33% 50%;
         margin-top:0;
-      }
-      
-      .profile-title{
-          font-size:3.5rem;
-          padding-top: 3.75rem;
-      }
-      
-      
-      br{
+    }
+  
+    .profile-title{
+        font-size:3.5rem;
+        padding-top: 3.75rem;
+    }
+  
+
+    br{
         display: inline;
     }
-      
-      
-      
-      
-      
-      
-      
-  }
     
+    .profile-subtitle{
+        font-size:1.75rem;
+    }
+    
+    .profile-item-name{
+        margin-top: 2.7rem;
+        margin-left:0;
+    }
+    
+    .profile-item-sport{
+        margin-right: 0;
+    }
+    
+    .profile-item-profile{
+        margin-left: 0;
+    }
+    
+    .profile-item-image{
+        margin-right: 0;
+    }
+    
+    .radio-name{
+        font-size:1rem;
+    }
+    
+    .profile-item-age{
+        margin-left: 0;
+    }
+    
+    .profile-item-place{
+        margin-right: 0;
+    }
+    
+    .profile-item-sex{
+        margin-left: 0;    
+    }
+    
+    /*remkae.blade.php*/
+    
+    .remake-top-contents{
+        height: 300px;
+        background-size: 33% 50%;
+        margin-top:0;
+    }
+  
+    .remake-title{
+        font-size:3.5rem;
+        padding-top:6rem;
+    }
+  
+    .remake-subtitle{
+        font-size:1.75rem;
+    }
+    
+    .remake-item-name{
+        margin-top: 2.7rem;
+        margin-left:0;
+    }
+    
+    .remake-item-sport{
+        margin-right: 0;
+    }
+    
+    .remake-item-profile{
+        margin-left: 0;
+    }
+    
+    .remake-item-image{
+        margin-right: 0;
+    }
+    
+    
+    .remake-item-age{
+        margin-left: 0;
+    }
+    
+    .remake-item-place{
+        margin-right: 0;
+    }
+    
+    .remake-item-sex{
+        margin-left: 0;    
+    }
+    
+    /*active.blade.php*/
+    
+    .active-top-contents{
+        height:300px;
+        background-size:33% 50%;
+    }
+    
+    .active-title{
+        font-size:4rem;
+        margin:2rem 0;
+        padding-top: 6rem;
+    }
+      
+    .active-subtitle{
+        font-size:1.75rem;    
+    }  
+    
+    .active-input-image{
+        width:7rem;
+        height:5rem;
+    }
+      
+    .active-input{
+        margin-top:7rem;
+    }  
+      
+    /*reactive.blade.php*/
+    
+    .reactive-top-contents{
+        height:300px;
+        background-size:33% 50%;
+    }
+    
+    .reactive-title{
+        font-size:4rem;
+        margin:2rem 0;
+        padding-top: 6rem;
+    }
+      
+    .reactive-subtitle{
+        font-size:1.75rem;    
+    }  
+    
+    .reactive-input-image{
+        width:7rem;
+        height:5rem;
+    }
+      
+    .reactive-input{
+        margin-top:7rem;
+    }  
+    
+    
+    /*user.blade.php*/
+    
+    .user-main-contents{
+        grid-template-columns:1fr 1fr;
+    }
+    
+    .user-active-edit-p{
+        font-size:0.8rem;
+    }
+    
+    .user-active-image{
+        height: 12rem;    
+    }
+    
+    .user-active-activity{
+        font-size:0.8rem;
+    }
+    
+    .user-active-container{
+        grid-template-rows:5rem 15rem 15rem 3rem;
+    }
+    
+    .user-profile-container{
+    display: grid;
+    grid-template-rows:4rem 5rem 5rem 5rem 5rem;
+    grid-template-columns:25% 25% 50%;
+    grid-template-areas:
+        "areaA areaB areaB"
+        "areaA areaZ areaH"
+        "areaC areaD areaH"
+        "areaE areaF areaI"
+        "areaG areaG areaI";
+        border-bottom-style:dotted;
+        border-width: 0.25rem;
+        border-color: white;
+    }
+    
+    .user-profile-sport{
+        font-size:0.75rem;    
+    }
+    
+    .user-profile-profile{
+        font-size:0.75rem;
+    }
+    
+    .user-profile-item-name{
+        grid-area:areaB;
+    }
+    
+    .user-profile-item-image{
+        grid-area:areaA;
+    }
+    
+    .user-profile-item-sex{
+        grid-area:areaD;
+    }
+    
+    .user-profile-item-age{
+         grid-area:areaF; 
+    }
+    
+    .user-profile-item-sport{
+       grid-area:areaH;
+    }
+    
+    .user-profile-item-profile{
+        grid-area:areaI;
+    }
+    
+    .user-profile-item-place{
+        grid-area:areaE;
+    }
+    
+    .user-profile-item-edit{
+        grid-area:areaC;
+    }
+    
+    .user-profile-item-active{
+        grid-area:areaG; 
+        margin-left: 0;
+    }
+    
+    .user-profile-edit{
+        font-size:0.8rem;    
+    }
+    
+    .user-profile-name{
+        margin-left: 10%;    
+    }
+    
+    /*member.blade.php*/
+    
+    .member-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:1rem;
+    }
+
+    .member-title{
+        font-size:4rem;
+        padding-top:6rem;
+    }
+    
+    .member-top-title{
+        height:300px;
+        background-size:33% 50%;
+    }
+    
+    /*account.blade.php*/
+    .account-grid{
+        display:flex;
+        flex-flow: column;
+    }
+    
+    .account-active-title{
+        margin:0;
+    }
+    
+    .account-post-title{
+        margin:0;
+    }
+    
+    .account-active-activity{
+        font-size:0.9rem;    
+    }
+    
+    .account-post-activity{
+        font-size:0.9rem;
+    }
+    
+    .account-post-condition{
+        font-size:0.9rem;
+    }
+    
+    .account-button{
+        font-size:1rem;
+        margin:0 2rem;
+    }
+    
+    .account-top-container{
+        grid-template-rows:9rem 5rem 4rem 4rem 5rem;
+        grid-template-columns:20% 20% 60%;
+        grid-template-areas:
+        "areaA areaA areaH"
+        "areaB areaB areaH"
+        "areaC areaD areaI"
+        "areaE areaF areaI"
+        "areaG areaG areaI";
+    }
+    
+     .account-item-image{
+        grid-area:areaA;
+    }
+    
+    .account-item-name{
+        grid-area:areaB;
+    }
+    
+    .account-item-profile-name{
+        grid-area:areaC;
+        display: block;
+    }
+    
+    .account-item-sex{
+        grid-area:areaD;
+    }
+    .account-item-age{
+        grid-area:areaE;
+    }
+    
+    .account-item-place{
+        grid-area:areaF;
+    }
+    
+    .account-item-sport{
+        grid-area:areaH;
+    }
+    
+    .account-item-profile{
+        grid-area:areaI;
+    }
+    
+    .account-item-chat{
+        grid-area:areaG;
+    }
+    
+    .account-name{
+        font-size:1.5rem;
+    }
+    
+}    

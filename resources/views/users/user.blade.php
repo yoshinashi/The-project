@@ -51,7 +51,7 @@
                     
                     
                     <div class="user-profile-item-active">
-                        <a href="/actives"class="jump-act">[アクティビティを投稿する]</a>
+                        <a href="/actives"class="jump-act">[活動を投稿する]</a>
                     </div>    
                     @else
                     <div class="profile-attention-box">
@@ -68,7 +68,7 @@
             
         </div>
         
-        <h1 class="user-main-title">活動の投稿</h1>
+        <h1 class="user-main-title">活動の投稿一覧</h1>
     
 
         <div class="user-main-contents">
@@ -96,7 +96,7 @@
                     </div>
                         
                         <div class="user-active-item-edit">
-                           <p><a href="/users/{{ $active->id }}/edit" class="user-active-edit">投稿の修正</a></p>
+                           <p class="user-active-edit-p"><a href="/users/{{ $active->id }}/edit" class="user-active-edit">[投稿の修正]</a></p>
                         </div>    
                         
                         <div class="user-active-item-delete">
@@ -111,7 +111,7 @@
         </div>
         
         <div class="footer">
-            <a href="/indexes">戻る</a>
+            <a href="/indexes"class="user-return">[戻る]</a>
         </div>
     </body>
 </html>

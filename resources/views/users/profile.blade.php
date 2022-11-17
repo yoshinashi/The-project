@@ -26,7 +26,7 @@
                                 
                                 <div class="profile-item-sport">
                                  
-                                   <h2 class="profile-subtitle">経験・興味のあるスポーツ</h2>
+                                   <h2 class="profile-subtitle">経験・興味のある<br>スポーツ</h2>
                                    <textarea name="profile[sport]" placeholder="経験年数などの記載" class="profile-textarea">{{ old('profile.sport') }}</textarea>
                                    <p class="title__error" style="color:red">{{ $errors->first('profile.sport') }}</p>
 
@@ -59,42 +59,43 @@
                                                name="profile[sex]" value="女性"style="transform:scale(3.0);" class="profile-radio-btn">
                                              <label for="contactChoice2" class="radio-name">女性</label>
                                         </div>
+                                        
                                 </div>   
                                 
-                              <div class="profile-item-age"> 
+                                <div class="profile-item-age"> 
 
                                     <h2 class="profile-subtitle">年齢層</h2>
                                     <select name="profile[age]" class="profile-age">
-                        　　　　　　　　<option value="">選択してください</option>
-                        　　　　　　　　<option value="20歳未満">20歳未満</option>
-                        　　　　　　　　<option value="20-29歳">20-29歳</option>
-                        　　　　　　　　<option value="30-39歳">30-39歳</option>
-                        　　　　　　　　<option value="40-49歳">40-49歳</option>
-                        　　　　　　　　<option value="50-59歳">50-59歳</option>
-                        　　　　　　　　<option value="60歳以上">60歳以上</option>
-                        　　　　　　 </select>
-                        　　　　　　 <p class="title__error" style="color:red">{{ $errors->first('profile.age') }}</p>
-                    　　　  　　</div>
+                                            <option value="">選択してください</option>
+                                        <option value="20歳未満">20歳未満</option>
+                                        <option value="20-29歳">20-29歳</option>
+                                        <option value="30-39歳">30-39歳</option>
+                                        <option value="40-49歳">40-49歳</option>
+                                        <option value="50-59歳">50-59歳</option>
+                                        <option value="60歳以上">60歳以上</option>
+                                    </select>
+                                    <p class="title__error" style="color:red">{{ $errors->first('profile.age') }}</p>
+                                </div>
 
-                    　　　　　　
-                        　<div class="profile-item-place">
+            
+                    <div class="profile-item-place">
                                 <h2 class="profile-subtitle">住んでいる地域</h2>
                                 <select name="profile[place]" class="profile-place">
-                    　　　　　　　　<option value="">選択してください</option>
-                    　　　　　　　　<option value="東京">東京</option>
-                    　　　　　　　　<option value="神奈川">神奈川</option>
-                    　　　　　　　　<option value="埼玉">埼玉</option>
-                    　　　　　　　　<option value="茨城">茨城</option>
-                    　　　　　　　　<option value="栃木">栃木</option>
-                    　　　　　　　　<option value="千葉">千葉</option>
-                    　　　　　　　　<option value="群馬">群馬</option>
-                    　　　　　　　　<option value="その他の地域">その他の地域</option>
+                                    <option value="">選択してください</option>
+                                    <option value="東京">東京</option>
+                                    <option value="神奈川">神奈川</option>
+                                    <option value="埼玉">埼玉</option>
+                                    <option value="茨城">茨城</option>
+                                    <option value="栃木">栃木</option>
+                                    <option value="千葉">千葉</option>
+                                    <option value="群馬">群馬</option>
+                                    <option value="その他の地域">その他の地域</option>
                                 </select>
                                 <p class="title__error" style="color:red">{{ $errors->first('profile.place') }}</p>
                             </div>    
                     
                             <div class="profile-item-keep">    
-                                <input type="submit" value="keep"/>
+                                <input type="submit" value="プロフィール登録"class="profile-input"/>
                             </div> 
 
 
@@ -102,7 +103,7 @@
                  </form>
         
         
-       <div class="footer">
+       <div class="profile-footer">
             <a href="/users" class="back-user">[プロフィール登録をやめる]</a>
         </div>
         

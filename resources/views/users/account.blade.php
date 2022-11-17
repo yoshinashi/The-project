@@ -142,7 +142,7 @@
          
     </div>     
         <div class="footer">
-            <a href="/indexes">戻る</a>
+            <a href="/members"class="account-return">[戻る]</a>
         </div>
         
         <script>

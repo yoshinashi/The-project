@@ -31,15 +31,16 @@
                 @if( Auth::check() )
                 
                       
-                        <a href="/hosts"><h2 class="host-link">サークル投稿者画面へ</h2></a>
+                        <a href="/hosts"><h2 class="host-link">[サークル投稿者画面へ]</h2></a>
                      
-                        <a href="/users"><h2 class="user-link">個人活動投稿画面へ</h2></a>
+                        <a href="/users"><h2 class="user-link">[個人活動投稿画面へ]</h2></a>
                         @endif
                        
                         @guest
                           <p class="index-info">Back To Clubでできること</p>
                           
                           <p class="index-info">Back To Clubは様々なスポーツの団体を作ることができ、スポーツを通して人生を楽しむコミュニティの形成が可能です</p>
+                          <p class="index-info">会員登録をして個人活動投稿画面でプロフィールを登録しよう！！</p>
                         @endguest
                </div> 
             
@@ -133,7 +134,7 @@
         </div>
         
         <div class="footer">
-            <a href="/indexes">戻る</a>
+            <a href="/indexes" class="index-return">[戻る]</a>
         </div>
        
     </body>

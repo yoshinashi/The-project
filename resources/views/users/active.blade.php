@@ -17,20 +17,20 @@
             <div class="active-container">
             
                 <div class="active-item-activity">
-                        <h2 class="active-subtitle">自分の活動を紹介する</h2>
+                        <h2 class="active-subtitle">自分の活動</h2>
                         <textarea name="active[activity]"placeholder="詳細の記入"class="active-textarea">{{ old('active.activity') }}</textarea>
-                         <p class="title__error" style="color:red">{{ $errors->first('active.activity')}}</p>
+                        <p class="title__error" style="color:red">{{ $errors->first('active.activity')}}</p>
                 </div>
                 
                 
                 <div class="active-item-image">
-                    <h2 class="active-subtitle">活動写真の投稿</h2>
+                    <h2 class="active-subtitle">写真の投稿</h2>
                     <input type="file" name="image_active" class="active-input-image">
                     <p class="title__error" style="color:red">{{ $errors->first('image_active')}}</p>
                 </div> 
                 
                 <div class="active-item-save">    
-                    <input type="submit" value="save"/>
+                    <input type="submit" value="活動の投稿"class="active-input"/>
                 </div>    
             </div>    
         </form>
