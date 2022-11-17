@@ -13,10 +13,16 @@
     
     
     <body>
+        
+        <div class="member-user-item-name">
+            <a href='/accounts/{{$user->id}}'class="chat-return">[チャット終了]</a>
+        </div>
         <div class="chat-container row justify-content-center">
             <div class="chat-area">
                 <div class="card">
-                    <div class="card-header">{{ $user->name}}と連絡を取る</div>
+                    <div class="card-header">
+                        <h2 class="chat-user-name">[{{ $user->name}}と連絡を取る]</h2>
+                    </div>
                     <div class="card-body chat-card">
                          <div id="comment-data"></div>
                     </div>
@@ -32,7 +38,7 @@
                         aria-label="With textarea"
                         onkeydown="if(event.shiftKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
                         <input  id="user" type="hidden" value="{{$user->id}}" name="user"></input>
-                    <button type="submit" id="submit" class="btn btn-outline-primary comment-btn">Submit</button>
+                    <button type="submit" id="submit" class="btn btn-outline-primary comment-btn">トークを送信</button>
                 </div>
             </div>
         </form>

@@ -202,12 +202,17 @@
 .hit-title-form{
     grid-area:areaB;
 }
+
+.index-return{
+    color:white;
+    font-size:1.5rem;
+}
 /* create.blade.php */
 
 .create-body{
     background-color: black;
     width:90%;
-    margin:0 5%;
+    margin:5%;
 }
 
 .create-top-contents{
@@ -310,6 +315,18 @@
 
 br{
     display: none;
+}
+
+.create-input{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    margin-top:3rem;
+}
+
+.create-return{
+    color:white;
+    font-size:1.5rem;
 }
 
 
@@ -419,6 +436,18 @@ br{
    display:block;
 }
 
+.edit-return{
+    color:white;
+    font-size:1.5rem;
+}
+
+.edit-input{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    margin-top:3rem;
+}
+
 
 /*show.blade.php*/
 .res-show-contents{
@@ -517,6 +546,7 @@ aside{
 .show-subtitle{
     color:white;
     font-size:2rem;
+    margin:1rem 0;
 }
 
 .show-condition-title{
@@ -591,6 +621,7 @@ aside{
 
 .show-user{
     color:white;
+    font-size:2rem;
 }
 
 .aside-main-title{
@@ -627,6 +658,22 @@ aside{
     -webkit-line-clamp: 4;
 }
 
+
+.res-aside-contents{
+    border-style: solid;
+    border-color:white;
+    border-width: 0.25rem;
+    border-radius:1.5rem;
+}
+
+.aside-image{
+    margin-left: 0.5rem;
+}
+
+.show-return{
+    color:white;
+    font-size:1.5rem;
+}
 
 
 /*host.blade.php*/
@@ -712,6 +759,7 @@ aside{
     width: 90%;
     height: 16rem;
     border-radius:1.5rem;
+    margin-left: 1rem;
 }
 
 .host-item-path{
@@ -803,6 +851,20 @@ aside{
     display: inline-block;
 }
 
+.host-return{
+    color:white;
+    font-size:1.5rem;
+}
+
+.host-edit{
+    color:white;
+    font-size:1.25rem;
+}
+
+.host-delete{
+    border-radius: 1.5rem;
+}
+
 /*モバイル対応*/
 
 @media screen and (max-width:600px) {
@@ -835,6 +897,7 @@ aside{
         background-image:url(../img/subindex.jpeg);
         background-size: 50% 50%;
         margin-top:3rem;
+        margin-left: 5%;
         
     }
     
@@ -913,8 +976,7 @@ aside{
     /*host-blade-php*/
     
     .host-body{
-        width: 100%;
-        margin:0;
+        width: 90%;
     }
     
     .host-top-title{
@@ -1028,7 +1090,8 @@ aside{
     .create-top-contents{
         height: 10rem;
         background-size: 50% 50%;
-        margin:0;
+        margin-left: 5%;
+        width:90%;
         
     }
     
@@ -1075,6 +1138,10 @@ aside{
         width: 90%;
     }
     
+    .create-input{
+        margin-left: 10%;    
+    }
+    
     /*edit-blade.php*/
     
     .edit-body{
@@ -1086,6 +1153,8 @@ aside{
         height: 10rem;
         background-size: 50% 50%;
         margin:0;
+        width:90%;
+        margin-left: 5%;
         
     }
     
@@ -1388,7 +1457,7 @@ aside{
     
     .host-container {
     display: grid;
-    grid-template-rows: 4rem 4.5rem 3.5rem 6.5rem 12rem 12rem 3rem;
+    grid-template-rows: 4rem 4.5rem 3.5rem 6.5rem 13rem 13rem 3rem;
     grid-template-columns: 60% 40%;
     }
     
@@ -1403,11 +1472,11 @@ aside{
     }
     
     .host-sport{
-        font-size:0.85rem;
+        font-size:0.75rem;
     }
     
     .host-place{
-        font-size:0.85rem;
+        font-size:0.75rem;
     }
     
     .host-image{
@@ -1422,6 +1491,15 @@ aside{
     
     .host-condition{
         font-size:0.85rem;
+    }
+    
+    .host-edit{
+        font-size:1rem;
+    }
+    
+    .host-delete{
+        width: 85%;
+        height: 35px;
     }
     
     /*create.blade.php*/
@@ -1546,6 +1624,38 @@ aside{
     
     .res-sub{
         font-size:1.5rem;    
+    }
+    
+    /*show.blade.php*/
+    
+    .aside-grid{
+        grid-template-columns:1fr 1fr;
+    }
+    
+    article{
+        margin:0;
+    }
+    
+    .aside-container{
+        width:95%;
+        margin-left: 2.5%;
+    }
+    
+    .show-container{
+        margin:0; 
+        border-width: 0.25rem;
+    }
+    
+    .aside-main-title{
+        font-size:1.75rem;
+    }
+    
+    .aside-item-activity{
+        display: none;
+    }
+    
+    .show-subtitle{
+        font-size:1.5rem;
     }
     
     

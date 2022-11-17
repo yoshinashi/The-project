@@ -16,19 +16,21 @@
             
             <div class="reactive-container">
                 <div class="reactive-item-activity">
-                    <h2 class="reactive-subtitle">自分のアクティビティを紹介する</h2>
+                    <h2 class="reactive-subtitle">自分の活動</h2>
                     <textarea name="active[activity]" placeholder="詳細の記入"class="reactive-textarea"><?php echo $active->activity ?></textarea>
-                    <p class="title__error" style="color:red">{{ $errors->first('active_activity')}}</p>
+                    <p class="title__error" style="color:red">{{ $errors->first('active.activity')}}</p>
                 </div>
                 
                 
                 <div class="reactive-item-image">
-                 <h2 class="reactive-subtitle">活動写真の投稿</h2>
+                 <h2 class="reactive-subtitle">写真の投稿</h2>
                     <input type="file" name="image_active"class="reactive-input-image">
                     <p class="title__error" style="color:red">{{ $errors->first('image_active')}}</p>
                 </div>    
+                
+                
                 <div class="reactive-item-repost">
-                    <input type="submit" value="再投稿"/>
+                    <input type="submit" value="再投稿"class="reactive-input"/>
                 </div>    
             </div>    
         </form>

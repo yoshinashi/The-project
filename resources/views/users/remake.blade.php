@@ -10,7 +10,7 @@
     </head>
     <body class="remake-body">
         <div class="remake-top-contents">
-            <h1 class="remake-title">プロフィールを編集する</h1>
+            <h1 class="remake-title">プロフィール編集</h1>
         </div>
         
                 <form action="/profiles" enctype="multipart/form-data" method="POST">
@@ -28,7 +28,7 @@
                                     
 
                                     <div class="remake-item-sport">
-                                        <h2 class="remake-subtitle">経験・興味のあるスポーツ</h2>
+                                        <h2 class="remake-subtitle">経験・興味のある<br>スポーツ</h2>
                                         <textarea name="profile[sport]" placeholder="経験年数などの記載" class="remake-textarea"><?php
                                         echo $profile->sport
                                         ?></textarea>
@@ -98,14 +98,14 @@
 
                                     
                                 <div class=remake-item-update>            
-                                    <input type="submit" value="update">
+                                    <input type="submit" value="プロフィールの更新"class="remake-input">
                                 </div> 
                             </div>    
                     </form>
                 
         
         
-       <div class="footer">
+       <div class="remake-footer">
             <a href="/users"class="back-user">[プロフィール編集をやめる]</a>
         </div>
         

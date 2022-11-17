@@ -58,13 +58,13 @@
                             </div>
                             
                             <div class="show-item">
-                                <h3 class="show-subtitle">このサークルのインスタを見る</h3>
+                                <h3 class="show-subtitle">サークルの<br>インスタを見る</h3>
                                <a href="https://instagram.com/{{$post->insta}}"><img src="../img/insta.jpeg"class="show-insta"></a>
                             </div>    
                             
                             <div class="show-item">
-                                <h3 class="show-subtitle">この投稿をしたユーザー</h3>
-                                <a href='/accounts/{{$post->user_id}}' class="show-user">{{ $post->user->name }}</a>
+                                <h3 class="show-subtitle">この投稿をした<br>ユーザー</h3>
+                                <a href='/accounts/{{$post->user_id}}' class="show-user">[{{ $post->user->name }}]</a>
                             </div>
                     </div>
                     
@@ -215,7 +215,7 @@
             </div>       
            
         <div class="footer">
-            <a href="/indexes">戻る</a>
+            <a href="/indexes"class="show-return">[戻る]</a>
         </div>
         
 

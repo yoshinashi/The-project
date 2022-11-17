@@ -13,15 +13,12 @@
 }
 
 .comment-container {
-  position: fixed;
   bottom: 20px;
   text-align: center;
   width: 100%;
 }
 
-.comment-area {
-  width: 70%;
-}
+
 
 .comment-btn {
   margin: 0px 10px;
@@ -29,6 +26,11 @@
 
 .comment-body {
   padding: 5px 30px 20px 30px;
+  margin-top: 1rem;
+  border-style: solid;
+  border-color:black;
+  border-width: 0.25rem;
+  border-radius: 1.5rem;
 }
 
 .comment-body:hover {
@@ -45,5 +47,26 @@
   margin-top: 10px;
   margin-left: 5px;
   color: #a0a0a0;
+}
+
+.chat-user-name{
+  font-size:3rem;
+}
+
+.form-control{
+  width: 70%;
+  height:5rem;
+  border-radius: 1rem;
+}
+
+.comment-btn{
+  width:10rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+}
+
+.chat-return{
+  font-size:1.5rem;
+  color:black;
 }
 

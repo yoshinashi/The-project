@@ -78,7 +78,7 @@
                         <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                               @csrf
                                @method('DELETE')
-                               <button type="button" onclick="deletePost({{ $post->id }})"class="host-delete">投稿を削除する</button> 
+                               <button type="button" onclick="deletePost({{ $post->id }})"class="host-delete">[削除]</button> 
                                
                          </form>
                     </div>
@@ -89,7 +89,7 @@
             
         
          <div class="footer">
-            <a href="/indexes">戻る</a>
+            <a href="/indexes" class="host-return">[戻る]</a>
         </div>
         
         

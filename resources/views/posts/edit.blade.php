@@ -54,6 +54,7 @@
                                     <option value="{{$place}}" {{$post->place == $place ? "selected" :"" }}>{{$place}}</option>
                                 @endforeach
                             </select>
+                            <p class="title__error" style="color:red">{{ $errors->first('post.place') }}</p>
                         </div>    
             
                         <div class="edit-item-activity">
@@ -77,8 +78,7 @@
                           <input type="file" name="image" class="edit-input-image">
                           <p class="title__error" style="color:red">{{ $errors->first('image') }}</p>
                         </div>
-
-
+                        
                         <div class="edit-item-insta">
     
                             <h2 class="edit-subtitle res-sub">インスタのアカウントID</h2>
@@ -88,7 +88,7 @@
                     　　</div>   
                
                         <div class="edit-item-input">
-                            <input type="submit" value="投稿を編集する" onclick="return isCheck()">
+                            <input type="submit" value="投稿を編集する" onclick="return isCheck()" class="edit-input">
                         </div>
             </div>
         
@@ -98,7 +98,7 @@
         
         
        <div class="footer">
-            <a href="/hosts">戻る</a>
+            <a href="/hosts" class="edit-return">[戻る]</a>
         </div>
         
         
