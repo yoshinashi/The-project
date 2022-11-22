@@ -1,4 +1,9 @@
 /* index.blade.php */
+.text-sm{
+    font-size:1.5rem;
+    color:white;
+}
+
 .index-info{
     color:white;
 }
@@ -870,6 +875,10 @@ aside{
 @media screen and (max-width:600px) {
     
     /*index.blade.php*/
+    
+    .text-sm{
+        font-size:1rem;
+    }
     
     .antialiased{
         width:100%;
