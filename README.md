@@ -15,4 +15,12 @@ yoshinashi4410@gmail.com メールアドレス
 Y0604f4410　パスワード
 
 注意点　サークルと個人登録はまずは会員登録をしないと表示されないので最初に会員当路をお願いします。 サークル投稿と個人活動の動作を確認する場合はまずは個人活動のリンクへとびプロフィールを登録してください。
-![6B3E6406-8A44-4506-9A13-C118A4017D7B_1_102_o](https://user-images.githubusercontent.com/109498331/204678396-34a171c3-a9e9-451d-86fe-a5f1cec9a0bc.jpeg)
+
+デモ画面![5142778F-BFD2-4E8A-8E3B-EE6D183B6579](https://user-images.githubusercontent.com/109498331/204680956-1727dba8-dcb5-4b34-ab13-92708632fd13.jpeg)
+
+
+![D6CA471B-B443-4A5E-9D1C-18AE4D63066A](https://user-images.githubusercontent.com/109498331/204681008-4ef5020c-0e2c-47ab-9f96-abb39098b133.jpeg)
+![5C59A5BC-3974-4245-B5E4-12AE6AEEEC72](https://user-images.githubusercontent.com/109498331/204681016-27f63317-7590-408c-a538-e1fa865b0708.jpeg)
+![CD131D71-D5FB-43AE-84BB-61A8713C6046](https://user-images.githubusercontent.com/109498331/204681022-c16d9e09-0a71-449a-a4ea-3b3a7a26dabf.jpeg)
+![88247F2A-009D-40E3-B2B3-9B5B2660501E](https://user-images.githubusercontent.com/109498331/204681028-0e448a75-4747-4f7b-a58e-1080ca21841b.jpeg)
+![59034D42-56B4-4C1B-8BFE-68FF35354CC3](https://user-images.githubusercontent.com/109498331/204681040-2e6f5181-083c-4c62-9114-c336ea354736.jpeg)
